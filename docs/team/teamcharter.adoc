@@ -20,16 +20,16 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Rolle | Person
 
 | Product Owner
-| [Name]
+| Ben Weinrich
 
 | Scrum Master
-| [Name]
+| Simon Joel Rios Sanchez
 
 | Tech Lead footnote:[optionale Rolle, aber empfohlen, um technische Entscheidungen zu koordinieren]
-| [Name]
+| Tim Besner
 
 | Entwickler:innen
-| [Namen]
+| Tim Besner, Sirri Metuge Menick Misode, Alina Petrenko, Konrad Arvid Bornstedt
 
 | Stakeholder (Hauptansprechpartner)
 | [Name]
@@ -43,14 +43,14 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Ereignis | Wann | Dauer | Moderation
 
 | Standup (Daily / Weekly)
-| [z. B. täglich 09:30]
-| [z. B. 15 min]
-| [Rolle / Person]
+| Dienstags 13:00 Uhr
+| 15 min
+| Simon Joel Rios Sanchez
 
 | Sprint Planning
-| [z. B. montags, Sprintstart]
-| [z. B. 2 h]
-| [Rolle / Person]
+| Mittwoch 19:00 Uhr, nach Sprintbeginn
+| 2 h
+| Simon Joel Rios Sanchez/ Benedikt Weinrich
 
 | Sprint Review
 | [z. B. freitags, Sprintende]
@@ -63,9 +63,9 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | [Rolle / Person]
 
 | Backlog Refinement
-| [z. B. mittwochs, wöchentlich]
-| [z. B. 1 h]
-| [Rolle / Person]
+| Dienstags 13:15 Uhr
+| 30min
+| Benedikt Weinrich
 |===
 
 == Kommunikation
@@ -75,22 +75,22 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Thema | Vereinbarung
 
 | Primärer Kanal
-| [z. B. Discord – #projektname]
+| Discord, WhatsApp
 
 | Entscheidungsprotokoll
-| [z. B. Wiki oder per Asciidoc in Ordner <Ordnername>]
+| Asciidoc in Ordner Entscheidungen
 
 | Erwartete Reaktionszeit
-| [z. B. innerhalb von 4 Stunden während Kernzeit]
+| innerhalb von 4 Stunden während Kernzeit
 
 | Kernarbeitszeit
-| [z. B. 09:00 – 16:00 Uhr]
+| 09:00 – 16:00 Uhr
 
 | Videokonferenz-Tool
-| [z. B. Teams / Discord / Google Meet]
+| Discord
 
 | Asynchrone Abstimmung
-| [z. B. kurze Statusupdates im Issue-Diskussion]
+| WhatsApp
 |===
 
 == Arbeitsweise
@@ -103,19 +103,17 @@ _Eine User Story ist bereit für die Entwicklung, wenn:_
 * [ ] Der Aufwand wurde vom Team geschätzt
 * [ ] Abhängigkeiten sind identifiziert und geklärt
 * [ ] Designs / Mockups sind vorhanden (falls relevant)
-* [ ] [Weitere Kriterien ergänzen]
 
 === Definition of Done (DoD)
 _Eine User Story gilt als fertig, wenn:_
 
 // Hier können die Kriterien individuell angepasst werden, z. B.:
 * [ ] Der Code wurde implementiert und in den Hauptbranch gemergt
-* [ ] Unit- und Integrationstests wurden geschrieben und sind grün
-* [ ] Der Code wurde von mindestens einer weiteren Person reviewt
+* [ ] Code wurde erfolgreich getestet
+* [ ] Der Code wurde von TechLead mindestens einer weiteren Person reviewt
 * [ ] Die Funktionalität wurde im Staging-System getestet
 * [ ] Dokumentation wurde aktualisiert (falls erforderlich)
 * [ ] Der Product Owner hat die Story abgenommen
-* [ ] [Weitere Kriterien ergänzen]
 
 === Code & Versionierung
 
@@ -127,24 +125,25 @@ _Eine User Story gilt als fertig, wenn:_
 | [z. B. Feature Branches, Trunk-Based Development]
 
 | PR-Review-Regeln
-| [z. B. mind. 1 Approval, kein Merge ohne grüne Pipeline]
+| mind. 1 Approvals vom TechLead
 
 | Merge-Berechtigung
-| [z. B. jedes Teammitglied nach Approval]
+| TechLead
 
 | Commit-Konventionen
-| [z. B. Conventional Commits]
+| Klar formulierte Kommentare zur Änderungsbeschreibung
 |===
 
 == Teamvereinbarungen
 
 _Diese Vereinbarungen haben wir gemeinsam getroffen:_
 
-. [z. B. Wir gehen respektvoll und offen miteinander um.]
-. [z. B. Wir sprechen Probleme frühzeitig an, anstatt sie zu ignorieren.]
-. [z. B. Fehler sind Lernchancen – wir suchen keine Schuldigen.]
-. [z. B. Meetings beginnen pünktlich; wer verhindert ist, gibt rechtzeitig Bescheid.]
-. [z. B. Entscheidungen werden dort dokumentiert, wo alle sie finden können.]
+. Absage mind. 2h vorher
+. Jeder der Bug merchen will gibt Bierchen aus (oder Spezi)
+. Meetings beginnen pünktlich; wer verhindert ist, gibt rechtzeitig Bescheid.
+. Entscheidungen werden dort dokumentiert, wo alle sie finden können.
+. Bei Abwesenheit selbstständig Protokoll lesen
+. Dokumente Namentlich makieren als Qualitätssiegel
 
 
 _Nächste Überprüfung: [Datum / Sprint] — Diese Charta wird regelmäßig in der Retrospektive aktualisiert._
