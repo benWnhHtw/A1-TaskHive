@@ -1,5 +1,5 @@
-= Teamcharta: {project-name}
-Vorname Nachname <email@domain.org>; Vorname2 Nachname2 <email2@domain.org>; Vorname3 Nachname3 <email3@domain.org>
+= Teamcharta: {Team A1 TaskHive}
+Benedikt Weinrich; Simon Joel Rios Sanchez; Tim Besner; Sirri Metuge Menick Misode; Alina Petrenko; Konrad Arvid Bornstedt
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 :version: 1.0
@@ -20,12 +20,12 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Rolle | Person
 
 | Product Owner
-| Ben Weinrich
+| Benedikt Weinrich
 
 | Scrum Master
 | Simon Joel Rios Sanchez
 
-| Tech Lead footnote:[optionale Rolle, aber empfohlen, um technische Entscheidungen zu koordinieren]
+| Tech Lead 
 | Tim Besner
 
 | Entwickler:innen
@@ -42,7 +42,7 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 |===
 | Ereignis | Wann | Dauer | Moderation
 
-| Standup (Daily / Weekly)
+| Standup (Weekly)
 | Dienstags 13:00 Uhr
 | 15 min
 | Simon Joel Rios Sanchez

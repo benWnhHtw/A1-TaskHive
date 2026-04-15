@@ -1,0 +1,19 @@
+= Entscheidungen: {Team A1 TaskHive}
+
+[cols="2,1,2,1,1", options="header"]
+|===
+| Beschreibung | Entscheidung | Begründung | Review | Review-Ergebnis
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+
+|===
