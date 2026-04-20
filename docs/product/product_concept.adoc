@@ -178,7 +178,7 @@ technischen Entscheidungen, die sich daraus ergeben — ohne sie hier zu wiederh
 | Qualitätsziel | Beschreibung | Messkriterium
 
 | Benutzbarkeit
-| Das Produkt ist ohne Einarbeitung nutzbar.
+| Die App ist intuitiv und ohne Einarbeitung nutzbar.
 | Neue Nutzer:innen finden die Kernfunktion innerhalb von 2 Minuten ohne Hilfe.
 
 | Performance
@@ -189,9 +189,46 @@ technischen Entscheidungen, die sich daraus ergeben — ohne sie hier zu wiederh
 | Das Produkt ist während der Hochschulöffnungszeiten zuverlässig erreichbar.
 | Verfügbarkeit ≥ 99 % während Betriebszeiten.
 
-| [Qualitätsziel]
-| [Beschreibung]
-| [Messkriterium]
+| Zuverlässigkeit
+| Daten (ToDos, Chat, Kalender) gehen nicht verloren.
+| Keine Datenverluste bei normalen Nutzungsbedingungen; automatische Speicherung bei jeder Änderung.
+
+| Konsistenz
+| Daten sind auf allen Geräten synchron.
+| Änderungen werden innerhalb von 2 Sekunden auf allen Geräten sichtbar.
+
+| Sicherheit
+| Nutzerdaten sind vor unbefugtem Zugriff geschützt.
+| Zugriff nur mit Login; verschlüsselte Datenübertragung (HTTPS).
+
+| Datenschutz
+| Personenbezogene Daten werden minimal und DSGVO-konform verarbeitet.
+| Keine unnötige Datenspeicherung; Nutzer können Daten löschen.
+
+| Skalierbarkeit
+| Die App funktioniert auch bei vielen WGs gleichzeitig stabil.
+| System unterstützt mindestens 100 gleichzeitige WGs ohne Performanceverlust.
+
+| Usability (WG-Kontext)
+| Aufgabenverteilung ist klar verständlich und fair nachvollziehbar.
+| Nutzer können jederzeit sehen, wer welche Aufgabe hat (max. 1 Klick).
+
+| Barrierefreiheit
+| Die App ist auch für Nutzer mit Einschränkungen nutzbar.
+| nach BITV 2.0
+
+| Wartbarkeit
+| Der Code ist leicht erweiterbar.
+| Neue Module benötigen weniger als 10% Anpassungen am bestehenden Code.
+
+| Responsivität 
+| App funktioniert auf verschiedenen Geräten
+| Alle Kernfunktionen sind auf jedem Gerät gut nutzbar/sichtbar
+
+| Effizienz
+| Die App verbruacht wenig Ressourcen
+| App verursacht wenig spürbare Akku- oder Datenbelastung im Alltag
+
 |===
 
 === Einschränkungen
