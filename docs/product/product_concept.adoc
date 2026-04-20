@@ -134,25 +134,53 @@ Diese Hauptfunktionen sollten als Epics im Product Backlog für die Gruppierung 
 |===
 | Nutzerbedarf | Hauptfunktion | Priorität
 
-| Studierende wollen schnell sehen, welche Räume gerade frei sind.
-| Echtzeit-Übersicht freier Lernräume
+| Als WG-Bewohner will ich eine neue Aufgabe mit einer Deadline erstellen können, damit unsere gemeinsamen Tätigkeiten strukturiert erfasst sind.
+| Kollaborative To-Do-Listen mit Echtzeit-Synchronisation und Änderungsverlauf.
 | Hoch
 
-| Nutzer:innen wollen einen Raum für einen bestimmten Zeitraum reservieren.
-| Raumbuchung mit Zeitfenster
+| Als WG-Bewohner will ich eine Aufgabe einem bestimmten Mitbewohner zuweisen können, damit eindeutig geklärt ist, wer für die Erledigung verantwortlich ist.
+| Aufgabenzuweisung an einzelne Personen oder Gruppen mit Deadlines und Prioritäten.
 | Hoch
 
-| Nutzer:innen wollen ihre aktiven Buchungen verwalten.
-| Buchungsübersicht & Stornierung
+| Als WG-Bewohner will ich ein Rotationssystem für wiederkehrende Aufgaben anlegen können, damit sich Zuständigkeiten automatisch abwechseln.
+| Rotationssysteme für wiederkehrende Aufgaben (z. B. Putzplan, Mülldienst).
+| Hoch
+
+| Als WG-Bewohner will ich eine Wochenübersicht meiner erledigten Aufgaben sehen, damit ich meinen Beitrag zum Haushalt nachvollziehen kann.
+| Fortschrittsvisualisierung (z. B. erledigte Aufgaben, Wochenübersichten, Aktivitätsverlauf).
+| Hoch
+
+| Als WG-Bewohner will ich für jede erledigte Aufgabe Punkte sammeln, damit mich ein spielerischer Anreiz zur Hausarbeit motiviert.
+| Gamification-Elemente wie Punkte, Level oder kleine Belohnungssysteme.
 | Mittel
 
-| Verwaltung will die Auslastung der Räume analysieren.
-| Auslastungsberichte für Administratoren
-| Niedrig
+| Als WG-Bewohner will ich sehen können, wie viele Aufgaben jede Person übernommen und erledigt hat, damit die Aufgabenverteilung transparent bleibt.
+| Statistiken zur Aufgabenverteilung und individuellen Beteiligung.
+| Hoch
 
-| [Nutzerbedarf]
-| [Hauptfunktion]
-| [Hoch / Mittel / Niedrig]
+| Als WG-Bewohner will ich eine automatische Erinnerung erhalten, wenn eine meiner Aufgaben bald fällig wird, damit ich sie nicht vergesse.
+| Benachrichtigungen und Erinnerungen für anstehende oder überfällige Aufgaben.
+| Hoch
+
+| Als WG-Bewohner will ich, dass wiederholt unerledigte Aufgaben für alle sichtbar hervorgehoben werden, damit offene Verantwortlichkeiten angesprochen werden können.
+| Eskalationsmechanismen bei wiederholt unerledigten Aufgaben.
+| Mittel
+
+| Als WG-Bewohner will ich einen integrierten WG-Kalender einsehen können, damit Termine und Aufgabenübersichten gebündelt sind.
+| Integration eines WG-Kalenders zur Koordination von Terminen und Aufgaben.
+| Hoch
+
+| Als WG-Bewohner will ich meine Verfügbarkeiten angeben können, damit Aufgaben fairer an meinen Alltag angepasst werden können.
+| Individuelle Präferenzen und Verfügbarkeiten zur fairen Aufgabenverteilung.
+| Hoch
+
+| Als Pendler will ich zwischen verschiedenen WG-Profilen wechseln können, damit ich Aufgaben unterschiedlicher Haushalte getrennt verwalten kann.
+| Multi-WG-Unterstützung für Nutzer mit mehreren Haushalten oder Rollen.
+| Hoch
+
+| Als WG-Bewohner will ich die App auch ohne Internetverbindung öffnen und Aufgaben einsehen können, damit ich z. B. auch bei schlechtem Empfang Zugriff habe.
+| Offline-Funktionalität mit späterer Synchronisation.
+| Hoch
 |===
 
 NOTE: Die Reihenfolge entspricht einer ersten groben Priorisierung und wird im Rahmen
