@@ -87,32 +87,38 @@ _Der Nutzungskontext gemäß DIN EN ISO 9241-11 beschreibt die Lebenswirklichkei
 | Aspekt | Beschreibung
  
 | Benutzer
-| [Eigenschaften, Kenntnisse, Erfahrung, Motivation der Nutzenden.
-(Verweis auf Personas für ausführliche Beschreibungen)]
+| Die Nutzenden sind WG-Mitglieder mit unterschiedlichen Einstellungen zur Haushaltsorganisation.
+Die Personas Peter und Lisa repräsentieren dabei typische Verhaltensweisen innerhalb einer WG: von eher unorganisiert und vermeidend bis hin zu strukturiert und verantwortungsbewusst.
+Die Nutzung erfolgt überwiegend über Smartphones und Laptop wobei sich die Nutzenden in ihrer Technikaffinität und Nutzungsintensität unterscheiden.
+(Details siehe Personas)
  
 | Ziele & Aufgaben
-| [Was wollen Nutzende erreichen?
-Welche konkreten Aufgaben führen sie dazu aus?]
+| Die Nutzenden möchten Haushaltsaufgaben organisieren und fair verteilen.
+Dazu gehören Aufgaben wie Putzen, Müll rausbringen oder Einkaufen.
+Sie wollen Verantwortlichkeiten klar festlegen und nachvollziehen können, wer was erledigt hat.
+Außerdem möchten sie Konflikte vermeiden und die Kommunikation innerhalb der WG verbessern.
  
 | Ressourcen
-| [Hardware, Software, Eingabegeräte, Hilfsmittel, die zur Nutzung des Produkts benötigt werden oder vorhanden sind.]
- 
+| Hauptsächlich Smartphones werden zur Nutzung verwendet, insbesondere für schnelle Interaktionen im Alltag.
+Einige Nutzende greifen zusätzlich auf Laptops zurück.
+Die Internetverbindung ist meist vorhanden.
+Unterschiede bestehen in der Techniknutzung: Einige nutzen Apps intensiv, andere eher selten.
+
 | Umgebung
-| [Technische Umgebung: Netzwerk, Plattformen, Betriebssysteme, Interoperabilität.
-
- Physische Umgebung: Ort der Nutzung, Lichtverhältnisse, Lärm, Mobilität.
-
-Soziale & organisatorische Umgebung: Organisationsstruktur, Zusammenarbeit, Unterbrechungen, rechtliche oder regulatorische Rahmenbedingungen.]
- 
+| Die Nutzung erfolgt überwiegend im privaten Wohnumfeld (WG).
+Oft wird die Anwendung nebenbei genutzt, z. B. unterwegs oder zwischen anderen Aktivitäten.
+Die soziale Umgebung ist geprägt von unterschiedlichen Persönlichkeiten, Verantwortungsniveaus und Kommunikationsstilen, was zu Konflikten führen kann.
 |===
 
 === Aktuelle Situation (ohne das Produkt)
 
-_Wie lösen die Nutzenden ihr Problem heute? Diese Beschreibung zeigt, was das Produkt
-verbessern soll — und macht den Mehrwert explizit._
 
-[Beschreibe den heutigen Ablauf in 3–5 Sätzen oder als kurze Schrittfolge. Beispiel: „Heute fragt Maria an der Infotheke nach freien Räumen, erhält eine Liste per E-Mail, und stellt beim Ankommen fest, dass der Raum bereits belegt ist.
-Der Prozess kostet sie im Schnitt 20 Minuten pro Tag."]
+Lisa kommt nach einem langen Arbeitstag nach Hause und stellt fest, dass anstehende Aufgaben wie Putzen oder Müll rausbringen nicht erledigt wurden.
+Da keine klare Aufgabenverteilung existiert, muss sie ihre Mitbewohner aktiv darauf ansprechen und sie an ihre Pflichten erinnern.
+Oft entstehen dabei Diskussionen, da sich niemand eindeutig verantwortlich fühlt.
+Gleichzeitig verliert ein unorganisierter Mitbewohner wie Peter leicht den Überblick über anstehende Aufgaben und vergisst diese.
+Die Organisation erfolgt meist über mündliche Absprachen oder Messenger, wodurch Transparenz und Nachvollziehbarkeit fehlen.
+Der Abstimmungsaufwand kostet täglich Zeit und führt regelmäßig zu Frustration und Konflikten innerhalb der WG.
 
 === Nutzungshürden & Risiken
 
@@ -122,14 +128,21 @@ _Was könnte die Akzeptanz oder Nutzung des Produkts beeinträchtigen?_
 |===
 | Hürde / Risiko | Mögliche Reaktion im Design
 
-| [z. B. Datenschutzbedenken bei Registrierungspflicht]
-| [z. B. Gastzugang für erste Nutzung anbieten]
+| Unorganisierte Nutzer (z. B. Peter) vergessen Aufgaben oder nutzen die App nicht regelmäßig
+| Erinnerungen anzeigen und die App einfach und schnell bedienbar machen
 
-| [z. B. Schlechte WLAN-Verfügbarkeit in Gebäudeteilen]
-| [z. B. Offline-Ansicht für zuletzt geladene Daten]
+| Verantwortliche Nutzer (z. B. Lisa) fühlen sich weiterhin überlastet
+| Klare Aufgabenverteilung anzeigen, damit jeder sieht, wer was machen muss
 
-| [Weitere Hürde]
-| [Reaktion]
+| Unterschiedliche Technikkenntnisse
+| Einfache und verständliche Oberfläche ohne komplizierte Funktionen
+
+| Streit oder Missverständnisse in der WG
+| Kommentarfunktion und klare Übersicht über erledigte Aufgaben
+
+| Wenig Motivation die App zu nutzen
+| Punkte, Fortschritt oder kleine Belohnungen einbauen
+
 |===
 
 == Systemweite Interaktionsflüsse
@@ -140,7 +153,9 @@ Hier dokumentieren wir nur Flüsse auf Systemebene, z.B. mit UML-Aktivitätsdiag
 
 === [Flussname, z. B. Onboarding-Flow]
 
-_Beschreibe kurz, was dieser Fluss abdeckt und welche Personas er betrifft._
+_Dieser Flow zeigt, wie neue Nutzer sich registrieren und bestehende Nutzer sich anmelden.
+Die Registrierung erfolgt einmalig mit E-Mail-Bestätigung, danach können sich Nutzer direkt einloggen und auf die Aufgabenübersicht zugreifen._
+
 
 [plantuml, onboarding-flow, svg]
 ....
@@ -149,17 +164,21 @@ skinparam monochrome true
 skinparam defaultFontSize 13
 
 start
+
 :App öffnen;
+
 if (Bereits registriert?) then (ja)
   :Login;
 else (nein)
   :Registrierung;
-  :Bestätigungs-E-Mail;
+  :E-Mail eingeben;
+  :Bestätigungs-E-Mail erhalten;
   :E-Mail bestätigen;
 endif
-:Startseite;
-stop
 
+:Aufgabenübersicht anzeigen;
+
+stop
 @enduml
 ....
 
@@ -168,40 +187,62 @@ stop
 | Schritt | Beteiligte Persona | Anmerkung
 
 | App öffnen
-| Maria (Studierende)
-| Erster Einstiegspunkt; muss sofort orientieren
+| Peter, Lisa
+| Einstiegspunkt für alle Nutzer
 
-| Login / Registrierung
-| Alle Personas
-| Registrierung nur beim ersten Besuch; danach automatischer Login
+| Registrierung starten
+| Peter, Lisa
+| Neue Nutzer legen ein Konto an
 
-| Startseite
-| Alle Personas
-| Zeigt direkt die wichtigste Funktion — keine unnötige Zwischenseite
+| E-Mail eingeben
+| Peter, Lisa
+| Notwendig zur Verifizierung
+
+| E-Mail bestätigen
+| Peter, Lisa
+| Stellt sicher, dass die Anmeldung gültig ist
+
+| Login
+| Peter, Lisa
+| Bestehende Nutzer melden sich an
+
+| Aufgabenübersicht anzeigen
+| Peter, Lisa
+| Nutzer gelangen zur Hauptfunktion der App
 |===
-
 ---
 
-=== [Weiterer Fluss, z. B. Buchungsabbruch & Fehlerbehandlung]
+=== [Weiterer Fluss, z. B. Aufgabenerstellen, zuweisen und erledigen]
 
-_Beschreibe den Fluss und ergänze ein Diagramm nach demselben Muster._
+_Dieser Flow zeigt, wie Aufgaben in der WG erstellt, zugewiesen und erledigt werden.
+Er betrifft sowohl organisierte Nutzer (z. B. Lisa), die Aufgaben planen,
+als auch unorganisierte Nutzer (z. B. Peter), die Aufgaben bearbeiten und oft Erinnerungen benötigen._
 
 [plantuml, error-flow, svg]
 ....
 @startuml
-skinparam monochrome true
-
 start
-:Buchung starten;
-if (Raum noch verfügbar?) then (ja)
-  :Buchung bestätigen;
-  :Bestätigung anzeigen;
-else (nein)
-  :Fehlermeldung anzeigen;
-  :Alternative Räume vorschlagen;
-endif
-stop
 
+:App öffnen;
+:Aufgabenübersicht anzeigen;
+
+if (Neue Aufgabe erstellen?) then (ja)
+  :Aufgabe erstellen;
+  :Person zuweisen;
+  :Deadline setzen;
+  :Speichern;
+endif
+
+:Offene Aufgaben anzeigen;
+
+if (Aufgabe erledigt?) then (ja)
+  :Als erledigt markieren;
+  :Fortschritt aktualisieren;
+else (nein)
+  :Erinnerung erhalten;
+endif
+
+stop
 @enduml
 ....
 
@@ -211,55 +252,68 @@ _Dieser Abschnitt dokumentiert systemweite Design- und Interaktionsentscheidunge
 die konsistent über alle Features hinweg gelten. Sie bilden die Basis für alle
 Wireframes und UI-Implementierungen._
 
+
 === Visuelle Sprache
+
 
 [cols="1,3", options="header"]
 |===
 | Aspekt | Entscheidung & Begründung
 
 | Farbpalette
-| [z. B. Primärfarbe: Hochschulblau #003D6E; Akzent: #E87722;
-  Begründung: Corporate Identity der Hochschule]
+| Primärfarbe: Blau (#3A7DFF) für Vertrauen und Übersicht.
+Akzentfarbe: Grün (#4CAF50) für erledigte Aufgaben.
+Warnfarbe: Rot (#E53935) für überfällige Aufgaben.
+Begründung: Klare Farben helfen, Aufgabenstatus schnell zu erkennen.
 
 | Typografie
-| [z. B. Fließtext: Inter 16px; Überschriften: Inter Bold;
-  Begründung: Hohe Lesbarkeit auf kleinen Bildschirmen]
+| Fließtext: einfache serifenlose Schrift (z. B. Arial, 16px).
+Überschriften: fett und etwas größer.
+Begründung: Gute Lesbarkeit auf dem Smartphone.
 
 | Ikonografie
-| [z. B. Material Icons; konsistentes Icon-Set im gesamten Produkt]
+| Einfache und bekannte Icons (z. B. Haken für erledigt, Glocke für Erinnerung).
+Alle Icons sind einheitlich und leicht verständlich.
+Begründung: Nutzer erkennen Funktionen schneller.
 
 | Bildsprache
-| [z. B. Keine Stock-Fotos; Illustrationen im Flat-Design-Stil]
+| Keine Fotos notwendig.
+Klare, einfache Darstellung (Flat Design).
+Begründung: Fokus liegt auf Funktionen, nicht auf Bildern.
 |===
+
+
 
 === Interaktionsprinzipien
 
 _Vereinbarte UX-Regeln, die für das gesamte Produkt gelten. Jede Entscheidung
 wird begründet, damit sie nicht aus Unwissenheit verletzt wird._
 
+=== Interaktionsprinzipien
+
 [cols="2,3", options="header"]
 |===
 | Prinzip | Beschreibung & Begründung
 
-| Destruktive Aktionen werden immer bestätigt.
-| Lösch- oder Stornieraktionen erfordern eine explizite Bestätigung durch die Nutzenden.
-  Verhindert unbeabsichtigte Datenverluste.
+| Aktionen bestätigen
+| Wichtige Aktionen wie Löschen oder Entfernen müssen bestätigt werden, damit nichts aus Versehen passiert.
 
-| Leerzustände erklären sich und schlagen eine Aktion vor.
-| Wenn eine Liste leer ist, zeigen wir eine kurze Erklärung und einen Call-to-Action —
-  niemals nur eine leere Fläche. Reduziert Orientierungslosigkeit.
+| Leere Zustände erklären sich
+| Wenn keine Aufgaben vorhanden sind, wird eine kurze Erklärung angezeigt und eine Aktion vorgeschlagen (z. B. „Neue Aufgabe erstellen“).
 
-| Fehlermeldungen sind verständlich und handlungsorientiert.
-| Fehlermeldungen nennen die Ursache in einfacher Sprache und schlagen einen
-  nächsten Schritt vor. Kein technischer Jargon für Endnutzer:innen.
+| Verständliche Fehlermeldungen
+| Fehler werden einfach erklärt und geben Hinweise, was der Nutzer als Nächstes tun kann.
 
-| Kernfunktionen sind mit einer Hand erreichbar.
-| Primäre Aktionen befinden sich im unteren Bildschirmbereich (Daumenzone).
-  Optimiert für einhändige Smartphone-Nutzung.
+| Einfache Bedienung
+| Die wichtigsten Funktionen sind schnell erreichbar und leicht verständlich, damit Nutzer nicht lange suchen müssen.
 
-| [Weiteres Prinzip]
-| [Beschreibung & Begründung]
+| Klare Aufgabenverteilung
+| Jede Aufgabe zeigt deutlich, wer verantwortlich ist und bis wann sie erledigt werden muss, um Missverständnisse zu vermeiden.
+
+| Erinnerungen unterstützen die Nutzung
+| Nutzer werden an offene Aufgaben erinnert, damit nichts vergessen wird und die Aufgaben zuverlässig erledigt werden.
 |===
+
 
 === Barrierefreiheit
 
@@ -268,19 +322,22 @@ wird begründet, damit sie nicht aus Unwissenheit verletzt wird._
 | Aspekt | Anforderung
 
 | Kontrastverhältnis
-| Mindestens WCAG 2.1 Level AA (Kontrast ≥ 4,5:1 für Fließtext)
+| Farben werden so gewählt, dass Texte gut lesbar sind (mindestens WCAG 2.1 Level AA, Kontrast ≥ 4,5:1).
 
 | Tastaturnavigation
-| Alle Kernfunktionen sind per Tastatur bedienbar
+| Alle wichtigen Funktionen können auch ohne Maus, nur mit der Tastatur, genutzt werden.
 
 | Screenreader
-| Alle interaktiven Elemente haben sinnvolle ARIA-Labels
+| Interaktive Elemente sind so gestaltet, dass Screenreader sie erkennen und sinnvoll vorlesen können.
 
 | Schriftgröße
-| Keine Schrift unter 14px; Nutzer:innen können Systemschriftgröße nutzen
+| Texte sind gut lesbar (mindestens 14px) und können vom Nutzer vergrößert werden.
 
-| [Weiterer Aspekt]
-| [Anforderung]
+| Einfache Sprache
+| Texte und Anweisungen sind klar und verständlich formuliert, damit alle Nutzer die App problemlos bedienen können.
+
+| Farbunabhängigkeit
+| Informationen werden nicht nur durch Farben dargestellt, sondern auch durch Symbole oder Texte ergänzt.
 |===
 
 
