@@ -252,9 +252,25 @@ organisatorische, rechtliche oder zeitliche Vorgaben._
 | Das Produkt muss innerhalb eines Semesters (ca. 4 Monate) lieferbar sein.
 | Zeitlich
 
-| [Einschränkung]
-| [Beschreibung]
-| [Technisch / Rechtlich / Organisatorisch / Zeitlich]
+| Multiusersystem
+| Gleichzeitige Nutzung durch mehrere Nutzer (WG). 
+| Technisch
+
+| Ressourcenbeschränkung
+| Entwicklung erfolgt durch ein kleines Team (8 Personen)
+| Organisatorisch
+
+| Multiusersystem
+| Gleichzeitige Nutzung durch mehrere Nutzer (WG). 
+| Technisch
+
+| Internetabhängigkeit
+| Die Nutzung erfordert eine Internetverbidnung 
+| Technisch
+
+| Keine externen kostenpflichtigen Services
+| Es dürfen nur kostenlose oder Hochschulinterne Dienste genutz werden
+| Organisatorisch
 |===
 
 
