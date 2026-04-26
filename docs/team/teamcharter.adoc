@@ -29,7 +29,7 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Tim Besner
 
 | Entwickler:innen
-| Tim Besner, Sirri Metuge Menick Misode, Alina Petrenko, Konrad Arvid Bornstedt
+| Tim Besner, Sirri Metuge Menick Misode, Alina Petrenko, Konrad Arvid Bornstedt, Astemir Sheriev, Ranim Khour
 
 | Stakeholder (Hauptansprechpartner)
 | [Name]
