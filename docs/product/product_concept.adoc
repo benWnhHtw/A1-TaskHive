@@ -19,10 +19,7 @@ _Warum wird dieses Produkt gebaut? Welches Problem existiert heute, und warum is
 Dieser Abschnitt beschreibt den Ausgangszustand und den Handlungsbedarf — ohne bereits eine
 Lösung zu nennen. 3–5 Sätze genügen._
 
-[Hier die Ausgangssituation und den Handlungsbedarf beschreiben. Beispiel:
-„Studierende an der Hochschule haben heute keinen zentralen Überblick über verfügbare
-Lernräume. Die Suche nach freien Plätzen kostet täglich wertvolle Zeit und führt zu Frust.
-Eine einfache, mobil nutzbare Lösung fehlt bisher."]
+In Wohngemeinschaften fehlt häufig eine klare und faire Struktur zur Verteilung alltäglicher Haushaltsaufgaben sowie eine zentrale Übersicht über Zuständigkeiten. Aufgaben werden oft informell geregelt, was zu Missverständnissen, Ungleichgewicht und Spannungen im Zusammenleben führen kann. Wiederkehrende Tätigkeiten wie Putzen, Müllentsorgung oder Einkäufe werden dadurch nicht immer zuverlässig erledigt oder bleiben teilweise liegen. Zudem unterscheiden sich die Tagesabläufe und zeitlichen Verfügbarkeiten der Bewohner, was die Abstimmung und Planung zusätzlich erschwert. 
 
 == Produktvision
 
@@ -42,14 +39,15 @@ Im Gegensatz zu [Alternative]
 bietet unser Produkt [entscheidender Unterschied].
 ____
 
-//Beispiel: Für Studierende der HTWD, die zu wenig Zeit in der Mittagspause zum Essen haben, ist Flying Burger ein  Lieferdient für Burger, der per Drohne liefert. Anders als landgestützte Lieferdienste kann unser Produkt durchs Fenster direkt in den Hörsaal liefern.
+Für Studierende und andere Bewohner von Wohngemeinschaften, die Schwierigkeiten haben, ihren gemeinsamen Alltag effizient zu organisieren, ist TaskHive eine kollaborative To-Do-Listen-Anwendung, die eine strukturierte und nachvollziehbare Verwaltung von Aufgaben ermöglicht. Im Gegensatz zu anderen To-Do-Apps bietet das Produkt speziell auf Wohngemeinschaften angepasste Funktionen, darunter flexible Rotationssysteme sowie integrierte Kommunikations- und Belohnungsfunktionen mit Gamification-Elementen.
 
 NOTE: Das Visions-Statement kann im Team mit der „Elevator Pitch"-Methode oder dem „Future Press Release"-Format erarbeitet werden.
 
 === Zielbild
 
 _Optional: Beschreibe in 2–4 Sätzen, wie die Welt mit diesem Produkt aussieht. Was hat sich für die Nutzer:innen verändert?_
-//[Hier das Zielbild beschreiben]
+
+Mit TaskHive wird die Organisation im WG-Alltag deutlich übersichtlicher und strukturierter. Jede Person hat jederzeit Einsicht in anstehende Aufgaben und Verantwortlichkeiten. Konflikte aufgrund unklarer Zuständigkeiten werden reduziert, und die Zusammenarbeit wird harmonischer gestaltet. Dadurch entsteht ein effizienterer Alltag, der Zeit spart und das Zusammenleben insgesamt verbessert.
 
 
 == Produktpositionierung
@@ -61,13 +59,13 @@ _Wer sind die Zielgruppen, und wie positioniert sich das Produkt im Vergleich zu
 |===
 | Zielgruppe | Beschreibung
 
-| [z. B. Studierende]
-| [Kurzbeschreibung: Wer sind sie? Was ist ihre Motivation?]
+| [WG-Bewohner (Studierende, Berufstätige)]
+| [Personen, die in Wohngemeinschaften zusammenleben und gemeinsam den Haushalt organisieren. Sie unterscheiden sich in ihrer Selbstorganisation und Verantwortungsübernahme, haben jedoch den Bedarf, alltägliche Aufgaben zu effizient koordinieren und den Überblick über anstehende sowie erledigte Aufgaben zu behalten.]
 
-| [z. B. Lehrende]
+| [Andere Zielgruppe]
 | [Kurzbeschreibung]
 
-| [Weitere Zielgruppe]
+| [Andere Zielgruppe]
 | [Kurzbeschreibung]
 |===
 
