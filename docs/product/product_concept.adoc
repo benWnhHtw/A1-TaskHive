@@ -134,25 +134,54 @@ Diese Hauptfunktionen sollten als Epics im Product Backlog für die Gruppierung 
 |===
 | Nutzerbedarf | Hauptfunktion | Priorität
 
-| Studierende wollen schnell sehen, welche Räume gerade frei sind.
-| Echtzeit-Übersicht freier Lernräume
-| Hoch
+| WG-Bewohner wollen gemeinsame Tätigkeiten strukturiert erfassen. 
+| Kollaborative To-Do-Listen mit Echtzeit-Synchronisation und Änderungsverlauf. 
+| Kritisch 
 
-| Nutzer:innen wollen einen Raum für einen bestimmten Zeitraum reservieren.
-| Raumbuchung mit Zeitfenster
-| Hoch
+| WG-Bewohner wollen eindeutig klären, wer für Aufgaben verantwortlich ist. 
+| Aufgabenzuweisung an einzelne Personen oder Gruppen mit Deadlines und Prioritäten. 
+| Kritisch 
 
-| Nutzer:innen wollen ihre aktiven Buchungen verwalten.
-| Buchungsübersicht & Stornierung
-| Mittel
+| WG-Bewohner wollen, dass sich Zuständigkeiten automatisch abwechseln. 
+| Rotationssysteme für wiederkehrende Aufgaben (z. B. Putzplan, Mülldienst). 
+| Hoch 
 
-| Verwaltung will die Auslastung der Räume analysieren.
-| Auslastungsberichte für Administratoren
-| Niedrig
+| WG-Bewohner wollen ihren Beitrag zum Haushalt nachvollziehen. 
+| Fortschrittsvisualisierung (z. B. erledigte Aufgaben, Wochenübersichten, Aktivitätsverlauf). 
+| Hoch 
 
-| [Nutzerbedarf]
-| [Hauptfunktion]
-| [Hoch / Mittel / Niedrig]
+| WG-Bewohner wollen spielerische Anreize zur Motivation für die Hausarbeit. 
+| Gamification-Elemente wie Punkte, Level oder kleine Belohnungssysteme. 
+| Mittel 
+
+| WG-Bewohner wollen eine transparente und faire Aufgabenverteilung sehen. 
+| Statistiken zur Aufgabenverteilung und individuellen Beteiligung. 
+| Hoch 
+
+| WG-Bewohner wollen an fällige Aufgaben im Alltag erinnert werden. 
+| Benachrichtigungen und Erinnerungen für anstehende oder überfällige Aufgaben. 
+| Kritisch 
+
+| WG-Bewohner wollen Termine und Aufgaben zentral bündeln. 
+| Integration eines WG-Kalenders zur Koordination von Terminen und Aufgaben. 
+| Hoch 
+
+| WG-Bewohner wollen offene Verantwortlichkeiten transparent ansprechen. 
+| Eskalationsmechanismen bei wiederholt unerledigten Aufgaben.
+| Mittel 
+
+| WG-Bewohner wollen Aufgaben an ihren Alltag und Abwesenheiten anpassen. 
+| Individuelle Präferenzen und Verfügbarkeiten zur fairen Aufgabenverteilung. 
+| Hoch 
+
+| WG-Bewohner wollen auch bei schlechtem Empfang auf Daten zugreifen. 
+| Offline-Funktionalität mit späterer Synchronisation. 
+| Kritisch
+
+| Pendler wollen Aufgaben unterschiedlicher Haushalte in einer App getrennt verwalten. 
+| Multi-WG-Unterstützung für Nutzer mit mehreren Haushalten oder Rollen. 
+| Hoch 
+
 |===
 
 NOTE: Die Reihenfolge entspricht einer ersten groben Priorisierung und wird im Rahmen
