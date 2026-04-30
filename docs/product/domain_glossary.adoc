@@ -19,28 +19,85 @@ Technische Implementierungsdetails gehören nicht hierher!
 |===
 | Begriff / Abkürzung | Definition | Synonyme / Abgrenzungen
 
-| Bestellung
-| Eine vom Nutzer ausgelöste Anforderung, ein oder mehrere Produkte zu erwerben.
-  Eine Bestellung durchläuft verschiedene Status (offen, bezahlt, versendet, abgeschlossen).
-| Auftrag; nicht zu verwechseln mit „Warenkorb" (noch nicht abgeschlossen)
+| WG
+| Wohngemeinschaft, in der mehrere Personen gemeinsam wohnen und Haushaltsaufgaben koordinieren müssen.
+| Wohngruppe
 
-| Nutzer
-| Eine Person, die das System aktiv verwendet. Nutzer müssen registriert und eingeloggt
-  sein, um Bestellungen aufzugeben.
-| Anwender, Benutzer; abzugrenzen von „Administrator"
+| Kritisch
+| Eine Bewertunsstufe über Hoch. Niedrig, Mittel, Hoch, Kritisch
+| Sehr Hoch
 
-| Produkt
-| Ein im System angebotener Artikel, der bestellt werden kann. Ein Produkt hat eine
-  Bezeichnung, einen Preis und eine Verfügbarkeit.
-| Artikel, Ware
+| Aufgabe
+| Konkrete Tätigkeit im WG-Alltag, die erledigt werden muss, z. B. Putzen, Müll rausbringen oder Einkaufen.
+| To-Do, Haushaltstask
 
-| [Begriff]
-| [Präzise, fachliche Definition in 1–3 Sätzen]
-| [Synonyme oder Abgrenzungen zu ähnlichen Begriffen]
+| Wiederkehrende Aufgabe
+| Aufgabe, die regelmäßig erneut anfällt, z. B. wöchentliches Badputzen.
+| Routineaufgabe
 
-| [Begriff]
-| [Präzise, fachliche Definition in 1–3 Sätzen]
-| [Synonyme oder Abgrenzungen zu ähnlichen Begriffen]
+| Deadline
+| Zeitpunkt, bis zu dem eine Aufgabe erledigt sein soll.
+| Fälligkeitsdatum, Frist
+
+| Überfällige Aufgabe
+| Aufgabe, deren Deadline überschritten wurde und die noch nicht erledigt ist.
+| Verspätete Aufgabe
+
+| Aufgabenübersicht
+| Ansicht, in der offene, erledigte und ggf. überfällige Aufgaben sichtbar sind.
+| Dashboard, To-Do-Übersicht
+
+| Aufgabenverteilung
+| Festlegung, welche Person für welche Aufgabe verantwortlich ist.
+| Zuständigkeit, Verantwortlichkeit
+
+| Rotationssystem
+| Regel, nach der wiederkehrende Aufgaben fair zwischen WG-Mitgliedern wechseln.
+| Wechselprinzip, Aufgabenrotation
+
+| Verfügbarkeit
+| Angabe, wann ein WG-Mitglied Zeit hat oder Aufgaben übernehmen kann.
+| Zeitfenster
+
+| Abwesenheit
+| Zeitraum, in dem ein WG-Mitglied nicht verfügbar ist, z. B. wegen Urlaub.
+| Urlaub, Nichtverfügbarkeit
+
+| Erinnerung
+| Hinweis an Nutzer:innen, dass eine Aufgabe bald fällig oder bereits überfällig ist.
+| Benachrichtigung, Reminder
+
+| WG-Kalender
+| Kalenderansicht für gemeinsame Termine, Aufgaben, Deadlines und Abwesenheiten.
+| Haushaltskalender
+
+| Punkte
+| Belohnungseinheit, die Nutzer:innen für erledigte Aufgaben erhalten können.
+| Score, Belohnungspunkte
+
+| Gamification
+| Einsatz spielerischer Elemente wie Punkte oder Fortschritt, um Motivation zu erhöhen.
+| Motivationselemente
+
+| Statistik
+| Auswertung, die zeigt, wie Aufgaben innerhalb der WG verteilt oder erledigt wurden.
+| Auswertung, Aufgabenanalyse
+
+| Kollaborative To-Do-Liste
+| Gemeinsame Aufgabenliste, die von mehreren Personen gleichzeitig genutzt, bearbeitet und aktualisiert werden kann.
+| Gemeinsame Aufgabenliste, Shared To-Do; abzugrenzen von persönlicher Einzelaufgabenliste
+
+| Familie
+| Nutzergruppe innerhalb von TaskHive, die aus mehreren miteinander verbundenen Personen besteht und gemeinsame Aufgaben, Termine oder Verantwortlichkeiten organisiert.
+| Familiengruppe, Haushalt; ähnlich WG, jedoch stärker auf familiäre Alltagsorganisation ausgerichtet
+
+| Besucher:in
+| Externe Person, die zeitweise Zugang zu bestimmten Informationen oder Aufgaben einer Familie/WG erhalten kann, ohne vollwertiges Mitglied zu sein.
+| Gast, Besuchsperson
+
+| Temporäre Aufgabe
+| Aufgabe, die speziell im Zusammenhang mit einem Besuch oder einem einmaligen Ereignis erstellt wird.
+| Anlassbezogene Aufgabe, Besuchsaufgabe
 |===
 
 
