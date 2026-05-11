@@ -148,7 +148,7 @@ Diese Hauptfunktionen sollten als Epics im Product Backlog für die Gruppierung 
 
 | WG-Bewohner wollen ihren Beitrag zum Haushalt nachvollziehen. 
 | Fortschrittsvisualisierung (z. B. erledigte Aufgaben, Wochenübersichten, Aktivitätsverlauf). 
-| Hoch 
+| Mittel 
 
 | WG-Bewohner wollen spielerische Anreize zur Motivation für die Hausarbeit. 
 | Gamification-Elemente wie Punkte, Level oder kleine Belohnungssysteme. 
@@ -160,7 +160,7 @@ Diese Hauptfunktionen sollten als Epics im Product Backlog für die Gruppierung 
 
 | WG-Bewohner wollen an fällige Aufgaben im Alltag erinnert werden. 
 | Benachrichtigungen und Erinnerungen für anstehende oder überfällige Aufgaben. 
-| Kritisch 
+| Hoch 
 
 | WG-Bewohner wollen Termine und Aufgaben zentral bündeln. 
 | Integration eines WG-Kalenders zur Koordination von Terminen und Aufgaben. 
@@ -171,14 +171,10 @@ Diese Hauptfunktionen sollten als Epics im Product Backlog für die Gruppierung 
 | Mittel 
 
 | WG-Bewohner wollen Aufgaben an ihren Alltag und Abwesenheiten anpassen. 
-| Individuelle Präferenzen und Verfügbarkeiten zur fairen Aufgabenverteilung. 
+| Erfassung Individueller Präferenzen und Verfügbarkeiten sowie Integrierung in Aufgabenverteilung. 
 | Hoch 
 
-| WG-Bewohner wollen auch bei schlechtem Empfang auf Daten zugreifen. 
-| Offline-Funktionalität mit späterer Synchronisation. 
-| Kritisch
-
-| Pendler wollen Aufgaben unterschiedlicher Haushalte in einer App getrennt verwalten. 
+| Nutzer mit mehreren Haushalten oder Rollen wollen Aufgaben unterschiedlicher Haushalte in einer App getrennt verwalten. 
 | Multi-WG-Unterstützung für Nutzer mit mehreren Haushalten oder Rollen. 
 | Hoch 
 
