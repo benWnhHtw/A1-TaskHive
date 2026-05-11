@@ -30,16 +30,13 @@ nicht wesentlich verändern._
 === Visions-Statement
 
 ____
-Für [Zielgruppe],
-die [Problem oder Bedarf],
-ist [Produktname]
-ein [Produktkategorie],
-das [zentraler Nutzen].
-Im Gegensatz zu [Alternative]
-bietet unser Produkt [entscheidender Unterschied].
+Für Studierende und andere Bewohner von Wohngemeinschaften,
+die Schwierigkeiten haben, ihren gemeinsamen Alltag effizient zu organisieren,
+ist TaskHive eine kollaborative To-Do-Listen-Anwendung, 
+die eine strukturierte und nachvollziehbare Verwaltung von Aufgaben ermöglicht.
+Im Gegensatz zu Flatastic,
+bietet unser Produkt eine kostenlose Alternative sowie Integration individueller Verfügbarkeiten sowie Abwesenheit.
 ____
-
-Für Studierende und andere Bewohner von Wohngemeinschaften, die Schwierigkeiten haben, ihren gemeinsamen Alltag effizient zu organisieren, ist TaskHive eine kollaborative To-Do-Listen-Anwendung, die eine strukturierte und nachvollziehbare Verwaltung von Aufgaben ermöglicht. Im Gegensatz zu anderen To-Do-Apps bietet das Produkt speziell auf Wohngemeinschaften angepasste Funktionen, darunter flexible Rotationssysteme sowie integrierte Kommunikations- und Belohnungsfunktionen mit Gamification-Elementen.
 
 NOTE: Das Visions-Statement kann im Team mit der „Elevator Pitch"-Methode oder dem „Future Press Release"-Format erarbeitet werden.
 
@@ -59,14 +56,12 @@ _Wer sind die Zielgruppen, und wie positioniert sich das Produkt im Vergleich zu
 |===
 | Zielgruppe | Beschreibung
 
-| [WG-Bewohner (Studierende, Berufstätige)]
-| [Personen, die in Wohngemeinschaften zusammenleben und gemeinsam den Haushalt organisieren. Sie unterscheiden sich in ihrer Selbstorganisation und Verantwortungsübernahme, haben jedoch den Bedarf, alltägliche Aufgaben zu effizient koordinieren und den Überblick über anstehende sowie erledigte Aufgaben zu behalten.]
+| WG-Bewohner (Studierende, Berufstätige)
+| Personen, die in Wohngemeinschaften zusammenleben und gemeinsam den Haushalt organisieren. Sie unterscheiden sich in ihrer Selbstorganisation und Verantwortungsübernahme, haben jedoch den Bedarf, alltägliche Aufgaben zu effizient koordinieren und den Überblick über anstehende sowie erledigte Aufgaben zu behalten.
 
-| [Andere Zielgruppe]
-| [Kurzbeschreibung]
+| Familien
+| Eltern mit Kindern in einem Haushalt. Eltern wollen Kindern Aufgaben zuweisen. Kinder wollen einfache Aufgabenübersicht
 
-| [Andere Zielgruppe]
-| [Kurzbeschreibung]
 |===
 
 NOTE: Ausführliche Beschreibungen der Nutzenden — Personas, Nutzungskontext,
@@ -101,25 +96,40 @@ erklärt, warum bestimmte Entscheidungen getroffen wurden.
 |===
 | Stakeholder | Rolle / Interesse | Erwartungen an das Produkt | Einfluss
 
-| [z. B. Hochschulverwaltung]
-| [Betreiber der Infrastruktur; will Raumauslastung optimieren]
-| [Auslastungsberichte, DSGVO-Konformität]
+| Bewohner
+| Hauptnutzer, unser Kunde, will Aufgaben erstellen und fair verteilen lassen sowie Sicherheit seiner Daten
+| Einfache Aufgabenerstellung, übersichtliche Aufgabenverteilung
 | Hoch
 
-| [z. B. Studierende]
-| [Hauptnutzer:innen; wollen schnell freie Plätze finden]
-| [Einfache Bedienung, mobiler Zugang]
-| Mittel
+| Hausmeister
+| Nebennutzer, will seine Aufgaben sehen
+| Übersichtliche Aufgabendarstellung, Ausdruck für nicht Handynutzer
+| Niedrig
 
-| [z. B. Lehrende]
-| [Nutzen Räume für Lehrveranstaltungen; wollen Konflikte vermeiden]
-| [Sichtbarkeit ihrer Buchungen]
-| Mittel
+| Hausverwaltung
+| Nebennutzer, Problem der Bewohner ermitteln
+| einfache Übersicht der Probleme 
+| Niedrig
 
-| [Weiterer Stakeholder]
-| [Beschreibung]
-| [Erwartungen]
-| [Hoch / Mittel / Niedrig]
+| Besucher
+| Nebennutzer, will seine Aufgaben sehen
+| temporäre Integration als WG-Nutzer
+| Niedrig
+
+| Beitreiber und Entwickler
+| BWartung und Bereitstellung des Systems
+| funktionierendes, leicht zu wartendes System
+| Hoch
+
+| Datenschutzbehörde
+| Prüfer
+| korrekte Einhaltung der Vorgaben
+| Hoch
+
+| Konkurrenz
+| Beobachtet Markt, möchte eigene Marktposition sichern oder ausbauen
+| Produkt sollte sich nicht deutlich von eigenen Angeboten abheben oder schwer kopierbar sein; ggf. Benchmark für eigene Weiterentwicklung
+| Mittel-Hoch
 |===
 
 == Hauptfunktionen
