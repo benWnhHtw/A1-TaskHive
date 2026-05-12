@@ -53,17 +53,17 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Simon Joel Rios Sanchez/ Benedikt Weinrich
 
 | Sprint Review
-| [z. B. freitags, Sprintende]
-| [z. B. 1 h]
-| [Rolle / Person]
+| Dienstag 13:15, Sprintende (5. Woche)
+| z. B. 1 h
+| Rolle / Person
 
 | Retrospektive
-| [z. B. freitags, nach Review]
-| [z. B. 1 h]
-| [Rolle / Person]
+| 
+| 20min
+| Rolle / Person
 
 | Backlog Refinement
-| Dienstags 13:15 Uhr
+| 
 | 30min
 | Benedikt Weinrich
 |===
