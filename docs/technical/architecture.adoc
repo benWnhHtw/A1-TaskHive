@@ -313,3 +313,9 @@ Punkte in Vergessenheit geraten._
 | [Begründung]
 | [Ticket-Referenz oder "-"]
 |===
+
+Frontend: HTML CSS JAVASCRIPT VUE.JS
+Backend: Java, Spring
+DB: PostgreSQL
+
+Schichten:  Repository, Service,
