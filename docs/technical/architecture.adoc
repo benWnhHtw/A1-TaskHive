@@ -163,7 +163,7 @@ sind in <<Architekturentscheidungen>> dokumentiert._
 | [ADR-Referenz oder —]
 |===
 
-== Architekturrelevante Anforderungen
+== Architekturrelevante Anforderungen (Architekturtreiber)
 
 _Dieser Abschnitt dokumentiert, welche Qualitätsziele und Einschränkungen aus dem
 Produktkonzept direkte Auswirkungen auf Architekturentscheidungen haben._
@@ -173,31 +173,73 @@ sie sind im link:../product/product_concept.adoc[Produktkonzept] als einziger Qu
 Dieser Abschnitt zeigt ausschließlich die technischen Konsequenzen, die sich aus
 diesen Anforderungen ergeben, und verweist auf die zugehörigen Entscheidungen.
 
+=== Detaillierte Architekturtreiber
+
+==== 1. Echtzeit-Fähigkeit & Konsistenz
+* *Quelle:* Hauptfunktionen & Qualitätsziel "Konsistenz".
+* *Beobachtung:* TaskHive bietet kollaborative To-Do-Listen an, bei denen Änderungen innerhalb von maximal 2 Sekunden auf allen Geräten der WG sichtbar sein müssen.
+* *Architekturtreiber:* Das System erfordert eine bidirektionale, latenzarme Kommunikation zwischen Client und Server (Echtzeit-Synchronisation).
+* *Mögliche Entscheidung:* Einsatz von WebSockets (z. B. Socket.io, Spring WebSockets) oder Server-Sent Events (SSE) anstelle von einfachem HTTP-Polling.
+
+==== 2. Hosting-Restriktionen & Kosten
+* *Quelle:* Organisatorische und technische Einschränkungen.
+* *Beobachtung:* Die App muss auf der Hochschulinfrastruktur betrieben werden und es dürfen keine externen kostenpflichtigen Services (wie AWS, Azure oder Firebase) genutzt werden.
+* *Architekturtreiber:* Public-Cloud-Lösungen oder "Managed Services" scheiden aus. Die Architektur muss Self-Hosting-fähig sein.
+* *Mögliche Entscheidung:* Bereitstellung über Containerisierung (Docker) und Nutzung lokaler Open-Source-Datenbanken (z. B. PostgreSQL, MySQL) sowie eigener Mail-Server für Benachrichtigungen.
+
+==== 3. Datenschutz & Skalierbare Mandantenfähigkeit
+* *Quelle:* DSGVO-Einschränkung, Qualitätsziel "Skalierbarkeit" & "Sicherheit".
+* *Beobachtung:* Das System muss die personenbezogenen Daten von mindestens 100 gleichzeitig aktiven WGs DSGVO-konform verwalten und strikt voneinander trennen.
+* *Architekturtreiber:* Das Datenbank- und Backend-Design muss eine strikte Mandantenfähigkeit (Multi-Tenancy) pro WG sicherstellen sowie eine sichere Zugriffskontrolle garantieren.
+* *Mögliche Entscheidung:* Implementierung einer token- oder sessionbasierten Authentifizierung und rollenbasierten Zugriffskontrolle (RBAC) über Frameworks wie Spring Security oder Django Auth.
+
+==== 4. Zeitgesteuerte Hintergrundaufgaben
+* *Quelle:* Hauptfunktionen.
+* *Beobachtung:* TaskHive benötigt automatisierte Rotationssysteme (z. B. rollierende Putzpläne) und muss Benachrichtigungen bei überfälligen Deadlines versenden.
+* *Architekturtreiber:* Das System benötigt die technische Fähigkeit des Schedulings, um Logik asynchron und zeitgesteuert auszuführen.
+* *Mögliche Entscheidung:* Integration eines Schedulers direkt im Backend (z. B. Spring @Scheduled) oder Nutzung von Task-Queues wie Celery (bei Python).
+
+==== 5. Kurze Entwicklungszeit & Teamressourcen
+* *Quelle:* Organisatorische und zeitliche Einschränkungen.
+* *Beobachtung:* Das Projekt muss von 8 Personen in nur ca. 4 Monaten (einem Semester) fertiggestellt werden.
+* *Architekturtreiber:* Die gewählte Technologie muss einen schnellen Einstieg erlauben, die "Time-to-Market" minimieren und an die bestehenden Fähigkeiten des Teams angepasst sein (Build vs. Buy).
+* *Mögliche Entscheidung:* Verzicht auf Microservices. Wahl eines etablierten monolithischen Full-Stack-Frameworks (z. B. Spring Boot, Django oder Nuxt.js), das viele Bausteine (ORM, Security) bereits out-of-the-box mitbringt.
+
+==== 6. Responsives Frontend
+* *Quelle:* Qualitätsziel "Responsivität".
+* *Beobachtung:* Die App wird von Nutzern primär unterwegs und auf verschiedenen Geräten (Smartphones, Tablets, PCs) verwendet.
+* *Architekturtreiber:* Die Benutzeroberfläche muss auf mobile Nutzung optimiert sein und sich an Bildschirmgrößen dynamisch anpassen.
+* *Mögliche Entscheidung:* Umsetzung des Frontends als Single-Page-Application (SPA) oder Progressive Web App (PWA) mittels React oder Vue.js in Kombination mit einer responsiven UI-Bibliothek (z. B. Bootstrap, Tailwind).
+
+=== Zusammenfassung der Konsequenzen
+
 [cols="2,3,2", options="header"]
 |===
-| Anforderung (aus Produktkonzept) | Technische Konsequenz | Entscheidung
+| Architekturtreiber / Anforderung | Technische Konsequenz | Mögliche Entscheidung (später ADR)
 
-| Performanceziel: Seitenladezeit < 2 s
-| Server-Side Rendering für initiales Laden erforderlich;
-  statische Assets über CDN ausliefern
-| ADR-002
+| Echtzeit-Fähigkeit & Konsistenz 
+| Bidirektionale, latenzarme Kommunikation erforderlich 
+| WebSockets oder SSE 
 
-| DSGVO-Konformität
-| Keine personenbezogenen Daten in Logs; Datensparsamkeit im Datenbankmodell;
-  Recht auf Löschung muss implementierbar sein
-| ADR-003, ADR-004
+| Hosting-Restriktionen & Kosten 
+| Self-Hosting-Fähigkeit; keine Public-Cloud 
+| Containerisierung (Docker), lokale Open-Source-DBs 
 
-| Betrieb auf Hochschulinfrastruktur
-| Keine Cloud-only-Dienste; Containerisierung für Portabilität erforderlich
-| ADR-005
+| Datenschutz & Mandantenfähigkeit 
+| Strikte Multi-Tenancy; DSGVO-konforme Datentrennung 
+| Token/Session-Auth, RBAC 
 
-| Verfügbarkeit ≥ 99 % während Betriebszeiten
-| Statusüberwachung und automatischer Neustart über Container-Orchestrierung
-| ADR-005
+| Zeitgesteuerte Hintergrundaufgaben 
+| Asynchrones Scheduling erforderlich 
+| Backend-Scheduler oder Task-Queues 
 
-| [Anforderung]
-| [Technische Konsequenz]
-| [ADR-Referenz oder —]
+| Kurze Entwicklungszeit
+| Schneller Einstieg, Minimierung der Time-to-Market
+| Monolithisches Full-Stack-Framework
+
+| Responsives Frontend
+| Mobile Optimierung, dynamische Anpassung
+| SPA/PWA mit responsiver UI-Bibliothek
 |===
 
 == Architekturentscheidungen
