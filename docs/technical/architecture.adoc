@@ -117,10 +117,6 @@ Rel(personAlias, containerAlias, "Label", "Optional Technology")
 
 == Technologie-Stack
 
-_Dieser Abschnitt listet die eingesetzten Technologien und begründet die Wahl.
-Detaillierte Architekturentscheidungen mit Alternativen und Konsequenzen
-sind in <<Architekturentscheidungen>> dokumentiert._
-
 === Übersicht
 
 [cols="1,1,2,2", options="header"]
@@ -128,24 +124,29 @@ sind in <<Architekturentscheidungen>> dokumentiert._
 | Bereich | Technologie | Begründung | Entscheidung
 
 | Frontend
-| [z. B. React 18]
-| [z. B. Teamkenntnisse; große Community; Komponentenmodell]
-| [z. B. ADR-002]
+| Vue.js
+| Leichtgewichtiges Framework mit guter Struktur und einfacher Entwicklung moderner Benutzeroberflächen. Das Team besitzt bereits Erfahrung mit Vue.js.
+| ADR-002
 
 | Backend
-| [z. B. Spring Boot 3]
-| [z. B. Vorgabe im Studiengang; gute Dokumentation]
-| [z. B. ADR-001]
+| Java 21 + Spring Boot
+| Stabiles und weit verbreitetes Framework für skalierbare Webanwendungen mit guter Dokumentation und einfacher Integration.
+| ADR-003
 
 | Datenbank
-| [z. B. PostgreSQL 15]
-| [z. B. Relationales Modell passend; auf Hochschulinfrastruktur verfügbar]
-| [z. B. ADR-003]
+| PostgreSQL
+| Open-Source-Datenbank ohne Lizenzkosten mit guter Integration in Spring Boot.
+| ADR-001
 
-| Authentifizierung
-| [z. B. OAuth2 / Hochschul-SSO]
-| [z. B. Pflichtintegration; kein eigenes Nutzermanagement nötig]
-| [z. B. ADR-004]
+| Kommunikation
+| REST API (HTTP + JSON)
+| Standardisierte und einfache Kommunikation zwischen Frontend und Backend.
+| ADR-004
+
+| Build-Tool
+| Maven
+| Automatisches Dependency-Management und einfacher Build-Prozess für Java-Projekte.
+| —
 
 | Containerisierung
 | [z. B. Docker / Docker Compose]
@@ -162,6 +163,7 @@ sind in <<Architekturentscheidungen>> dokumentiert._
 | [Begründung]
 | [ADR-Referenz oder —]
 |===
+*wird noch bearbeitet*
 
 == Architekturrelevante Anforderungen (Architekturtreiber)
 
@@ -303,7 +305,7 @@ NOTE: ADRs werden nicht gelöscht oder überschrieben — sie werden als
 | Die Entwicklung der Benutzeroberfläche wird einfacher und übersichtlicher. Gleichzeitig müssen sich die Entwickler mit Vue.js, Komponentenstruktur und Zustandsverwaltung vertraut machen.
 |===
 
-=== ADR-003: Verwendung von Java und Spring Boot für das Backend
+=== ADR-003: Verwendung von Java 21 und Spring Boot für das Backend
 
 [cols="1,3"]
 |===
@@ -347,6 +349,28 @@ NOTE: ADRs werden nicht gelöscht oder überschrieben — sie werden als
 
 | *Konsequenzen*
 | Die Kommunikation zwischen Frontend und Backend wird klar strukturiert und einfacher testbar. Gleichzeitig müssen API-Endpunkte dokumentiert und versioniert werden.
+|===
+=== ADR-005: Verwendung von Maven als Build-Tool
+
+[cols="1,3"]
+|===
+| *Status*
+| Akzeptiert
+
+| *Datum*
+| 12.05.2026
+
+| *Kontext*
+| Für das Backend-Projekt wird ein Tool benötigt, das Abhängigkeiten verwaltet, den Build-Prozess automatisiert und das Projekt einheitlich strukturiert.
+
+| *Entscheidung*
+| Wir verwenden Maven als Build-Tool, weil es eine einfache Verwaltung von Abhängigkeiten ermöglicht und sehr gut mit Java und Spring Boot integriert ist.
+
+| *Alternativen*
+| Als Alternative wurde Gradle betrachtet, aber verworfen, da Maven einfacher verständlich ist und mehr Teammitglieder bereits Erfahrung damit haben.
+
+| *Konsequenzen*
+| Der Build- und Dependency-Management-Prozess wird standardisiert und automatisiert. Gleichzeitig müssen die Entwickler die Struktur von Maven-Projekten und die pom.xml-Datei verstehen.
 |===
 
 == Risiken & technische Schulden
