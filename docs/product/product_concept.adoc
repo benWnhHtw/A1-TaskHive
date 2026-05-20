@@ -73,17 +73,17 @@ typische Aufgaben — sind im link:ux_concept.adoc[UX-Konzept] dokumentiert.
 |===
 | Alternative | Beschreibung | Warum unser Produkt besser passt
 
-| [z. B. E-Mail-Anfrage an Sekretariat]
-| [Wie lösen Nutzer:innen das Problem heute?]
-| [Worin liegt unser Vorteil?]
+| Allgemeine To-Do-Apps (z. B. Todoist)
+| Individuelle Aufgabenverwaltung ohne Fokus auf WG-Kollaboration.
+| TaskHive ist speziell auf Gruppenorganisation und faire Aufgabenverteilung ausgelegt.
 
-| [z. B. Aushang an schwarzem Brett]
-| [Beschreibung]
-| [Unterschied]
+| Messenger (WhatsApp, Telegram)
+| Aufgaben werden informell im Chat verteilt und gehen oft verloren.
+| TaskHive bietet strukturierte Aufgaben, klare Zuständigkeiten und Nachverfolgbarkeit.
 
-| [Weitere Alternative]
-| [Beschreibung]
-| [Unterschied]
+| Papier-Putzplan
+| Statische Aufgabenverteilung ohne Flexibilität oder Anpassung.
+| TaskHive ermöglicht dynamische Rotationen und berücksichtigt individuelle Präferenzen.
 |===
 
 
