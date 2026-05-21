@@ -17,3 +17,52 @@
 |
 
 |===
+
+= Meetings: {Team A1 TaskHive}
+
+== 15.04.2026
+
+.Hauptfunktionen
+* ToDo Liste
+* Besorgungsliste
+* Gruppenchat
+* Kalender mit Rotationssystem für wiederkehrende Aufgaben
+* Gameification: Statistiken, 
+* direkte Mitteilungen für Hausverwaltung
+* Erinnerungen/Benachrichtigungen
+
+
+.Zielgruppe
+* Produkt für alle Arten von WGs (Familien etc)
+* Hauptyielgruppe Studenten
+
+.Stakeholder
+* Bewohner
+* Personal (Hausmeister, Putzfrau)
+* Hausverwaltung
+* Banken
+* Besucher
+* Support 
+* Admin
+
+.Personas 
+* schon erarbeitet
+link:../product/ux_concept.adoc[Personas]
+
+.Epics bilden
+|===
+| Hauptfunktion | Epic
+
+|ToDo-Liste, Aufgabenvorlage, Kommunikation
+| grundlegene Aufgabenverwaltung 
+
+|Besorgungsliste
+|Gemeinsame Besorgungen in der WG koordinieren
+
+|Administration
+|WG-Verwaltung
+
+|===
+
+
+

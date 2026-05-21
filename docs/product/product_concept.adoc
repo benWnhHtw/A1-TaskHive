@@ -19,10 +19,7 @@ _Warum wird dieses Produkt gebaut? Welches Problem existiert heute, und warum is
 Dieser Abschnitt beschreibt den Ausgangszustand und den Handlungsbedarf — ohne bereits eine
 Lösung zu nennen. 3–5 Sätze genügen._
 
-[Hier die Ausgangssituation und den Handlungsbedarf beschreiben. Beispiel:
-„Studierende an der Hochschule haben heute keinen zentralen Überblick über verfügbare
-Lernräume. Die Suche nach freien Plätzen kostet täglich wertvolle Zeit und führt zu Frust.
-Eine einfache, mobil nutzbare Lösung fehlt bisher."]
+In Wohngemeinschaften fehlt häufig eine klare und faire Struktur zur Verteilung alltäglicher Haushaltsaufgaben sowie eine zentrale Übersicht über Zuständigkeiten. Aufgaben werden oft informell geregelt, was zu Missverständnissen, Ungleichgewicht und Spannungen im Zusammenleben führen kann. Wiederkehrende Tätigkeiten wie Putzen, Müllentsorgung oder Einkäufe werden dadurch nicht immer zuverlässig erledigt oder bleiben teilweise liegen. Zudem unterscheiden sich die Tagesabläufe und zeitlichen Verfügbarkeiten der Bewohner, was die Abstimmung und Planung zusätzlich erschwert. 
 
 == Produktvision
 
@@ -33,23 +30,21 @@ nicht wesentlich verändern._
 === Visions-Statement
 
 ____
-Für [Zielgruppe],
-die [Problem oder Bedarf],
-ist [Produktname]
-ein [Produktkategorie],
-das [zentraler Nutzen].
-Im Gegensatz zu [Alternative]
-bietet unser Produkt [entscheidender Unterschied].
+Für Studierende und andere Bewohner von Wohngemeinschaften,
+die Schwierigkeiten haben, ihren gemeinsamen Alltag effizient zu organisieren,
+ist TaskHive eine kollaborative To-Do-Listen-Anwendung, 
+die eine strukturierte und nachvollziehbare Verwaltung von Aufgaben ermöglicht.
+Im Gegensatz zu Flatastic,
+bietet unser Produkt eine kostenlose Alternative sowie Integration individueller Verfügbarkeiten sowie Abwesenheit.
 ____
-
-//Beispiel: Für Studierende der HTWD, die zu wenig Zeit in der Mittagspause zum Essen haben, ist Flying Burger ein  Lieferdient für Burger, der per Drohne liefert. Anders als landgestützte Lieferdienste kann unser Produkt durchs Fenster direkt in den Hörsaal liefern.
 
 NOTE: Das Visions-Statement kann im Team mit der „Elevator Pitch"-Methode oder dem „Future Press Release"-Format erarbeitet werden.
 
 === Zielbild
 
 _Optional: Beschreibe in 2–4 Sätzen, wie die Welt mit diesem Produkt aussieht. Was hat sich für die Nutzer:innen verändert?_
-//[Hier das Zielbild beschreiben]
+
+Mit TaskHive wird die Organisation im WG-Alltag deutlich übersichtlicher und strukturierter. Jede Person hat jederzeit Einsicht in anstehende Aufgaben und Verantwortlichkeiten. Konflikte aufgrund unklarer Zuständigkeiten werden reduziert, und die Zusammenarbeit wird harmonischer gestaltet. Dadurch entsteht ein effizienterer Alltag, der Zeit spart und das Zusammenleben insgesamt verbessert.
 
 
 == Produktpositionierung
@@ -61,14 +56,12 @@ _Wer sind die Zielgruppen, und wie positioniert sich das Produkt im Vergleich zu
 |===
 | Zielgruppe | Beschreibung
 
-| [z. B. Studierende]
-| [Kurzbeschreibung: Wer sind sie? Was ist ihre Motivation?]
+| WG-Bewohner (Studierende, Berufstätige)
+| Personen, die in Wohngemeinschaften zusammenleben und gemeinsam den Haushalt organisieren. Sie unterscheiden sich in ihrer Selbstorganisation und Verantwortungsübernahme, haben jedoch den Bedarf, alltägliche Aufgaben zu effizient koordinieren und den Überblick über anstehende sowie erledigte Aufgaben zu behalten.
 
-| [z. B. Lehrende]
-| [Kurzbeschreibung]
+| Familien
+| Eltern mit Kindern in einem Haushalt. Eltern wollen Kindern Aufgaben zuweisen. Kinder wollen einfache Aufgabenübersicht
 
-| [Weitere Zielgruppe]
-| [Kurzbeschreibung]
 |===
 
 NOTE: Ausführliche Beschreibungen der Nutzenden — Personas, Nutzungskontext,
@@ -80,17 +73,17 @@ typische Aufgaben — sind im link:ux_concept.adoc[UX-Konzept] dokumentiert.
 |===
 | Alternative | Beschreibung | Warum unser Produkt besser passt
 
-| [z. B. E-Mail-Anfrage an Sekretariat]
-| [Wie lösen Nutzer:innen das Problem heute?]
-| [Worin liegt unser Vorteil?]
+| Allgemeine To-Do-Apps (z. B. Todoist)
+| Individuelle Aufgabenverwaltung ohne Fokus auf WG-Kollaboration.
+| TaskHive ist speziell auf Gruppenorganisation und faire Aufgabenverteilung ausgelegt.
 
-| [z. B. Aushang an schwarzem Brett]
-| [Beschreibung]
-| [Unterschied]
+| Messenger (WhatsApp, Telegram)
+| Aufgaben werden informell im Chat verteilt und gehen oft verloren.
+| TaskHive bietet strukturierte Aufgaben, klare Zuständigkeiten und Nachverfolgbarkeit.
 
-| [Weitere Alternative]
-| [Beschreibung]
-| [Unterschied]
+| Papier-Putzplan
+| Statische Aufgabenverteilung ohne Flexibilität oder Anpassung.
+| TaskHive ermöglicht dynamische Rotationen und berücksichtigt individuelle Präferenzen.
 |===
 
 
@@ -103,25 +96,40 @@ erklärt, warum bestimmte Entscheidungen getroffen wurden.
 |===
 | Stakeholder | Rolle / Interesse | Erwartungen an das Produkt | Einfluss
 
-| [z. B. Hochschulverwaltung]
-| [Betreiber der Infrastruktur; will Raumauslastung optimieren]
-| [Auslastungsberichte, DSGVO-Konformität]
+| Bewohner
+| Hauptnutzer, unser Kunde, will Aufgaben erstellen und fair verteilen lassen sowie Sicherheit seiner Daten
+| Einfache Aufgabenerstellung, übersichtliche Aufgabenverteilung
 | Hoch
 
-| [z. B. Studierende]
-| [Hauptnutzer:innen; wollen schnell freie Plätze finden]
-| [Einfache Bedienung, mobiler Zugang]
-| Mittel
+| Hausmeister
+| Nebennutzer, will seine Aufgaben sehen
+| Übersichtliche Aufgabendarstellung, Ausdruck für nicht Handynutzer
+| Niedrig
 
-| [z. B. Lehrende]
-| [Nutzen Räume für Lehrveranstaltungen; wollen Konflikte vermeiden]
-| [Sichtbarkeit ihrer Buchungen]
-| Mittel
+| Hausverwaltung
+| Nebennutzer, Problem der Bewohner ermitteln
+| einfache Übersicht der Probleme 
+| Niedrig
 
-| [Weiterer Stakeholder]
-| [Beschreibung]
-| [Erwartungen]
-| [Hoch / Mittel / Niedrig]
+| Besucher
+| Nebennutzer, will seine Aufgaben sehen
+| temporäre Integration als WG-Nutzer
+| Niedrig
+
+| Beitreiber und Entwickler
+| BWartung und Bereitstellung des Systems
+| funktionierendes, leicht zu wartendes System
+| Hoch
+
+| Datenschutzbehörde
+| Prüfer
+| korrekte Einhaltung der Vorgaben
+| Hoch
+
+| Konkurrenz
+| Beobachtet Markt, möchte eigene Marktposition sichern oder ausbauen
+| Produkt sollte sich nicht deutlich von eigenen Angeboten abheben oder schwer kopierbar sein; ggf. Benchmark für eigene Weiterentwicklung
+| Mittel-Hoch
 |===
 
 == Hauptfunktionen
@@ -134,25 +142,50 @@ Diese Hauptfunktionen sollten als Epics im Product Backlog für die Gruppierung 
 |===
 | Nutzerbedarf | Hauptfunktion | Priorität
 
-| Studierende wollen schnell sehen, welche Räume gerade frei sind.
-| Echtzeit-Übersicht freier Lernräume
-| Hoch
+| WG-Bewohner wollen gemeinsame Tätigkeiten strukturiert erfassen. 
+| Kollaborative To-Do-Listen mit Echtzeit-Synchronisation und Änderungsverlauf. 
+| Kritisch 
 
-| Nutzer:innen wollen einen Raum für einen bestimmten Zeitraum reservieren.
-| Raumbuchung mit Zeitfenster
-| Hoch
+| WG-Bewohner wollen eindeutig klären, wer für Aufgaben verantwortlich ist. 
+| Aufgabenzuweisung an einzelne Personen oder Gruppen mit Deadlines und Prioritäten. 
+| Kritisch 
 
-| Nutzer:innen wollen ihre aktiven Buchungen verwalten.
-| Buchungsübersicht & Stornierung
-| Mittel
+| WG-Bewohner wollen, dass sich Zuständigkeiten automatisch abwechseln. 
+| Rotationssysteme für wiederkehrende Aufgaben (z. B. Putzplan, Mülldienst). 
+| Hoch 
 
-| Verwaltung will die Auslastung der Räume analysieren.
-| Auslastungsberichte für Administratoren
-| Niedrig
+| WG-Bewohner wollen ihren Beitrag zum Haushalt nachvollziehen. 
+| Fortschrittsvisualisierung (z. B. erledigte Aufgaben, Wochenübersichten, Aktivitätsverlauf). 
+| Mittel 
 
-| [Nutzerbedarf]
-| [Hauptfunktion]
-| [Hoch / Mittel / Niedrig]
+| WG-Bewohner wollen spielerische Anreize zur Motivation für die Hausarbeit. 
+| Gamification-Elemente wie Punkte, Level oder kleine Belohnungssysteme. 
+| Mittel 
+
+| WG-Bewohner wollen eine transparente und faire Aufgabenverteilung sehen. 
+| Statistiken zur Aufgabenverteilung und individuellen Beteiligung. 
+| Hoch 
+
+| WG-Bewohner wollen an fällige Aufgaben im Alltag erinnert werden. 
+| Benachrichtigungen und Erinnerungen für anstehende oder überfällige Aufgaben. 
+| Hoch 
+
+| WG-Bewohner wollen Termine und Aufgaben zentral bündeln. 
+| Integration eines WG-Kalenders zur Koordination von Terminen und Aufgaben. 
+| Hoch 
+
+| WG-Bewohner wollen offene Verantwortlichkeiten transparent ansprechen. 
+| Eskalationsmechanismen bei wiederholt unerledigten Aufgaben.
+| Mittel 
+
+| WG-Bewohner wollen Aufgaben an ihren Alltag und Abwesenheiten anpassen. 
+| Erfassung Individueller Präferenzen und Verfügbarkeiten sowie Integrierung in Aufgabenverteilung. 
+| Hoch 
+
+| Nutzer mit mehreren Haushalten oder Rollen wollen Aufgaben unterschiedlicher Haushalte in einer App getrennt verwalten. 
+| Multi-WG-Unterstützung für Nutzer mit mehreren Haushalten oder Rollen. 
+| Hoch 
+
 |===
 
 NOTE: Die Reihenfolge entspricht einer ersten groben Priorisierung und wird im Rahmen
@@ -178,7 +211,7 @@ technischen Entscheidungen, die sich daraus ergeben — ohne sie hier zu wiederh
 | Qualitätsziel | Beschreibung | Messkriterium
 
 | Benutzbarkeit
-| Das Produkt ist ohne Einarbeitung nutzbar.
+| Die App ist intuitiv und ohne Einarbeitung nutzbar.
 | Neue Nutzer:innen finden die Kernfunktion innerhalb von 2 Minuten ohne Hilfe.
 
 | Performance
@@ -189,9 +222,46 @@ technischen Entscheidungen, die sich daraus ergeben — ohne sie hier zu wiederh
 | Das Produkt ist während der Hochschulöffnungszeiten zuverlässig erreichbar.
 | Verfügbarkeit ≥ 99 % während Betriebszeiten.
 
-| [Qualitätsziel]
-| [Beschreibung]
-| [Messkriterium]
+| Zuverlässigkeit
+| Daten (ToDos, Chat, Kalender) gehen nicht verloren.
+| Keine Datenverluste bei normalen Nutzungsbedingungen; automatische Speicherung bei jeder Änderung.
+
+| Konsistenz
+| Daten sind auf allen Geräten synchron.
+| Änderungen werden innerhalb von 2 Sekunden auf allen Geräten sichtbar.
+
+| Sicherheit
+| Nutzerdaten sind vor unbefugtem Zugriff geschützt.
+| Zugriff nur mit Login; verschlüsselte Datenübertragung (HTTPS).
+
+| Datenschutz
+| Personenbezogene Daten werden minimal und DSGVO-konform verarbeitet.
+| Keine unnötige Datenspeicherung; Nutzer können Daten löschen.
+
+| Skalierbarkeit
+| Die App funktioniert auch bei vielen WGs gleichzeitig stabil.
+| System unterstützt mindestens 100 gleichzeitige WGs ohne Performanceverlust.
+
+| Usability (WG-Kontext)
+| Aufgabenverteilung ist klar verständlich und fair nachvollziehbar.
+| Nutzer können jederzeit sehen, wer welche Aufgabe hat (max. 1 Klick).
+
+| Barrierefreiheit
+| Die App ist auch für Nutzer mit Einschränkungen nutzbar.
+| nach BITV 2.0
+
+| Wartbarkeit
+| Der Code ist leicht erweiterbar.
+| Neue Module benötigen weniger als 10% Anpassungen am bestehenden Code.
+
+| Responsivität 
+| App funktioniert auf verschiedenen Geräten
+| Alle Kernfunktionen sind auf jedem Gerät gut nutzbar/sichtbar
+
+| Effizienz
+| Die App verbruacht wenig Ressourcen
+| App verursacht wenig spürbare Akku- oder Datenbelastung im Alltag
+
 |===
 
 === Einschränkungen
@@ -215,9 +285,25 @@ organisatorische, rechtliche oder zeitliche Vorgaben._
 | Das Produkt muss innerhalb eines Semesters (ca. 4 Monate) lieferbar sein.
 | Zeitlich
 
-| [Einschränkung]
-| [Beschreibung]
-| [Technisch / Rechtlich / Organisatorisch / Zeitlich]
+| Multiusersystem
+| Gleichzeitige Nutzung durch mehrere Nutzer (WG). 
+| Technisch
+
+| Ressourcenbeschränkung
+| Entwicklung erfolgt durch ein kleines Team (8 Personen)
+| Organisatorisch
+
+| Multiusersystem
+| Gleichzeitige Nutzung durch mehrere Nutzer (WG). 
+| Technisch
+
+| Internetabhängigkeit
+| Die Nutzung erfordert eine Internetverbidnung 
+| Technisch
+
+| Keine externen kostenpflichtigen Services
+| Es dürfen nur kostenlose oder Hochschulinterne Dienste genutz werden
+| Organisatorisch
 |===
 
 
