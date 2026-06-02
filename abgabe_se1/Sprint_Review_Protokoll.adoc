@@ -86,4 +86,4 @@ Datum:: 12.05.2026
 - Größte Überraschung: Die unterschiedlichen Ideen und Perspektiven im Team haben zu besseren Ergebnissen geführt als erwartet.
 - Was wir verbessern wollen: Wir möchten im nächsten Sprint präziser arbeiten, technische Entscheidungen besser begründen und das Backlog strukturierter pflegen.
 
-probe
+-probe
