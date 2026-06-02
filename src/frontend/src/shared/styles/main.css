@@ -1,0 +1,65 @@
+body {
+  margin: 2rem;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 760px;
+}
+
+form,
+article {
+  border: 1px solid #ccc;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+input {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 0.25rem;
+  padding: 0.4rem;
+}
+
+button {
+  padding: 0.4rem 0.7rem;
+}
+
+.task-list {
+  margin-top: 1rem;
+}
+
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.task-card h3,
+.task-card p {
+  margin: 0.2rem 0;
+}
+
+.task-status {
+  font-weight: bold;
+}
+
+.task-status-open {
+  color: #8a5a00;
+}
+
+.task-status-done {
+  color: #17633a;
+}
+
+.error {
+  color: #a40000;
+}
