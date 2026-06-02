@@ -1,0 +1,60 @@
+= TaskHive Frontend
+
+TaskHive ist eine CSR-Vue-Anwendung fuer die Organisation von WG-Aufgaben.
+Dieses Verzeichnis enthaelt das Frontend-Grundgeruest.
+
+== Technischer Fokus
+
+* Frontend-Monolith mit Vue 3, JavaScript und Vite
+* Feature-orientierte Ordnerstruktur
+* API-Gateway als einzige Backend-Grenze aus Frontend-Sicht
+* Lokaler Mock-Adapter fuer Entwicklung ohne Java/Spring-Boot-Backend
+* Vorbereitung auf spaetere Spring-Boot-Microservices hinter dem Gateway
+
+== Lokaler Start
+
+[source,bash]
+----
+npm install
+npm run dev
+----
+
+Die App laeuft danach standardmaessig mit Mock-Daten.
+
+== Gateway-Konfiguration
+
+Kopiere bei Bedarf `.env.example` nach `.env.local`.
+
+[source,properties]
+----
+VITE_API_GATEWAY_URL=http://localhost:8080/api
+VITE_USE_MOCKS=true
+----
+
+Wenn das API-Gateway spaeter laeuft:
+
+[source,properties]
+----
+VITE_USE_MOCKS=false
+----
+
+== Relevante Ordner
+
+[source,text]
+----
+src/app/              Einstiegspunkt und App-Shell
+src/core/             Konfiguration, HTTP-Client, API-Gateway-Fassade
+src/features/         Fachliche Frontend-Features wie tasks
+src/shared/           Minimale globale Styles
+src/mocks/            Lokale Adapter fuer Entwicklung ohne Backend
+----
+
+== Aktueller Durchstich
+
+Der aktuelle Frontend-Durchstich zeigt:
+
+* Aufgabenliste fuer eine Beispiel-WG
+* Aufgabe erstellen
+* Aufgabe als erledigt markieren
+* Lade- und Fehlerzustand
+* austauschbaren Task-Adapter: Mock oder API-Gateway

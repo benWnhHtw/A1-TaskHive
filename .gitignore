@@ -4,3 +4,10 @@
 .DS_Store
 *~
 .vscode
+
+# Frontend
+src/frontend/node_modules/
+src/frontend/dist/
+src/frontend/.vite/
+src/frontend/.env.local
+src/frontend/.env.*.local
