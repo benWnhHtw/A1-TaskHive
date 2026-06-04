@@ -1,0 +1,211 @@
+= Sprint Retrospektive
+:toc:
+:toc-title: Inhalt
+:icons: font
+
+Sprint: __________  
+Datum: __________  
+Teilnehmende: __________  
+Scrum Master / Moderation: __________  
+
+== Ziel der Retrospektive
+
+Am Ende dieser Retrospektive wollen wir eine konkrete Änderung festlegen, die unsere Zusammenarbeit und Qualität im nächsten Sprint verbessert.
+
+== 1. Rückblick auf den letzten Sprint
+
+=== Individuen
+
+Wie ging es den einzelnen Personen im Sprint?
+
+[cols="1,3", options="header"]
+|===
+| Beobachtung | Notizen
+
+| Belastung / Fokus
+| Teilweise unausgelastet, ungleiche Verteilung der Aufgaben
+
+| Motivation / Stimmung
+| Bessere Teamstimmung, oft Nachfragen nach mehr Aufgaben
+
+| Klarheit über Aufgaben
+| Unklarheit bei Sprintanweisungen
+
+| Unterstützung im Team
+| gut ausgeprägt, Einleitung technisches Verständnis
+|===
+
+=== Interaktionen
+
+Wie war die Zusammenarbeit im Team?
+
+[cols="1,3", options="header"]
+|===
+| Thema | Notizen
+
+| Kommunikation
+| Noch nicht sehr ausgeprägt, mehr Leute können sich einbringen bei Vorschlägen und Ideensammlung
+
+| Abstimmung
+| Ausbaufähig, teilweise fehlende Teilnahme an Abstimmungen, teilweise nicht eingehaltene Abstimmungen
+
+| Hilfe untereinander
+| noch nicht großartig nötig gewesen
+
+| Konflikte / Missverständnisse
+| Sprachbarriere, fehlendes KnowHow
+|===
+
+=== Prozesse
+
+Wie liefen unsere Scrum-Events und Arbeitsabläufe?
+
+[cols="1,3", options="header"]
+|===
+| Prozess | Notizen
+
+| Sprint Planning
+| Deutliche Steigerung zu Sprint 1, ordentliche Zuordnung der Aufgaben + Klärung der Aufgaben, allgemein sehr positiv zu bewerten
+
+| Daily Scrum
+| Teilweise spontane absagen, Zeitrahmen eingehalten, oft nicht so vile zu besprechen gehabt
+
+| Refinement
+| auf Grund von fehlendem technischem Wissen von Teammitgliedern nicht so viele userStorys geschafft wie gewollt
+
+| Sprint Review
+| __________
+
+|===
+
+=== Werkzeuge
+
+Haben unsere Tools geholfen oder gebremst?
+
+[cols="1,3", options="header"]
+|===
+| Werkzeug / Bereich | Notizen
+
+| Mircosoftteams
+| funktioniert einwandfrei
+
+| Discord
+| wird kaum benutzt, Meetingfunktion hat nicht funktioniert
+
+| WhatsApp
+| funktioniert gut für Termine und Abstimmungen
+
+| Dokumentation
+| mehr Dokumentation im Meeting + ordentliche Strukur;
+
+| Entwicklungsumgebung
+| VS-Code für Forntend ausreichend, IntelliJ IDEA für Backend
+ 
+|===
+
+=== Definition of Done
+
+War klar, wann etwas wirklich fertig ist?
+
+[cols="1,3", options="header"]
+|===
+| Frage | Antwort / Notizen
+
+| War unsere Definition of Done klar?
+| Ja
+
+| Wurde sie eingehalten?
+| ja
+
+| Wo gab es Abweichungen?
+| Keine
+
+| Muss die Definition of Done angepasst werden?
+| Nein
+|===
+
+
+== 4. Falsche Annahmen
+
+Alle Annahmen liefen wie geplant oder noch offen.
+
+
+
+
+== 5. Mögliche Verbesserungen
+
+Welche Änderungen könnten helfen?
+
+[cols="1,3,1,1,1", options="header"]
+|===
+| Nr. | Verbesserung | Wirkung | Machbarkeit | Einfluss
+
+| 1
+| Kommunikation
+| mittel 
+| mittel 
+| mittel 
+
+| 2
+| Beteiligung im Meeting
+| hoch 
+| Abhängig vom Wissen
+| hoch / mittel / niedrig
+
+| 3
+| Technisches Wissen
+| hoch
+| hoch
+| hoch / mittel / niedrig
+
+
+|===
+
+
+
+== 6. Aufnahme ins Sprint Backlog
+
+Muss aus der Maßnahme ein sichtbares Backlog Item werden?
+
+[cols="1,3", options="header"]
+|===
+| Frage | Antwort
+
+| Wird daraus Arbeit im nächsten Sprint?
+| ja 
+
+| Backlog Item / Task
+| __________
+
+| Priorität
+| __________
+
+| Akzeptanzkriterium
+| __________
+|===
+
+== 7. Abschluss
+
+=== Check-out
+
+Jede Person beantwortet kurz:
+
+Was nehme ich aus dieser Retrospektive mit?
+
+[cols="1,4", options="header"]
+|===
+| Person | Aussage
+
+| __________
+| __________
+
+| __________
+| __________
+
+| __________
+| __________
+
+| __________
+| __________
+|===
+
