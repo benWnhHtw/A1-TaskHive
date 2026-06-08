@@ -62,14 +62,14 @@ Beziehen Sie sich bevorzugt auf Praktiken, die in den Hinweisen für Sprint 2 be
 | Nutzen, Erkenntnis oder Anpassung
 
 | Walking Skeleton als lauffähigen Nachweis des technischen Konzepts aufbauen
-| Wir haben einen Walking Skeleton erstellt, der die grundlegende Architektur von TaskHive repräsentiert und eine End-to-End-Kommunikation zwischen Frontend und Backend über REST-APIs ermöglicht.
+| Wir haben einen Walking Skeleton erstellt, der die grundlegende Architektur von TaskHive repräsentiert und eine End-to-End-Kommunikation zwischen Frontend und Backend über REST-APIs realisiert.
 | https://github.com/benWnhHtw/A1-TaskHive/tree/main/src/frontend
 | Der Walking Skeleton hat gezeigt, dass unser geplanter Technologie-Stack funktionsfähig ist und die Integration der einzelnen Komponenten erfolgreich umgesetzt werden kann. Dadurch konnten wir erstmals ein besseres Verständnis davon gewinnen, wie das Gesamtsystem später zusammenwirkt. Zusätzlich haben wir erste Erkenntnisse zur technischen Umsetzung und zur möglichen Erweiterbarkeit des Systems gewonnen.
 
 | ADRs für wichtige technische Entscheidungen schreiben
 | Wir haben ADRs für zentrale Architekturentscheidungen dokumentiert, insbesondere zur Auswahl des Technologie-Stacks (Spring Boot, Vue.js, PostgreSQL) sowie zur Kommunikationsarchitektur.
 |https://github.com/benWnhHtw/A1-TaskHive/blob/main/docs/technical/architecture.adoc
-| Dadurch wurden technische Entscheidungen im Team transparent und nachvollziehbar festgehalten. Dadurch sind die Gründe für wichtige technische Entscheidungen im Team klar und nachvollziehbar und bilden eine Grundlage für zukünftige Architekturentscheidungen..
+| Dadurch wurden technische Entscheidungen im Team transparent und nachvollziehbar festgehalten. Dadurch sind die Gründe für wichtige technische Entscheidungen im Team klar und nachvollziehbar und bilden eine Grundlage für zukünftige Architekturentscheidungen.
 
 | Architekturtreiber aus Domäne, Qualitätsanforderungen, Randbedingungen und Teamfähigkeit ableiten
 | Wir haben zentrale Architekturtreiber wie kurze Entwicklungszyklen, Echtzeitfähigkeit, DSGVO-Konformität sowie Hosting-Restriktionen identifiziert und dokumentiert.
@@ -101,10 +101,10 @@ Beschreiben Sie 2–3 zentrale Erkenntnisse aus Sprint 2. Leitfragen:
 | Kriterium | Ihre Antwort
 
 | Erkenntnis 1
-| Der Walking Skeleton hat gezeigt, dass die grundlegende End-to-End-Integration zwischen Frontend (Vue.js), Backend (Spring Boot) und Datenbank (PostgreSQL) technisch funktioniert und der gewählte Architekturansatz grundsätzlich umsetzbar ist.
+| Der Walking Skeleton hat gezeigt, dass die grundlegende End-to-End-Integration zwischen Frontend (Vue.js), Backend (Spring Boot) und Datenbank (PostgreSQL) technisch funktioniert und der gewählte Architekturansatz grundsätzlich realisierbar ist.
 
 | Erkenntnis 2
-| Durch die ADRs und den Technologievergleich wurde bestätigt, dass der gewählte Stack (Spring Boot, Vue.js, PostgreSQL) für die Projektanforderungen geeignet ist und eine gute Balance zwischen Produktivität, Wartbarkeit und Erweiterbarkeit bietet.
+| Durch die ADRs und den Technologievergleich wurde bestätigt, dass der gewählte Stack (Spring Boot, Vue.js, PostgreSQL) für die Projektanforderungen geeignet ist und eine ausgewogene Balance zwischen Produktivität, Wartbarkeit und Erweiterbarkeit bietet.
 
 | Erkenntnis 3
 | Das C4-Kontextdiagramm und die definierten Architekturtreiber haben wesentlich zur Klärung der Systemgrenzen und Qualitätsanforderungen beigetragen und bilden eine Grundlage für weitere Architekturentscheidungen.
@@ -121,7 +121,7 @@ Beschreiben Sie konkret anhand von drei Beispielen, was sich durch Ihre Modellie
 
 | Technologie-Stack ist grundsätzlich geeignet und funktionsfähig
 | Durch den Walking Skeleton wurde eine funktionierende End-to-End-Kommunikation zwischen Frontend, Backend und Datenbank nachgewiesen
-| Der Stack wurde als technisch bestätigt und als Grundlage für die weitere Entwicklung übernommen
+| Der Technologie-Stack wurde technisch validiert und als Grundlage für die weitere Entwicklung übernommen
 
 | Systemarchitektur war nur konzeptionell definiert
 | Das C4-Kontextdiagramm hat klare Systemgrenzen und externe Abhängigkeiten (z.B. Datenbank, externe Dienste) sichtbar gemacht
@@ -172,13 +172,13 @@ Beschreiben Sie, was Ihr Team im nächsten Sprint beibehalten, ändern oder gezi
 | Kriterium | Ihre Antwort
 
 | Beibehalten
-| Die strukturierte Architekturarbeit mit ADRs sowie der Einsatz eines Walking Skeletons zur technischen Validierung haben sich bewährt und sollen beibehalten werden. Ebenso hat die frühzeitige Abstimmung über Architekturtreiber zur besseren Entscheidungsfindung beigetragen.Zusätzlich hat sich die Nutzung von offizieller Dokumentation und von unseren technisch erfahrene Teammitglieder ausgewählten YouTube-Tutorials als hilfreich erwiesen, um neue Technologien schneller zu verstehen und technische Entscheidungen schneller und sicherer treffen zu können.
+| Die strukturierte Architekturarbeit mit ADRs sowie der Einsatz eines Walking Skeletons zur technischen Validierung haben sich bewährt und sollen beibehalten werden. Ebenso hat die frühzeitige Abstimmung über Architekturtreiber zur besseren Entscheidungsfindung beigetragen. Zusätzlich hat sich die Nutzung von offizieller Dokumentation und von unseren technisch erfahrenen Teammitglieder ausgewählten YouTube-Tutorials als hilfreich erwiesen, um neue Technologien schneller zu verstehen und technische Entscheidungen schneller und sicherer treffen zu können.
 
 | Ändern / verbessern
 | Die technische Abstimmung zwischen Frontend und Backend soll enger erfolgen, um Integrationsprobleme früher zu erkennen. Zusätzlich soll die Aufgabenverteilung klarer definiert werden, um paralleles Arbeiten effizienter zu gestalten und Wartezeiten bei Abhängigkeiten zu reduzieren. Außerdem soll die Teilnahme an Team-Meetings konsequenter erfolgen, da regelmäßige Abstimmung und eine verbesserte Kommunikation innerhalb des gesamten Teams wesentlich zur Vermeidung von Missverständnissen und zur besseren Koordination beitragen.
 
 | Kandidat für Sprint 3
-| Als erster MVP-Ausschnitt soll eine vollständige Kernfunktion (z.B. Erstellung und Anzeige von Tasks) umgesetzt werden. Dadurch soll überprüft werden, ob der vollständige fachliche Workflow im System stabil funktioniert und welche Erweiterungen für die weitere Entwicklung notwendig sind.
+| Als erster MVP-Ausschnitt soll eine vollständige Kernfunktion (z. B. Erstellung und Anzeige von Tasks) umgesetzt werden. Dadurch soll überprüft werden, ob der vollständige fachliche Workflow im System stabil funktioniert und welche Erweiterungen für die weitere Entwicklung notwendig sind.
 
 |===
 
