@@ -3,7 +3,7 @@
 // Bitte fügen Sie hier die Informationen zu Ihrem Team, Projekt, Datum und Repository ein.
 Team:: A1
 Projektname:: TaskHive: Kollaborative To-Do-Liste für WGs
-Datum:: 07.06.2025
+Datum:: 07.06.2026
 Repository-Link:: https://github.com/benWnhHtw/A1-TaskHive
 
 ====
@@ -62,28 +62,28 @@ Beziehen Sie sich bevorzugt auf Praktiken, die in den Hinweisen für Sprint 2 be
 | Nutzen, Erkenntnis oder Anpassung
 
 | Walking Skeleton als lauffähigen Nachweis des technischen Konzepts aufbauen
-| Wir haben einen Walking Skeleton erstellt, der die grundlegende Architektur von TaskHive abbildet und eine End-to-End-Kommunikation zwischen Frontend und Backend über REST-APIs ermöglicht.
-| src/frontend/
-| Der Walking Skeleton hat gezeigt, dass unser geplanter Technologie-Stack grundsätzlich funktioniert und die Integration der einzelnen Komponenten möglich ist. Dadurch konnten wir erstmals ein vollständiges Bild davon gewinnen, wie das Gesamtsystem später zusammenwirken wird. Zusätzlich haben wir erste Erkenntnisse zur technischen Umsetzung und zur möglichen Erweiterbarkeit des Systems gewonnen.
+| Wir haben einen Walking Skeleton erstellt, der die grundlegende Architektur von TaskHive repräsentiert und eine End-to-End-Kommunikation zwischen Frontend und Backend über REST-APIs ermöglicht.
+| https://github.com/benWnhHtw/A1-TaskHive/tree/main/src/frontend
+| Der Walking Skeleton hat gezeigt, dass unser geplanter Technologie-Stack funktionsfähig ist und die Integration der einzelnen Komponenten erfolgreich umgesetzt werden kann. Dadurch konnten wir erstmals ein besseres Verständnis davon gewinnen, wie das Gesamtsystem später zusammenwirkt. Zusätzlich haben wir erste Erkenntnisse zur technischen Umsetzung und zur möglichen Erweiterbarkeit des Systems gewonnen.
 
 | ADRs für wichtige technische Entscheidungen schreiben
-| Wir haben ADRs für zentrale Architekturentscheidungen erstellt, insbesondere zur Auswahl des Technologie-Stacks (Spring Boot, Vue.js, PostgreSQL) sowie zur Kommunikationsarchitektur.
-| docs/technical/architecture.adoc
-| Die Architekturentscheidungen wurden dokumentiert. Dadurch sind die Gründe für wichtige technische Entscheidungen im Team klar und nachvollziehbar und können bei Bedarf angepasst werden.
+| Wir haben ADRs für zentrale Architekturentscheidungen dokumentiert, insbesondere zur Auswahl des Technologie-Stacks (Spring Boot, Vue.js, PostgreSQL) sowie zur Kommunikationsarchitektur.
+|https://github.com/benWnhHtw/A1-TaskHive/blob/main/docs/technical/architecture.adoc
+| Dadurch wurden technische Entscheidungen im Team transparent und nachvollziehbar festgehalten. Dadurch sind die Gründe für wichtige technische Entscheidungen im Team klar und nachvollziehbar und bilden eine Grundlage für zukünftige Architekturentscheidungen..
 
 | Architekturtreiber aus Domäne, Qualitätsanforderungen, Randbedingungen und Teamfähigkeit ableiten
-| Wir haben zentrale Architekturtreiber wie Echtzeitfähigkeit, DSGVO-Konformität, Hosting-Restriktionen sowie kurze Entwicklungszeit identifiziert und dokumentiert.
-| docs/technical/architecture.adoc
+| Wir haben zentrale Architekturtreiber wie kurze Entwicklungszyklen, Echtzeitfähigkeit, DSGVO-Konformität sowie Hosting-Restriktionen identifiziert und dokumentiert.
+| https://github.com/benWnhHtw/A1-TaskHive/blob/main/docs/technical/architecture.adoc
 | Die Architekturtreiber bilden die Grundlage für alle Architektur- und Technologieentscheidungen und reduzieren technische Unsicherheiten im weiteren Projektverlauf.
 
 | Systemgrenzen und externe Systeme identifizieren sowie C4-Kontextdiagramm erstellen
 | Wir haben ein C4-Systemkontextdiagramm erstellt, das das System klar von externen Diensten (z. B. Datenbank, Authentifizierung und E-Mail-Service) sowie Nutzern abgrenzt.
-| docs/technical/deployment.adoc
+| https://github.com/benWnhHtw/A1-TaskHive/blob/main/docs/technical/deployment.adoc
 | Dadurch wurde ein gemeinsames Verständnis der Systemgrenzen geschaffen und die Kommunikation im Team verbessert.
 
 | Technologieoptionen vergleichen und auswählen
-| Wir haben verschiedene Technologieoptionen (Vue vs. React, Spring Boot vs. Node.js, PostgreSQL vs. MySQL) verglichen und auf Basis von Erfahrung der Teammitglieder und den Anforderungen des Projekts entschieden.
-| docs/technical/architecture.adoc (ADRs 001–004)
+| Wir haben verschiedene Technologieoptionen (Vue vs. React, Spring Boot vs. Node.js, PostgreSQL vs. MySQL) verglichen und auf Basis von Erfahrungen der Teammitglieder und den Anforderungen des Projekts entschieden.
+| https://github.com/benWnhHtw/A1-TaskHive/blob/main/docs/technical/architecture.adoc
 | Die Entscheidungen wurden durch ADRs dokumentiert und reduzieren technische Unsicherheiten sowie spätere Architekturänderungen.
 |===
 
