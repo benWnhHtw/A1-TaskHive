@@ -1,2 +1,26 @@
 databaseChangeLog:
-  - changeset
+  - changeSet:
+      id: 1
+      author: taskhive
+      changes:
+        - createTable:
+            tableName: zimmer
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: zimmer_nr
+                  type: INT
+
+              - column:
+                  name: person_id
+                  type: BIGINT
+
+              - column:
+                  name: wg_nr
+                  type: BIGINT
