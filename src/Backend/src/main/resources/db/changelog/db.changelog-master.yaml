@@ -68,3 +68,39 @@ databaseChangeLog:
                             type: VARCHAR(50)
                             constraints:
                                 nullable: false
+
+
+  - changeSet:
+        id: 4
+        author: Alina Petrenko
+
+        changes:
+            - createTable:
+                  tableName: person_aufgabe
+
+                  columns:
+                      - column:
+                            name: person_id
+                            type: BIGINT
+                            constraints:
+                                nullable: false
+
+                      - column:
+                            name: aufgabe_id
+                            type: BIGINT
+                            constraints:
+                                nullable: false
+
+            - addForeignKeyConstraint:
+                  baseTableName: person_aufgabe
+                  baseColumnNames: person_id
+                  referencedTableName: person
+                  referencedColumnNames: id
+                  constraintName: fk_person_aufgabe_person
+
+            - addForeignKeyConstraint:
+                  baseTableName: person_aufgabe
+                  baseColumnNames: aufgabe_id
+                  referencedTableName: aufgabe
+                  referencedColumnNames: id
+                  constraintName: fk_person_aufgabe_aufgabe
