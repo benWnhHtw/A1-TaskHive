@@ -33,3 +33,38 @@ databaseChangeLog:
                   name: zimmerNr
                   constraints:
                     nullable: false
+
+
+  - changeSet:
+        id: 3
+        author: Alina Petrenko
+        changes:
+            - createTable:
+                  tableName: aufgabe
+                  columns:
+                      - column:
+                            name: id
+                            type: BIGINT
+                            constraints:
+                                primaryKey: true
+                                nullable: false
+
+                      - column:
+                            name: titel
+                            type: VARCHAR(255)
+                            constraints:
+                                nullable: false
+
+                      - column:
+                            name: beschreibung
+                            type: VARCHAR(1000)
+
+                      - column:
+                            name: faelligkeitsdatum
+                            type: date
+
+                      - column:
+                            name: status
+                            type: VARCHAR(50)
+                            constraints:
+                                nullable: false
