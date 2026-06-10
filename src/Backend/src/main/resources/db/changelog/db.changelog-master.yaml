@@ -57,7 +57,7 @@ databaseChangeLog:
 
                       - column:
                             name: beschreibung
-                            type: VARCHAR(1000)
+                            type: VARCHAR(500)
 
                       - column:
                             name: faelligkeitsdatum
