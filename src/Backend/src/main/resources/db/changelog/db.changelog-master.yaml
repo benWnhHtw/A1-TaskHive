@@ -1,2 +1,62 @@
 databaseChangeLog:
-  - changeset
+  - changeSet:
+      id: 2
+      author: Astemir Sheriev
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vorname
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: erreichbarkeit
+                  type: boolean
+              - column:
+                  name: age
+                  type: smallint
+              - column:
+                  type: bigint
+                  name: zimmerNr
+                  constraints:
+                    nullable: false
+
+                    # Zimmer Tabelle
+  - changeSet:
+      id: 3
+      author: Sirri Metuge
+      changes:
+        - createTable:
+            tableName: zimmer
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: zimmer_nr
+                  type: INT
+
+              - column:
+                  name: person_id
+                  type: BIGINT
+
+              - column:
+                  name: wg_nr
+                  type: BIGINT
