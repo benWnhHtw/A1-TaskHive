@@ -6,6 +6,15 @@
         <input v-model.trim="form.title" required placeholder="z. B. Kueche putzen" />
       </label>
 
+      <label>
+        Beschreibung
+        <textarea
+          v-model.trim="form.description"
+          required
+          placeholder="z. B. Arbeitsflaechen reinigen und Muell rausbringen"
+        ></textarea>
+      </label>
+
       <AssigneeSelect
         v-model="form.personId"
         :disabled="arePersonsLoading || persons.length === 0"
@@ -50,6 +59,7 @@ const emit = defineEmits(['submit'])
 
 const form = reactive({
   title: '',
+  description: '',
   personId: '',
   dueDate: new Date().toISOString().slice(0, 10),
 })
@@ -65,6 +75,7 @@ function submitTask() {
       : '',
   })
   form.title = ''
+  form.description = ''
   form.personId = ''
 }
 </script>
