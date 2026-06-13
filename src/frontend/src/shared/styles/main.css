@@ -20,7 +20,8 @@ label {
   margin-bottom: 0.75rem;
 }
 
-input {
+input,
+select {
   display: block;
   width: 100%;
   max-width: 360px;
@@ -30,6 +31,12 @@ input {
 
 button {
   padding: 0.4rem 0.7rem;
+}
+
+button:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
 }
 
 .task-list {

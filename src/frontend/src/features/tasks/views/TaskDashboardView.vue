@@ -2,7 +2,12 @@
   <section>
     <h1>TaskHive Walking Skeleton</h1>
 
-    <TaskCreateForm @submit="createTask" />
+    <TaskCreateForm
+      :are-persons-loading="arePersonsLoading"
+      :persons="persons"
+      :persons-error-message="personsErrorMessage"
+      @submit="createTask"
+    />
 
     <p v-if="isLoading">Aufgaben werden geladen...</p>
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
@@ -15,7 +20,9 @@
 <script setup>
 import TaskCreateForm from '@/features/tasks/components/TaskCreateForm.vue'
 import TaskList from '@/features/tasks/components/TaskList.vue'
+import { usePersons } from '@/features/persons/composables/usePersons'
 import { useTasks } from '@/features/tasks/composables/useTasks'
 
 const { tasks, isLoading, errorMessage, createTask, markTaskDone } = useTasks()
+const { persons, arePersonsLoading, personsErrorMessage } = usePersons()
 </script>
