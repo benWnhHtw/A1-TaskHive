@@ -22,5 +22,11 @@ export async function requestJson(baseUrl, path, options = {}) {
     return undefined
   }
 
-  return response.json()
+  const responseBody = await response.text()
+
+  if (!responseBody) {
+    return undefined
+  }
+
+  return JSON.parse(responseBody)
 }

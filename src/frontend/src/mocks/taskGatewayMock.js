@@ -3,24 +3,24 @@ const STORAGE_KEY = 'taskhive.tasks'
 const seedTasks = [
   {
     id: 'task-1',
-    title: 'Kueche putzen',
-    assigneeName: 'Mira',
-    dueDate: '2026-05-22',
-    status: 'open',
+    titel: 'Kueche putzen',
+    beschreibung: 'Arbeitsflaechen reinigen und Muell rausbringen',
+    faelligkeitsdatum: '2026-05-22',
+    status: 'OFFEN',
   },
   {
     id: 'task-2',
-    title: 'Muellsaecke rausbringen',
-    assigneeName: 'Jonas',
-    dueDate: '2026-05-23',
-    status: 'open',
+    titel: 'Muellsaecke rausbringen',
+    beschreibung: 'Restmuell und Verpackungen in die Tonnen bringen',
+    faelligkeitsdatum: '2026-05-23',
+    status: 'OFFEN',
   },
   {
     id: 'task-3',
-    title: 'Bad kontrollieren',
-    assigneeName: 'Lea',
-    dueDate: '2026-05-20',
-    status: 'done',
+    titel: 'Bad kontrollieren',
+    beschreibung: 'Waschbecken, Dusche und Boden pruefen',
+    faelligkeitsdatum: '2026-05-20',
+    status: 'ERLEDIGT',
   },
 ]
 
@@ -55,10 +55,10 @@ export function createMockTaskGateway() {
 
       const createdTask = {
         id: crypto.randomUUID(),
-        title: input.title,
-        assigneeName: input.assigneeName,
-        dueDate: input.dueDate,
-        status: 'open',
+        titel: input.titel,
+        beschreibung: input.beschreibung,
+        faelligkeitsdatum: input.faelligkeitsdatum,
+        status: input.status,
       }
 
       const tasks = [createdTask, ...readTasks()]

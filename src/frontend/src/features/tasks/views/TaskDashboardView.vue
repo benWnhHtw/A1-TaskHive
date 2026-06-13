@@ -1,8 +1,8 @@
 <template>
   <section>
-    <h1>TaskHive Walking Skeleton</h1>
+    <h1>Aufgabenuebersicht</h1>
 
-    <TaskCreateForm @submit="createTask" />
+    <TaskForm :is-saving="isSaving" @submit="createTask" />
 
     <p v-if="isLoading">Aufgaben werden geladen...</p>
     <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
@@ -13,9 +13,9 @@
 </template>
 
 <script setup>
-import TaskCreateForm from '@/features/tasks/components/TaskCreateForm.vue'
+import TaskForm from '@/features/tasks/components/TaskForm.vue'
 import TaskList from '@/features/tasks/components/TaskList.vue'
 import { useTasks } from '@/features/tasks/composables/useTasks'
 
-const { tasks, isLoading, errorMessage, createTask, markTaskDone } = useTasks()
+const { tasks, isLoading, isSaving, errorMessage, createTask, markTaskDone } = useTasks()
 </script>

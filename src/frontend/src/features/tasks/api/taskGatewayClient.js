@@ -7,7 +7,7 @@ export function createTaskGatewayClient(apiGatewayUrl) {
     },
 
     createTask(input) {
-      return requestJson(apiGatewayUrl, '/tasks', {
+      return requestJson(apiGatewayUrl, '/task', {
         method: 'POST',
         body: input,
       })

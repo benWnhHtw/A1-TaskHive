@@ -5,6 +5,7 @@ import { apiGateway } from '@/core/api/apiGateway'
 export function useTasks() {
   const tasks = ref([])
   const isLoading = ref(false)
+  const isSaving = ref(false)
   const errorMessage = ref('')
 
   async function loadTasks() {
@@ -21,13 +22,21 @@ export function useTasks() {
   }
 
   async function createTask(input) {
+    isSaving.value = true
     errorMessage.value = ''
 
     try {
       const createdTask = await apiGateway.tasks.createTask(input)
-      tasks.value = [createdTask, ...tasks.value]
+      if (createdTask) {
+        tasks.value = [createdTask, ...tasks.value]
+      }
+
+      return true
     } catch {
       errorMessage.value = 'Aufgabe konnte nicht erstellt werden.'
+      return false
+    } finally {
+      isSaving.value = false
     }
   }
 
@@ -35,7 +44,7 @@ export function useTasks() {
     errorMessage.value = ''
 
     try {
-      const updatedTask = await apiGateway.tasks.updateTask(taskId, { status: 'done' })
+      const updatedTask = await apiGateway.tasks.updateTask(taskId, { status: 'ERLEDIGT' })
       tasks.value = tasks.value.map((task) => (task.id === taskId ? updatedTask : task))
     } catch {
       errorMessage.value = 'Aufgabe konnte nicht aktualisiert werden.'
@@ -47,6 +56,7 @@ export function useTasks() {
   return {
     tasks,
     isLoading,
+    isSaving,
     errorMessage,
     createTask,
     markTaskDone,

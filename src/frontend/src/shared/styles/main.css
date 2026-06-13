@@ -28,6 +28,15 @@ input {
   padding: 0.4rem;
 }
 
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin-top: 0.25rem;
+  padding: 0.4rem;
+  font: inherit;
+}
+
 button {
   padding: 0.4rem 0.7rem;
 }
@@ -62,4 +71,11 @@ button {
 
 .error {
   color: #a40000;
+}
+
+.field-error {
+  display: block;
+  margin-top: 0.25rem;
+  color: #a40000;
+  font-size: 0.9rem;
 }
