@@ -26,13 +26,13 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Simon Joel Rios Sanchez
 
 | Tech Lead 
-| Tim Besner
+| Astemir Sheriev
 
 | Entwickler:innen
 | Tim Besner, Sirri Metuge Menick Misode, Alina Petrenko, Konrad Arvid Bornstedt, Astemir Sheriev, Ranim Khour
 
 | Stakeholder (Hauptansprechpartner)
-| [Name]
+| Sofiia Khaleeva, Levin Grune, Joud Khatib, Junyan Wang, Constantin Francke, Antonio Albert
 |===
 
 

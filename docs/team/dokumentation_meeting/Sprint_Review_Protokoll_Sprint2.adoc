@@ -1,0 +1,80 @@
+= Sprint-Review-Protokoll: Sprint 2
+
+Team:: A1-TaskHive
+Sprint:: Sprint 2
+Datum:: 09.06.2026
+
+== Sprint-Ziel
+
+* Ziel: Der technische Ansatz für TaskHive sollte durch Architekturarbeit und einen Walking Skeleton validiert werden. Dabei sollte geklärt werden, ob der gewählte Technologie-Stack grundsätzlich für die weitere Produktentwicklung geeignet ist.
+* Status: weitgehend erreicht
+
+== Gezeigte Ergebnisse
+
+* Gezeigte Artefakte:
+** Architekturtreiber und zentrale Architekturentscheidungen
+** Technologie-Stack aus Vue.js, Spring Boot und PostgreSQL
+** C4-Sichten und dokumentierte Systemgrenzen
+** Architecture Decision Records (ADRs)
+** Lauffähiger Walking Skeleton des Frontends
+** Planung des ersten nützlichen MVP-Ausschnitts für Sprint 3
+
+* Technischer Stand des Walking Skeletons:
+** Der Walking Skeleton wurde im Review erfolgreich vorgeführt.
+** Das Frontend war lauffähig und verwendete zu diesem Zeitpunkt Mock-Daten.
+** Die vollständige Anbindung an das Spring-Boot-Backend und die Datenbank stand noch aus.
+
+* Links zu Nachweisen:
+** link:../../Sprint2_Report_ready.adoc[Sprint-2-Report]
+** link:../../technical/architecture.adoc[Architekturdokumentation und ADRs]
+** link:../../technical/design.adoc[Technisches Design]
+** link:../../technical/deployment.adoc[Deployment und Systemkontext]
+** link:../../../src/frontend/README.adoc[Frontend Walking Skeleton]
+
+== Feedback
+
+* Positiv:
+** Die Architekturentscheidungen wurden als schlüssig und nachvollziehbar bewertet.
+** Es bestand Verständnis dafür, dass aufgrund der technischen Randbedingungen nur wenige sinnvolle Alternativen zur Verfügung standen.
+** Der lauffähige Walking Skeleton machte den bisherigen technischen Fortschritt sichtbar.
+
+* Bedenken:
+** Im Wireframe ist der für Sprint 3 geplante MVP-Ausschnitt nicht klar erkennbar, da der Wireframe bereits den Umfang des gesamten geplanten Produkts darstellt.
+** Die technische Machbarkeit der vollständigen Ende-zu-Ende-Kommunikation muss noch durch die Anbindung des Frontends an Backend und Datenbank nachgewiesen werden.
+
+* Offene Fragen:
+** Wie wird der MVP-Ausschnitt in den Wireframes und im Product Backlog eindeutig vom späteren Gesamtprodukt abgegrenzt?
+
+
+== Entscheidungen
+
+* Zentrale Entscheidungen:
+** Die bisherigen Architekturentscheidungen und der gewählte Technologie-Stack werden beibehalten.
+** Astemir übernimmt aufgrund seiner technischen Expertise die Rolle des Technical Lead.
+** Das Entwicklungsteam teilt sich für Sprint 3 in einen Frontend- und einen Backend-Bereich auf.
+** Als erster MVP-Ausschnitt werden das Erstellen und Anzeigen von Aufgaben Ende-zu-Ende umgesetzt.
+
+* Wichtige Trade-offs:
+** Der Fokus liegt zunächst auf einer stabilen Kernfunktion statt auf dem vollständigen Funktionsumfang des Wireframes.
+** Frontend und Backend werden parallel entwickelt, benötigen aber klar abgestimmte Schnittstellen.
+** Mock-Daten ermöglichen eine frühe Frontend-Validierung, ersetzen jedoch nicht den Nachweis der vollständigen Systemintegration.
+
+== Nächste Schritte
+
+* Folgeaktionen:
+** Frontend an das Spring-Boot-Backend und die PostgreSQL-Datenbank anbinden
+** Gemeinsame REST-Schnittstellen und Datenstrukturen zwischen Frontend und Backend festlegen
+** Den MVP-Ausschnitt in Wireframes und Product Backlog klar kennzeichnen
+** Aufgaben entsprechend der Frontend- und Backend-Aufteilung verteilen
+** Architekturentscheidungen und technische Risiken bei neuen Erkenntnissen aktualisieren
+
+* Fokus für Sprint 3:
+** Eine erste fachlich nützliche Kernfunktion Ende-zu-Ende umsetzen
+** Das Erstellen und Anzeigen von Aufgaben mit realen Backend-Daten ermöglichen
+** Die Zusammenarbeit zwischen Frontend- und Backend-Team durch regelmäßige technische Abstimmungen koordinieren
+
+== Reflexion
+
+* Wichtigste Erkenntnis: Die Architekturentscheidungen sind nachvollziehbar und der Walking Skeleton bietet eine tragfähige Grundlage für die weitere Entwicklung.
+* Verbleibende Unsicherheit: Die vollständige Integration von Frontend, Backend und Datenbank wurde in Sprint 2 noch nicht praktisch nachgewiesen.
+* Verbesserung für Sprint 3: Der MVP-Umfang soll in den fachlichen und visuellen Artefakten klarer vom geplanten Gesamtprodukt abgegrenzt werden.
