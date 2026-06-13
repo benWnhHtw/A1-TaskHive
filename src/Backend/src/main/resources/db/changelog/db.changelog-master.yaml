@@ -1,2 +1,35 @@
 databaseChangeLog:
-  - changeset
+  - changeSet:
+      id: 2
+      author: Astemir Sheriev
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vorname
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: erreichbarkeit
+                  type: boolean
+              - column:
+                  name: age
+                  type: smallint
+              - column:
+                  type: bigint
+                  name: zimmerNr
+                  constraints:
+                    nullable: false
