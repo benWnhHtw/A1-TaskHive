@@ -29,6 +29,7 @@
     </scm>
     <properties>
         <java.version>21</java.version>
+        <openapi.generator.version>7.22.0</openapi.generator.version>
     </properties>
     <dependencies>
         <dependency>
@@ -101,6 +102,11 @@
             <version>1.5.5.Final</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>3.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -160,6 +166,44 @@
                                     <version>1.5.5.Final</version>
                                 </path>
                             </annotationProcessorPaths>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>${openapi.generator.version}</version>
+
+                <executions>
+                    <execution>
+                        <id>generate-openapi-models</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/resources/openapi/taskhive-api.yaml</inputSpec>
+                            <generatorName>spring</generatorName>
+
+                            <output>${project.build.directory}/generated-sources/openapi</output>
+
+                            <modelPackage>com.taskhive.backend.generated.model</modelPackage>
+                            <apiPackage>com.taskhive.backend.generated.api</apiPackage>
+
+                            <generateModels>true</generateModels>
+                            <generateApis>false</generateApis>
+                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <generateModelTests>false</generateModelTests>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+
+                            <configOptions>
+                                <library>spring-boot</library>
+                                <useBeanValidation>true</useBeanValidation>
+                                <openApiNullable>false</openApiNullable>
+
+                                <useSpringBoot4>true</useSpringBoot4>
+                            </configOptions>
                         </configuration>
                     </execution>
                 </executions>

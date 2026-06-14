@@ -1,10 +1,8 @@
 package com.taskhive.backend.controller;
 
-import com.taskhive.backend.dto.PersonDTO;
+import com.taskhive.backend.generated.model.PersonDTO;
 import com.taskhive.backend.service.PersonService;
-import jakarta.validation.Valid;
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,10 +10,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/person")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class PersonController {
 
-    @Autowired
     private final PersonService personService;
 
     @GetMapping()
@@ -29,9 +26,15 @@ public class PersonController {
     }
 
     @PostMapping
-    public ResponseEntity<PersonDTO> savePerson(@RequestBody @Valid PersonDTO person) {
-        PersonDTO personDTO = personService.createPerson(person);
-        return ResponseEntity.ok(personDTO);
+    public ResponseEntity<PersonDTO> savePerson(@RequestBody PersonDTO person) {
+        return ResponseEntity.ok(personService.createPerson(person));
     }
 
+    @PostMapping("/{personId}/aufgabe/{aufgabeId}")
+    public ResponseEntity<PersonDTO> addAufgabeToPerson(
+        @PathVariable Long personId,
+        @PathVariable Long aufgabeId
+    ) {
+        return ResponseEntity.ok(personService.addAufgabeToPerson(personId, aufgabeId));
+    }
 }

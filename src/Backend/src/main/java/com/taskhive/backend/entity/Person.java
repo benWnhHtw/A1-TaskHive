@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Setter
 @Getter
@@ -21,9 +24,12 @@ public class Person {
     @Column
     private Short age;
 
+    @ManyToMany(mappedBy = "personen")
+    private Set<Aufgabe> aufgaben = new HashSet<>();;
 
-    // TODO als FK
-    @Column(nullable = false)
-    private Long zimmerNr;
+
+    @OneToOne
+    @JoinColumn(name = "zimmer_id")
+    private Zimmer zimmer;
 
 }
