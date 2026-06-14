@@ -1,3 +1,5 @@
+import { findMockPerson } from '@/mocks/personGatewayMock'
+
 const STORAGE_KEY = 'taskhive.tasks'
 
 const seedTasks = [
@@ -53,10 +55,17 @@ export function createMockTaskGateway() {
     async createTask(input) {
       await waitForMockLatency()
 
+      const assignee = findMockPerson(input.personId)
+
+      if (!assignee) {
+        throw new Error('Person not found')
+      }
+
       const createdTask = {
         id: crypto.randomUUID(),
         title: input.title,
-        assigneeName: input.assigneeName,
+        personId: assignee.id,
+        assigneeName: `${assignee.vorname} ${assignee.name}`,
         dueDate: input.dueDate,
         status: 'open',
       }

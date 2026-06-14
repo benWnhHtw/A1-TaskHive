@@ -23,25 +23,25 @@ Technische Implementierungsdetails gehören nicht hierher!
 | Wohngemeinschaft, in der mehrere Personen gemeinsam wohnen und Haushaltsaufgaben koordinieren müssen.
 | Wohngruppe
 
-| Kritisch
-| Eine Bewertunsstufe über Hoch. Niedrig, Mittel, Hoch, Kritisch
-| Sehr Hoch
+| Nutzer
+| Person, die die Anwendung verwendet und Aufgaben verwalten oder erledigen kann.
+| Mitglied, Benutzer
 
 | Aufgabe
-| Konkrete Tätigkeit im WG-Alltag, die erledigt werden muss, z. B. Putzen, Müll rausbringen oder Einkaufen.
+| Tätigkeit innerhalb der WG, die erledigt werden muss.
 | To-Do, Haushaltstask
 
 | Wiederkehrende Aufgabe
 | Aufgabe, die regelmäßig erneut anfällt, z. B. wöchentliches Badputzen.
 | Routineaufgabe
 
-| Deadline
-| Zeitpunkt, bis zu dem eine Aufgabe erledigt sein soll.
-| Fälligkeitsdatum, Frist
+| Temporäre Aufgabe
+| Aufgabe, die speziell im Zusammenhang mit einem Besuch oder einem einmaligen Ereignis erstellt wird.
+| Anlassbezogene Aufgabe, Besuchsaufgabe
 
-| Überfällige Aufgabe
-| Aufgabe, deren Deadline überschritten wurde und die noch nicht erledigt ist.
-| Verspätete Aufgabe
+| Aufgabenliste
+| Übersicht aller offenen und erledigten Aufgaben.
+| To-Do-Liste
 
 | Aufgabenübersicht
 | Ansicht, in der offene, erledigte und ggf. überfällige Aufgaben sichtbar sind.
@@ -51,25 +51,33 @@ Technische Implementierungsdetails gehören nicht hierher!
 | Festlegung, welche Person für welche Aufgabe verantwortlich ist.
 | Zuständigkeit, Verantwortlichkeit
 
-| Rotationssystem
-| Regel, nach der wiederkehrende Aufgaben fair zwischen WG-Mitgliedern wechseln.
-| Wechselprinzip, Aufgabenrotation
+| Deadline
+| Zeitpunkt, bis wann eine Aufgabe erledigt werden soll.
+| Frist, Fälligkeitsdatum
 
-| Verfügbarkeit
-| Angabe, wann ein WG-Mitglied Zeit hat oder Aufgaben übernehmen kann.
-| Zeitfenster
-
-| Abwesenheit
-| Zeitraum, in dem ein WG-Mitglied nicht verfügbar ist, z. B. wegen Urlaub.
-| Urlaub, Nichtverfügbarkeit
+| Überfällige Aufgabe
+| Aufgabe, deren Deadline überschritten wurde und die noch nicht erledigt ist.
+| Verspätete Aufgabe
 
 | Erinnerung
 | Hinweis an Nutzer:innen, dass eine Aufgabe bald fällig oder bereits überfällig ist.
 | Benachrichtigung, Reminder
 
-| WG-Kalender
-| Kalenderansicht für gemeinsame Termine, Aufgaben, Deadlines und Abwesenheiten.
-| Haushaltskalender
+| Benachrichtigung
+| Nachricht über Änderungen oder Aufgaben.
+| Hinweis
+
+| Kommentar
+| Nachricht oder Hinweis zu einer Aufgabe.
+| Notiz, Rückmeldung
+
+| Rotationssystem
+| Aufgaben wechseln automatisch zwischen den WG-Mitgliedern, damit die Aufgaben fair verteilt werden.
+| Aufgabenrotation, Wechselprinzip
+
+| Punktesystem
+| Nutzer bekommen Punkte, wenn sie Aufgaben erledigen.
+| Belohnungssystem
 
 | Punkte
 | Belohnungseinheit, die Nutzer:innen für erledigte Aufgaben erhalten können.
@@ -79,27 +87,45 @@ Technische Implementierungsdetails gehören nicht hierher!
 | Einsatz spielerischer Elemente wie Punkte oder Fortschritt, um Motivation zu erhöhen.
 | Motivationselemente
 
+| Synchronisation
+| Aktualisierung von Daten auf mehreren Geräten.
+| Datenabgleich
+
+| Einladung
+| Möglichkeit, neue Nutzer zur WG hinzuzufügen.
+| Einladungscode, Beitritt
+
+| Offline-Modus
+| Nutzung der App ohne aktive Internetverbindung.
+| Offline-Nutzung
+
+| Verfügbarkeit
+| Angabe, wann ein WG-Mitglied Zeit hat oder Aufgaben übernehmen kann.
+| Zeitfenster
+
+| Abwesenheit
+| Zeitraum, in dem ein WG-Mitglied nicht verfügbar ist, z. B. wegen Urlaub.
+| Urlaub, Nichtverfügbarkeit
+
+| WG-Kalender
+| Kalenderansicht für gemeinsame Termine, Aufgaben, Deadlines und Abwesenheiten.
+| Haushaltskalender
+
 | Statistik
 | Auswertung, die zeigt, wie Aufgaben innerhalb der WG verteilt oder erledigt wurden.
 | Auswertung, Aufgabenanalyse
 
 | Kollaborative To-Do-Liste
 | Gemeinsame Aufgabenliste, die von mehreren Personen gleichzeitig genutzt, bearbeitet und aktualisiert werden kann.
-| Gemeinsame Aufgabenliste, Shared To-Do; abzugrenzen von persönlicher Einzelaufgabenliste
+| Gemeinsame Aufgabenliste, Shared To-Do
 
 | Familie
-| Nutzergruppe innerhalb von TaskHive, die aus mehreren miteinander verbundenen Personen besteht und gemeinsame Aufgaben, Termine oder Verantwortlichkeiten organisiert.
-| Familiengruppe, Haushalt; ähnlich WG, jedoch stärker auf familiäre Alltagsorganisation ausgerichtet
+| Nutzergruppe innerhalb von TaskHive, die gemeinsame Aufgaben, Termine oder Verantwortlichkeiten organisiert.
+| Familiengruppe, Haushalt
 
 | Besucher:in
-| Externe Person, die zeitweise Zugang zu bestimmten Informationen oder Aufgaben einer Familie/WG erhalten kann, ohne vollwertiges Mitglied zu sein.
+| Externe Person, die zeitweise Zugang zu bestimmten Informationen oder Aufgaben erhalten kann.
 | Gast, Besuchsperson
-
-| Temporäre Aufgabe
-| Aufgabe, die speziell im Zusammenhang mit einem Besuch oder einem einmaligen Ereignis erstellt wird.
-| Anlassbezogene Aufgabe, Besuchsaufgabe
-|===
-
 
 == Domänenmodell
 
@@ -113,26 +139,30 @@ Es beschreibt die Realität des Problemraums, nicht die Datenbankstruktur._
 [plantuml, domain-model, svg]
 ....
 @startuml
-' Beispiel — bitte durch das echte Domänenmodell ersetzen
 
 entity Nutzer {
   Name
-  E-Mail
+  Verfügbarkeit
 }
 
-entity Bestellung {
-  Bestellnummer
-  Datum
+entity WG {
+  Name
+}
+
+entity Aufgabe {
+  Titel
+  Deadline
   Status
 }
 
-entity Produkt {
-  Bezeichnung
-  Preis
+entity Erinnerung {
+  Zeitpunkt
 }
 
-Nutzer "1" --> "0..*" Bestellung : gibt auf
-Bestellung "1" --> "1..*" Produkt : enthält
+WG "1" --> "1..*" Nutzer : besteht aus
+Nutzer "1" --> "0..*" Aufgabe : erledigt
+Aufgabe "1" --> "0..1" Erinnerung : hat
+Aufgabe "0..*" --> "1" WG : gehört zu
 
 @enduml
 ....
@@ -149,16 +179,17 @@ Kurze Erläuterung zu den im Modell enthaltenen Entitäten.
 | Entität | Beschreibung
 
 | Nutzer
-| [Beschreibung der Entität und ihrer Rolle im System]
+| Person, die die Anwendung verwendet und Aufgaben erstellen, bearbeiten oder erledigen kann.
 
-| Bestellung
-| [Beschreibung der Entität und ihrer Rolle im System]
+| WG
+| Gruppe von Nutzern, die gemeinsam Aufgaben und Termine organisieren.
 
-| Produkt
-| [Beschreibung der Entität und ihrer Rolle im System]
+| Aufgabe
+| Tätigkeit innerhalb der WG, die erledigt werden muss.
 
-| [Weitere Entität]
-| [Beschreibung]
+| Erinnerung
+| Benachrichtigung für anstehende oder überfällige Aufgaben.
+
 |===
 
 === Beschreibung der Beziehungen
@@ -169,20 +200,25 @@ Beschreibung der wichtigsten Beziehungen zwischen den Entitäten, sofern diese b
 |===
 | Von | Zu | Kardinalität | Bedeutung
 
+| WG
 | Nutzer
-| Bestellung
-| 1 zu 0..*
-| Ein Nutzer kann keine oder mehrere Bestellungen aufgeben.
-
-| Bestellung
-| Produkt
 | 1 zu 1..*
-| Eine Bestellung enthält mindestens ein Produkt.
+| Eine WG besteht aus mindestens einem Nutzer.
 
-| [Entität]
-| [Entität]
-| [z. B. 0..* zu 1]
-| [Beschreibung der Beziehung in natürlicher Sprache]
+| Nutzer
+| Aufgabe
+| 1 zu 0..*
+| Ein Nutzer kann mehrere Aufgaben erledigen.
+
+| Aufgabe
+| Erinnerung
+| 1 zu 0..1
+| Eine Aufgabe kann eine Erinnerung besitzen.
+
+| Aufgabe
+| WG
+| 0..* zu 1
+| Aufgaben gehören immer genau zu einer WG.
 |===
 
 _Dieses Dokument wird kontinuierlich gepflegt. Änderungen an Fachbegriffen oder Beziehungen

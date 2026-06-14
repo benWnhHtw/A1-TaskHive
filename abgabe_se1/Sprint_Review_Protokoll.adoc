@@ -1,0 +1,89 @@
+// Kurzer Kontext zur Einordnung des Reviews.
+Team:: A1-TaskHive
+Sprint:: Sprint Review
+Datum:: 12.05.2026
+
+// Das Sprint-Ziel soll in einem Satz benannt werden.
+// Es beschreibt, was im Sprint erreicht oder validiert werden sollte.
+
+== Sprint-Ziel
+* Ziel: Im Sprint 1 sollte ein gemeinsames Verständnis für das Produkt TaskHive geschaffen und erste fachliche sowie konzeptionelle Grundlagen validiert werden.
+* Status: Teilweise erreicht
+
+// Hier nur die wichtigsten Ergebnisse des Reviews festhalten.
+// "Artefakte" können z. B. ein Produktinkrement, Wireframes, Architekturentwürfe, Modelle, Produktvision
+// oder andere überprüfte Ergebnisse sein.
+== Gezeigte Ergebnisse
+* Gezeigte Artefakte:
+** Produktvision und Produktkonzept
+** Erste Wireframes und Wireflow (Issue 34)
+** Erste Architekturüberlegungen
+** User Stories und Product Backlog
+** Erste Überlegungen zu Qualitätsanforderungen und Randbedingungen
+
+* Links zu Nachweisen:
+** GitHub Issues und Project Board
+** Wireframes in Miro
+** Produktkonzept im Repository
+** Erste Architekturentwürfe im technischen Dokument
+
+// Feedback möglichst knapp und konkret dokumentieren.
+// Positiv = was überzeugt hat
+// Bedenken = was problematisch, unklar oder riskant erschien
+// Offene Fragen = was noch geklärt werden muss
+== Feedback
+* Positiv:
+** Die Produktidee wurde als alltagsnah und sinnvoll eingeschätzt.
+** Die Wireframes waren verständlich und haben den Bestellablauf gut dargestellt.
+** Die User Stories waren in weiten Teilen nachvollziehbar und passend zur Persona.
+** Das Team konnte die Grundidee des Systems klar erklären.
+
+* Bedenken:
+** Einige User Stories waren noch zu groß und müssen weiter präzisiert werden.
+** Die Abgrenzung zwischen Hauptfunktion, Epic und User Story war nicht immer eindeutig.
+** Technische Entscheidungen waren noch nicht ausreichend begründet.
+** Manche Akzeptanzkriterien waren noch zu allgemein formuliert.
+
+* Offene Fragen:
+** Welche Funktionen gehören wirklich zum MVP und welche erst zu späteren Ausbaustufen?
+** Wie soll die Rollenverteilung im Team in den nächsten Sprintphasen noch klarer organisiert werden?
+** Welche technischen Dienste sind für die Umsetzung zuerst wirklich notwendig?
+** Wie kann die Priorisierung im Backlog noch klarer und realistischer gemacht werden?
+
+// Nur die wichtigsten Entscheidungen und Zielkonflikte aufnehmen.
+// Beispiele für Trade-off: schnellere Umsetzung vs. saubere Architektur oder besonders ausgefallene Features vs. solide Umsetzung von Basisfunktionen
+== Entscheidungen
+* Zentrale Entscheidung(en):
+** Das Team konzentriert sich im nächsten Sprint stärker auf die technische Machbarkeit und die Architekturgrundlagen.
+** Das Product Backlog wird überarbeitet und um präzisere technische und fachliche Einträge ergänzt.
+** Für die weitere Arbeit wird das Pull-Prinzip bei Issues genutzt, damit die Aufgabenverteilung transparenter wird.
+
+* Wichtige Trade-offs:
+** Zunächst Fokus auf klare Grundfunktionen statt auf zusätzliche Komfortfunktionen.
+** Lieber einfache und verständliche Lösungen als zu komplexe technische Ansätze.
+** Erst saubere fachliche und technische Grundlage, danach Ausbau weiterer Features.
+
+// Konkrete nächste Schritte notieren.
+// Fokus = worauf sich das Team im nächsten Sprint besonders konzentrieren will
+== Nächste Schritte
+* Folgeaktionen:
+** Product Backlog überarbeiten und User Stories weiter verfeinern
+** Technische Dienste und Architekturtreiber identifizieren
+** Erste ADRs vorbereiten
+** Glossar und Domänenmodell weiter ausarbeiten
+** Offene Fragen aus dem Review im Team klären
+** Wireframes und Akzeptanzkriterien an das Feedback anpassen
+
+* Fokus für den nächsten Sprint:
+** Technischen Ansatz besser verstehen und dokumentieren
+** Mehr Klarheit bei Technologie-Stack und Architektur schaffen
+** Die Ergebnisse aus dem Review gezielt für Sprint 2 nutzen
+** Zusammenarbeit im Team strukturierter organisieren
+
+// Was haben wir gelernt?
+== Reflexion
+- Wichtigste Erkenntnis: Teamkommunikation und eine klare Aufgabenverteilung sind entscheidend für den Fortschritt im Projekt.
+- Größte Überraschung: Die unterschiedlichen Ideen und Perspektiven im Team haben zu besseren Ergebnissen geführt als erwartet.
+- Was wir verbessern wollen: Wir möchten im nächsten Sprint präziser arbeiten, technische Entscheidungen besser begründen und das Backlog strukturierter pflegen.
+
+-probe

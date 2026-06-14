@@ -104,3 +104,29 @@ databaseChangeLog:
                   referencedTableName: aufgabe
                   referencedColumnNames: id
                   constraintName: fk_person_aufgabe_aufgabe
+                    # Zimmer Tabelle
+  - changeSet:
+      id: 5
+      author: Sirri Metuge
+      changes:
+        - createTable:
+            tableName: zimmer
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: zimmer_nr
+                  type: INT
+
+              - column:
+                  name: person_id
+                  type: BIGINT
+
+              - column:
+                  name: wg_nr
+                  type: BIGINT
