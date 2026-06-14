@@ -6,6 +6,7 @@ function normalizeTask(task, fallback = {}) {
   return {
     id: task.id,
     title: task.title ?? task.titel,
+    description: task.description ?? task.beschreibung ?? fallback.description ?? '',
     dueDate: task.dueDate ?? task.faelligkeitsdatum,
     status: (task.status ?? 'OFFEN').toLowerCase() === 'erledigt' ? 'done' : 'open',
     personId: task.personId ?? assignedPerson?.id ?? fallback.personId,

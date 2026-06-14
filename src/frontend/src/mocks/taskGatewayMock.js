@@ -6,6 +6,7 @@ const seedTasks = [
   {
     id: 'task-1',
     title: 'Kueche putzen',
+    description: 'Arbeitsflaechen reinigen und Muell rausbringen',
     assigneeName: 'Mira',
     dueDate: '2026-05-22',
     status: 'open',
@@ -13,6 +14,7 @@ const seedTasks = [
   {
     id: 'task-2',
     title: 'Muellsaecke rausbringen',
+    description: 'Restmuell vor die Haustuer stellen',
     assigneeName: 'Jonas',
     dueDate: '2026-05-23',
     status: 'open',
@@ -20,6 +22,7 @@ const seedTasks = [
   {
     id: 'task-3',
     title: 'Bad kontrollieren',
+    description: 'Waschbecken und Spiegel pruefen',
     assigneeName: 'Lea',
     dueDate: '2026-05-20',
     status: 'done',
@@ -64,6 +67,7 @@ export function createMockTaskGateway() {
       const createdTask = {
         id: crypto.randomUUID(),
         title: input.title,
+        description: input.description ?? '',
         personId: assignee.id,
         assigneeName: `${assignee.vorname} ${assignee.name}`,
         dueDate: input.dueDate,
