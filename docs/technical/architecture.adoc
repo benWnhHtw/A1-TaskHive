@@ -114,6 +114,33 @@ Rel(personAlias, containerAlias, "Label", "Optional Technology")
 === Verteilungsdiagramm (Deployment Diagramm)
 //Beschreibt die physischen Knoten (Rechner) des Systems und Komponenten, die in diesen Knoten ausgeführt werden.
 
+[plantuml]
+....
+@startuml
+
+node "Client-PC" {
+    artifact "Webbrowser"
+    artifact "Vue.js Frontend (Browser)"
+}
+
+node "Smartphone" {
+    artifact "Mobile Browser"
+    artifact "Vue.js Frontend (Mobile)"
+}
+
+node "Application Server" {
+    artifact "Java 21"
+    artifact "Spring Boot Backend"
+}
+
+database "PostgreSQL" as DB
+
+"Vue.js Frontend (Browser)" --> "Spring Boot Backend" : REST API\nHTTP + JSON
+"Vue.js Frontend (Mobile)" --> "Spring Boot Backend" : REST API\nHTTP + JSON
+"Spring Boot Backend" --> DB : SQL
+
+@enduml
+....
 
 == Technologie-Stack
 
