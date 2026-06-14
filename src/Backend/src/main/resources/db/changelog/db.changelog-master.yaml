@@ -34,9 +34,79 @@ databaseChangeLog:
                   constraints:
                     nullable: false
 
+
+  - changeSet:
+        id: 3
+        author: Alina Petrenko
+        changes:
+            - createTable:
+                  tableName: aufgabe
+                  columns:
+                      - column:
+                            name: id
+                            type: BIGINT
+                            constraints:
+                                primaryKey: true
+                                nullable: false
+
+                      - column:
+                            name: titel
+                            type: VARCHAR(255)
+                            constraints:
+                                nullable: false
+
+                      - column:
+                            name: beschreibung
+                            type: VARCHAR(500)
+
+                      - column:
+                            name: faelligkeitsdatum
+                            type: date
+
+                      - column:
+                            name: status
+                            type: VARCHAR(50)
+                            constraints:
+                                nullable: false
+
+
+  - changeSet:
+        id: 4
+        author: Alina Petrenko
+
+        changes:
+            - createTable:
+                  tableName: person_aufgabe
+
+                  columns:
+                      - column:
+                            name: person_id
+                            type: BIGINT
+                            constraints:
+                                nullable: false
+
+                      - column:
+                            name: aufgabe_id
+                            type: BIGINT
+                            constraints:
+                                nullable: false
+
+            - addForeignKeyConstraint:
+                  baseTableName: person_aufgabe
+                  baseColumnNames: person_id
+                  referencedTableName: person
+                  referencedColumnNames: id
+                  constraintName: fk_person_aufgabe_person
+
+            - addForeignKeyConstraint:
+                  baseTableName: person_aufgabe
+                  baseColumnNames: aufgabe_id
+                  referencedTableName: aufgabe
+                  referencedColumnNames: id
+                  constraintName: fk_person_aufgabe_aufgabe
                     # Zimmer Tabelle
   - changeSet:
-      id: 3
+      id: 5
       author: Sirri Metuge
       changes:
         - createTable:
