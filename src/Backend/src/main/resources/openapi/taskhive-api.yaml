@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+    title: TaskHive API
+    version: 1.0.0
+
+paths: {}
+
+components:
+    schemas:
+
+        PersonDTO:
+            type: object
+            required:
+                - name
+                - vorname
+                - erreichbarkeit
+                - age
+                - zimmerId
+            properties:
+                id:
+                    type: integer
+                    format: int64
+
+                name:
+                    type: string
+                    minLength: 1
+                    example: Sheriev
+
+                vorname:
+                    type: string
+                    minLength: 1
+                    example: Astemir
+
+                erreichbarkeit:
+                    type: boolean
+                    example: true
+
+                age:
+                    type: integer
+                    format: int32
+                    minimum: 0
+                    example: 22
+
+                zimmerId:
+                    type: integer
+                    format: int64
+                    example: 1
+
+                aufgabeIds:
+                    type: array
+                    uniqueItems: true
+                    items:
+                        type: integer
+                        format: int64
+                    example: [1, 2, 3]
+
+
+        AufgabeDTO:
+            type: object
+            required:
+                - titel
+                - faelligkeitsdatum
+                - status
+            properties:
+                id:
+                    type: integer
+                    format: int64
+
+                titel:
+                    type: string
+                    minLength: 1
+                    example: Küche putzen
+
+                beschreibung:
+                    type: string
+                    example: Boden wischen und Müll rausbringen
+
+                faelligkeitsdatum:
+                    type: string
+                    format: date
+                    example: 2026-06-20
+
+                status:
+                    type: string
+                    minLength: 1
+                    example: OFFEN
+
+                personIds:
+                    type: array
+                    uniqueItems: true
+                    items:
+                        type: integer
+                        format: int64
+                    example: [1, 2]
+
+
+        ZimmerDTO:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    format: int64
+
+                zimmerNr:
+                    type: integer
+                    format: int32
+                    example: 101
+
+                wgNr:
+                    type: integer
+                    format: int64
+                    example: 1
+
+                personId:
+                    type: integer
+                    format: int64
+                    example: 1

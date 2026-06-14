@@ -17,9 +17,9 @@ public class Zimmer {
     @Column(name = "zimmer_nr")
     private Integer zimmerNr;
 
-    @Column(name = "person_id")
-    private Long personId;
-
     @Column(name = "wg_nr")
     private Long wgNr;
+
+    @OneToOne(mappedBy = "zimmer")
+    private Person person;
 }

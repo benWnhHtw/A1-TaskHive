@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -28,12 +29,11 @@ public class Aufgabe {
     @Column(nullable = false)
     private String status;
 
-    // Many-to-Many Beziehung zu Person
     @ManyToMany
     @JoinTable(
         name = "person_aufgabe",
         joinColumns = @JoinColumn(name = "aufgabe_id"),
         inverseJoinColumns = @JoinColumn(name = "person_id")
     )
-    private Set<Person> personen;
+    private Set<Person> personen = new HashSet<>();
 }
