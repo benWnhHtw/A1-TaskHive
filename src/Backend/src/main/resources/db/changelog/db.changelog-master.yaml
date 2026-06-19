@@ -130,3 +130,20 @@ databaseChangeLog:
               - column:
                   name: wg_nr
                   type: BIGINT
+  - changeSet:
+        id: 6
+        author: Astemir Sheriev
+        changes:
+
+            - renameColumn:
+                  tableName: person
+                  oldColumnName: zimmerNr
+                  newColumnName: zimmer_id
+                  columnDataType: BIGINT
+
+            - addForeignKeyConstraint:
+                  baseTableName: person
+                  baseColumnNames: zimmer_id
+                  referencedTableName: zimmer
+                  referencedColumnNames: id
+                  constraintName: fk_person_zimmer
