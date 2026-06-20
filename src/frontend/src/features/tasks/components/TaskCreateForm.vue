@@ -1,12 +1,12 @@
 <template>
   <form class="task-form" @submit.prevent="submitTask">
     <div class="form-grid">
-      <label>
+      <label class="field">
         Aufgabe
         <input v-model.trim="form.title" required placeholder="z. B. Kueche putzen" />
       </label>
 
-      <label>
+      <label class="field field-wide">
         Beschreibung
         <textarea
           v-model.trim="form.description"
@@ -21,7 +21,7 @@
         :persons="persons"
       />
 
-      <label>
+      <label class="field">
         Faellig am
         <input v-model="form.dueDate" required type="date" />
       </label>

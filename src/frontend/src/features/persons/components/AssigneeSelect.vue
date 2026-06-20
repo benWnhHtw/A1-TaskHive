@@ -1,5 +1,5 @@
 <template>
-  <label>
+  <label class="field">
     Verantwortlich
     <select
       :value="modelValue"
