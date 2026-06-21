@@ -7,27 +7,53 @@ const seedTasks = [
     id: 'task-1',
     title: 'Kueche putzen',
     description: 'Arbeitsflaechen reinigen und Muell rausbringen',
-    assigneeName: 'Mira',
+    personId: 1,
+    assigneeName: 'Mira Mustermann',
     dueDate: '2026-05-22',
     status: 'open',
+    rotationAktiv: false,
+    wiederholungsIntervall: '',
+    rotationsPersonIds: [],
   },
   {
     id: 'task-2',
     title: 'Muellsaecke rausbringen',
     description: 'Restmuell vor die Haustuer stellen',
-    assigneeName: 'Jonas',
+    personId: 2,
+    assigneeName: 'Jonas Becker',
     dueDate: '2026-05-23',
     status: 'open',
+    rotationAktiv: false,
+    wiederholungsIntervall: '',
+    rotationsPersonIds: [],
   },
   {
     id: 'task-3',
     title: 'Bad kontrollieren',
     description: 'Waschbecken und Spiegel pruefen',
-    assigneeName: 'Lea',
+    personId: 3,
+    assigneeName: 'Lea Schulz',
     dueDate: '2026-05-20',
     status: 'done',
+    rotationAktiv: false,
+    wiederholungsIntervall: '',
+    rotationsPersonIds: [],
   },
 ]
+
+function normalizeTask(task) {
+  const assignee = findMockPerson(task.personId)
+
+  if (assignee) {
+    return {
+      ...task,
+      personId: assignee.id,
+      assigneeName: `${assignee.vorname} ${assignee.name}`,
+    }
+  }
+
+  return task
+}
 
 function readTasks() {
   const storedTasks = localStorage.getItem(STORAGE_KEY)
@@ -37,7 +63,7 @@ function readTasks() {
     return seedTasks
   }
 
-  return JSON.parse(storedTasks)
+  return JSON.parse(storedTasks).map((task) => normalizeTask(task))
 }
 
 function writeTasks(tasks) {
@@ -72,6 +98,9 @@ export function createMockTaskGateway() {
         assigneeName: `${assignee.vorname} ${assignee.name}`,
         dueDate: input.dueDate,
         status: 'open',
+        rotationAktiv: Boolean(input.rotationAktiv),
+        wiederholungsIntervall: input.rotationAktiv ? input.wiederholungsIntervall : '',
+        rotationsPersonIds: input.rotationAktiv ? (input.rotationsPersonIds ?? []) : [],
       }
 
       const tasks = [createdTask, ...readTasks()]

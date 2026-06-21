@@ -10,6 +10,9 @@ function normalizeTask(task, fallback = {}) {
     dueDate: task.dueDate ?? task.faelligkeitsdatum,
     status: (task.status ?? 'OFFEN').toLowerCase() === 'erledigt' ? 'done' : 'open',
     personId: task.personId ?? assignedPerson?.id ?? fallback.personId,
+    rotationAktiv: task.rotationAktiv ?? fallback.rotationAktiv ?? false,
+    wiederholungsIntervall: task.wiederholungsIntervall ?? fallback.wiederholungsIntervall ?? '',
+    rotationsPersonIds: task.rotationsPersonIds ?? fallback.rotationsPersonIds ?? [],
     assigneeName:
       task.assigneeName ??
       (assignedPerson ? `${assignedPerson.vorname} ${assignedPerson.name}` : fallback.assigneeName),
@@ -24,15 +27,23 @@ export function createTaskGatewayClient(apiGatewayUrl) {
     },
 
     async createTask(input) {
+      const requestBody = {
+        titel: input.title,
+        beschreibung: input.description ?? '' ,
+        faelligkeitsdatum: input.dueDate,
+        status: 'OFFEN',
+        personId: input.personId,
+        rotationAktiv: Boolean(input.rotationAktiv),
+      }
+
+      if (input.rotationAktiv) {
+        requestBody.wiederholungsIntervall = input.wiederholungsIntervall
+        requestBody.rotationsPersonIds = input.rotationsPersonIds ?? []
+      }
+
       const createdTask = await requestJson(apiGatewayUrl, '/task', {
         method: 'POST',
-        body: {
-          titel: input.title,
-          beschreibung: input.description ?? '',
-          faelligkeitsdatum: input.dueDate,
-          status: 'OFFEN',
-          personId: input.personId,
-        },
+        body: requestBody,
       })
 
       return normalizeTask(createdTask, input)
