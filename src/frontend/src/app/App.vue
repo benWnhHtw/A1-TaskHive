@@ -1,9 +1,9 @@
 <template>
   <main>
-    <TaskDashboardView />
+    <RouterView />
   </main>
 </template>
 
 <script setup>
-import TaskDashboardView from '@/features/tasks/views/TaskDashboardView.vue'
+import { RouterView } from 'vue-router'
 </script>

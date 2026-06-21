@@ -20,6 +20,11 @@ label {
   margin-bottom: 0.75rem;
 }
 
+.hint {
+  color: #555;
+  font-size: 0.9rem;
+}
+
 input,
 select {
   display: block;
@@ -69,4 +74,73 @@ select:disabled {
 
 .error {
   color: #a40000;
+}
+
+.rotation-settings,
+.multi-person-select {
+  margin-top: 1rem;
+}
+
+.multi-person-select__header {
+  margin-bottom: 0.75rem;
+}
+
+.multi-person-select__layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.multi-person-select__available,
+.multi-person-select__order {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+}
+
+.multi-person-select__available {
+  min-width: 0;
+}
+
+.multi-person-select__option {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.multi-person-select__option input {
+  width: auto;
+  margin: 0;
+}
+
+.multi-person-select__order-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.multi-person-select__order-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.multi-person-select__order-item {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.multi-person-select__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+@media (min-width: 760px) {
+  .multi-person-select__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
 }

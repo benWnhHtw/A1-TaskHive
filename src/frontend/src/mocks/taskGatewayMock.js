@@ -10,6 +10,9 @@ const seedTasks = [
     assigneeName: 'Mira',
     dueDate: '2026-05-22',
     status: 'open',
+    rotationAktiv: false,
+    wiederholungsIntervall: '',
+    rotationsPersonIds: [],
   },
   {
     id: 'task-2',
@@ -18,6 +21,9 @@ const seedTasks = [
     assigneeName: 'Jonas',
     dueDate: '2026-05-23',
     status: 'open',
+    rotationAktiv: false,
+    wiederholungsIntervall: '',
+    rotationsPersonIds: [],
   },
   {
     id: 'task-3',
@@ -26,6 +32,9 @@ const seedTasks = [
     assigneeName: 'Lea',
     dueDate: '2026-05-20',
     status: 'done',
+    rotationAktiv: false,
+    wiederholungsIntervall: '',
+    rotationsPersonIds: [],
   },
 ]
 
@@ -72,6 +81,9 @@ export function createMockTaskGateway() {
         assigneeName: `${assignee.vorname} ${assignee.name}`,
         dueDate: input.dueDate,
         status: 'open',
+        rotationAktiv: Boolean(input.rotationAktiv),
+        wiederholungsIntervall: input.rotationAktiv ? input.wiederholungsIntervall : '',
+        rotationsPersonIds: input.rotationAktiv ? (input.rotationsPersonIds ?? []) : [],
       }
 
       const tasks = [createdTask, ...readTasks()]
