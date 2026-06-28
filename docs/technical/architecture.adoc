@@ -93,7 +93,7 @@ Diese Sicht gibt an, welche Umgebungen für den Code vorgesehen sind, z.B. JVM, 
 title TaskHive - Container-Diagramm
 
 Person(user, "Benutzer", "Nutzt das System über Browser/Mobilgerät")
-Person(admin, "Administrator", "Verwaltet Systemeinstellungen")
+
 
 System_Boundary(taskhive, "TaskHive System") {
 
@@ -103,19 +103,15 @@ System_Boundary(taskhive, "TaskHive System") {
 
     ContainerDb(database, "Datenbank", "PostgreSQL", "Speichert Benutzer, Aufgaben und Zeitpläne")
 
-    Container(email, "E-Mail-Dienst", "SMTP", "Sendet Benachrichtigungen")
-
-    Container(auth, "Authentifizierung", "LDAP / OAuth2", "Verwaltet Anmeldung und Identität")
+    
 }
 
 Rel(user, frontend, "Nutzt", "HTTPS")
-Rel(admin, frontend, "Verwaltet", "HTTPS")
+
 
 Rel(frontend, backend, "API-Aufrufe", "REST / JSON")
 
 Rel(backend, database, "Liest / Schreibt", "SQL")
-Rel(backend, email, "Sendet E-Mails", "SMTP")
-Rel(backend, auth, "Authentifiziert Benutzer", "LDAP/OAuth2")
 
 @enduml
 ...
