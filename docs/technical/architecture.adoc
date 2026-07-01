@@ -29,33 +29,24 @@ _Der Systemkontext zeigt das System als Ganzes in seiner Umgebung: welche extern
 [plantuml, "{diagramsdir}/system-context", svg]
 ....
 @startuml
-' source: https://github.com/plantuml-stdlib/C4-PlantUML
-' C4 Model
-!include <c4/C4_Context.puml>
+title System Context Diagram – TaskHive
 
-' Images
-!include <office/Users/user.puml>
-!include <office/Users/mobile_user.puml>
+actor "Peter Mueller\nWG-Bewohner" as peter
+actor "Lisa Meier\nWG-Chefin" as lisa
 
-LAYOUT_WITH_LEGEND()
+rectangle "TaskHive\nKollaborative To-Do-Liste für WGs" as system
 
-title System Context Diagram – [Systemname]
+database "PostgreSQL\nDatenbank" as db
 
-Person(user, "Nutzer:in", "Verwendet das System über Web oder Mobile")
-Person(admin, "Administrator:in", "Verwaltet und konfiguriert das System")
+rectangle "E-Mail-Server\nBenachrichtigungen" as mail
 
-System(system, "[Systemname]", "Kernfunktionalität des Systems")
+rectangle "Authentifizierung\nSpring Security" as auth
 
-SystemDb(db, "Datenbank", "Persistente Datenhaltung des Systems")
-
-System_Ext(ext1, "Externer Dienst\n[z. B. LDAP / SSO]", "Authentifizierung und Identitätsverwaltung")
-System_Ext(ext2, "Externer Dienst\n[z. B. E-Mail-Server]", "Versand von Benachrichtigungen")
-
-Rel(user, system, "nutzt", "Web / Mobile")
-Rel(admin, system, "verwaltet")
-Rel(system, db, "liest / schreibt", "JDBC / SQL")
-Rel(system, ext1, "authentifiziert über", "LDAP / OAuth2")
-Rel(system, ext2, "sendet Benachrichtigungen über", "SMTP")
+peter --> system : nutzt (Web / Browser)
+lisa --> system : verwaltet & erstellt Aufgaben
+system --> db : liest / schreibt (JDBC / SQL)
+system --> mail : sendet Benachrichtigungen (SMTP)
+system --> auth : authentifiziert Nutzer (OAuth2)
 
 @enduml
 ....
@@ -97,23 +88,66 @@ Diese Sicht gibt an, welche Umgebungen für den Code vorgesehen sind, z.B. JVM, 
 [plantuml, "{diagramsdir}/system-context", svg]
 ....
 @startuml
-' source: https://github.com/plantuml-stdlib/C4-PlantUML
-' C4 Model
-!include <c4/C4_Container.puml>
+!include <C4/C4_Container.puml>
 
-Person(personAlias, "Label", "Optional Description")
+title TaskHive - Container-Diagramm
 
-System_Boundary(c1, "Sample System") {
-    Container(containerAlias, "Container Name", "Technology", "Optional Description")
+Person(user, "Benutzer", "Nutzt das System über Browser/Mobilgerät")
+
+
+System_Boundary(taskhive, "TaskHive System") {
+
+    Container(frontend, "Frontend", "Vue.js", "Benutzeroberfläche (SPA/PWA)")
+   
+    Container(backend, "Backend API", "Java 21 + Spring Boot", "Verarbeitet Geschäftslogik, Aufgaben und Zeitplanung")
+
+    ContainerDb(database, "Datenbank", "PostgreSQL", "Speichert Benutzer, Aufgaben und Zeitpläne")
+
+    
 }
-Rel(personAlias, containerAlias, "Label", "Optional Technology")
+
+Rel(user, frontend, "Nutzt", "HTTPS")
+
+
+Rel(frontend, backend, "API-Aufrufe", "REST / JSON")
+
+Rel(backend, database, "Liest / Schreibt", "SQL")
 
 @enduml
-....
+...
 
 === Verteilungsdiagramm (Deployment Diagramm)
 //Beschreibt die physischen Knoten (Rechner) des Systems und Komponenten, die in diesen Knoten ausgeführt werden.
+=== Verteilungsdiagramm (Deployment Diagramm)
+//Beschreibt die physischen Knoten (Rechner) des Systems und Komponenten, die in diesen Knoten ausgeführt werden.
 
+[plantuml]
+....
+@startuml
+
+node "Client-PC" {
+    artifact "Webbrowser"
+    artifact "Vue.js Frontend (Browser)"
+}
+
+node "Smartphone" {
+    artifact "Mobile Browser"
+    artifact "Vue.js Frontend (Mobile)"
+}
+
+node "Application Server" {
+    artifact "Java 21"
+    artifact "Spring Boot Backend"
+}
+
+database "PostgreSQL" as DB
+
+"Vue.js Frontend (Browser)" --> "Spring Boot Backend" : REST API\nHTTP + JSON
+"Vue.js Frontend (Mobile)" --> "Spring Boot Backend" : REST API\nHTTP + JSON
+"Spring Boot Backend" --> DB : SQL
+
+@enduml
+....
 
 == Technologie-Stack
 
