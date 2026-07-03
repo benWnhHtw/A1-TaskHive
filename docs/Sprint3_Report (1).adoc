@@ -1,10 +1,10 @@
 = Sprint-3-Report: Erstes Produktinkrement und agile Arbeitsweise
 
 // Bitte fügen Sie hier die Informationen zu Ihrem Team, Projekt, Datum und Repository ein.
-Team::
-Projektname::
-Datum::
-Repository-Link::
+Team:: A1
+Projektname:: TaskHive: Kollaborative To-Do-Liste für WGs
+Datum:: 03.07.2026
+Repository-Link:: https://github.com/benWnhHtw/A1-TaskHive
 
 ====
 Dieser Report soll auf maximal einer Seite zeigen, wie Ihr Team in Sprint 3 gearbeitet hat,
@@ -27,13 +27,14 @@ Formulieren Sie Ihr Sprintziel in 1–2 Sätzen. Leitfragen:
 | Kriterium | Ihre Antwort
 
 | Sprintziel
-|
+| Ziel des Sprints war es, den ersten funktionsfähigen MVP-Ausschnitt von TaskHive umzusetzen. Dazu wurden die Kernfunktionen im Frontend und Backend entwickelt und über REST-Schnittstellen miteinander verbunden, sodass ein durchgängiger Nutzerfluss entsteht.
+
 
 | Ausgewählter MVP-Ausschnitt / Nutzerfluss
-|
+| Der erste MVP-Ausschnitt umfasst den grundlegenden Workflow zur Erstellung und Anzeige von Aufgaben. Nutzer können neue Aufgaben erfassen und die gespeicherten Aufgaben anzeigen. Das Frontend kommuniziert dabei über REST-Schnittstellen mit dem Backend, welches die Daten verarbeitet und in der Datenbank speichert.
 
 | Zentrale Annahme oder Umsetzungsfrage
-|
+| Es sollte überprüft werden, ob sich die geplante Architektur praktisch umsetzen lässt und ob Frontend, Backend und Datenbank zuverlässig zusammenarbeiten, sodass ein vollständiger End-to-End-Nutzerfluss entsteht.
 |===
 
 == 2. Erwartete Praktiken in Sprint 3
@@ -59,30 +60,27 @@ Beziehen Sie sich bevorzugt auf Praktiken, die in den Hinweisen für Sprint 3 be
 | Nachweis / Artefakt (Link einfügen)
 | Nutzen, Erkenntnis oder Anpassung
 
-|
-|
-|
-|
 
-|
-|
-|
-|
+| Aufgaben aus User Stories ableiten
+| Die Aufgaben wurden aus den User Stories abgeleitet und zwischen Frontend- und Backend-Team aufgeteilt. Dadurch konnte parallel an verschiedenen Funktionen gearbeitet werden.
+| Link zu den GitHub-Issues oder zum Projektboard
+| Die klare Aufgabenverteilung erleichterte die Zusammenarbeit und sorgte für eine fristgerechte Umsetzung.
 
-|
-|
-|
-|
+| Pull Requests mit Bezug zu Issues vorbereiten
+| Neue Funktionen wurden über eigene Branches entwickelt und anschließend als Pull Request eingereicht.
+| Link zu einem Pull Request (z. B. PR #81 oder einem Feature-PR)
+| Pull Requests ermöglichten eine strukturierte Integration der Änderungen und eine bessere Nachvollziehbarkeit.
 
-|
-|
-|
-|
+| Verantwortlichkeiten im Code umsetzen
+| Die Anwendung wurde in Frontend und Backend getrennt entwickelt. Im Backend wurden Controller, Services und Datenzugriffe getrennt organisiert.
+| Link zum Backend-Ordner oder zur Projektstruktur
+| Die klare Trennung der Verantwortlichkeiten verbessert die Wartbarkeit und Erweiterbarkeit des Systems.
 
-|
-|
-|
-|
+| Verhalten anhand von Akzeptanzkriterien verifizieren
+| Die umgesetzten Funktionen wurden gemeinsam getestet, um zu prüfen, ob der Nutzerfluss wie geplant funktioniert.
+| Link zu den User Stories oder Testbeschreibungen
+| Dadurch konnten Fehler früh erkannt und vor der Abgabe behoben werden.
+
 |===
 
 == 3. Wichtigste Lernergebnisse aus Sprint 3
@@ -98,13 +96,16 @@ Beschreiben Sie 2–3 zentrale Erkenntnisse aus Sprint 3. Leitfragen:
 | Kriterium | Ihre Antwort
 
 | Erkenntnis 1
-|
+| Die Umsetzung des ersten End-to-End-Inkrements hat gezeigt, dass die Integration zwischen Vue.js-Frontend, Spring-Boot-Backend und PostgreSQL-Datenbank zuverlässig funktioniert. Aufgaben können über das Frontend erstellt und über die REST-Schnittstellen im Backend verarbeitet und angezeigt werden.
+
 
 | Erkenntnis 2
-|
+| Die klare Trennung der Verantwortlichkeiten in Controller, Service und Repository sowie die Aufteilung der Entwicklung in Frontend- und Backend-Team haben die Wartbarkeit und parallele Entwicklung verbessert. Gleichzeitig wurde deutlich, dass eine gemeinsame Dokumentation der API-Endpunkte und Schnittstellen die Zusammenarbeit weiter erleichtert.
+
 
 | Erkenntnis 3
-|
+|Die praktische Umsetzung hat gezeigt, dass regelmäßige Abstimmungen und Code-Reviews wichtig sind, um Integrationsprobleme frühzeitig zu erkennen. Aus der Sprint-Retrospektive wurde daher abgeleitet, die technische Dokumentation zu verbessern und Reviews im nächsten Sprint konsequent durchzuführen.
+
 |===
 
 == 4. Änderungen am Inkrement, Backlog oder an Projektdokumentation
@@ -117,17 +118,17 @@ Beschreiben Sie konkret anhand von drei Beispielen, was sich durch Implementieru
 | Neue Erkenntnisse
 | Anpassung am Inkrement, Backlog, Code oder an der Dokumentation
 
-|
-|
-|
+| Der erste MVP sollte lediglich eine einfache Aufgabenverwaltung demonstrieren.
+| Während der Implementierung zeigte sich, dass eine saubere Trennung zwischen Frontend und Backend über REST-Schnittstellen die Entwicklung erleichtert und spätere Erweiterungen unterstützt.
+| Das Inkrement wurde um eine strukturierte Kommunikation zwischen Vue-Frontend und Spring-Boot-Backend erweitert. Die Aufgabenverwaltung wurde über Controller, Services und Repositories umgesetzt.
 
-|
-|
-|
+| Die Aufgabenverteilung zwischen Frontend und Backend wurde zunächst als ausreichend angesehen.
+| Im Sprint wurde deutlich, dass fehlende Dokumentation der API-Endpunkte und Schnittstellen zu Abstimmungsproblemen führte.
+| Für die nächsten Sprints wurde beschlossen, die API und technische Schnittstellen besser zu dokumentieren und die Zusammenarbeit zwischen Frontend und Backend stärker zu koordinieren.
 
-|
-|
-|
+| Es wurde angenommen, dass die vorhandene Projektstruktur für die weitere Entwicklung ausreicht.
+| Mit zunehmender Funktionalität zeigte sich, dass eine klare Trennung der Verantwortlichkeiten die Wartbarkeit verbessert.
+| Die Codebasis wurde nach Verantwortlichkeiten strukturiert (Controller, Service, Repository sowie getrennte Frontend-Komponenten wie TaskDashboardView, TaskList und TaskCreateForm). Zusätzlich wurden Pull Requests und Projektdokumentation als Grundlage für die weitere Entwicklung genutzt.
 |===
 
 == 5. Produktinkrement, Verifikation und Umsetzungsqualität
@@ -144,22 +145,26 @@ Beschreiben Sie kurz, welche Nachweise zeigen, dass Ihr Produktinkrement nützli
 | Kriterium | Ihre Antwort
 
 | Umgesetzter End-to-End-Nutzerfluss
-|
+|Im Sprint wurde ein erster durchgängiger Nutzerfluss umgesetzt. Nutzer können Aufgaben über das Frontend erfassen. Die Daten werden über REST-Schnittstellen an das Spring-Boot-Backend übertragen, dort verarbeitet und anschließend wieder im Frontend angezeigt. Damit steht ein funktionsfähiges Produktinkrement zur Verfügung.
+
 
 | Akzeptanzkriterien und Definition of Done
-|
+| Die umgesetzten User Stories wurden als abgeschlossen betrachtet, sobald die Funktionalität implementiert, erfolgreich getestet und in das Repository integriert war. Zusätzlich wurde überprüft, ob Frontend und Backend fehlerfrei zusammenarbeiten.
+
 
 | Akzeptanzorientierte Verifikation
-|
+| Die Funktionen wurden durch praktische Tests während der Entwicklung überprüft. Dabei wurde insbesondere kontrolliert, ob Aufgaben korrekt erstellt, gespeichert und anschließend im Frontend dargestellt werden.
 
 | Code Review, Integration und main branch
-|
+| Neue Funktionen wurden über Feature-Branches entwickelt und anschließend als Pull Requests eingebracht. Die Integration in den main-Branch erfolgt nach erfolgreicher Überprüfung gemäß den Regeln des Repositorys.
+
 
 | Wartbarkeitsverbesserung / Refactoring
-|
+| Zur Verbesserung der Wartbarkeit wurde die Anwendung in Frontend und Backend gegliedert. Im Backend wurden Controller, Service und Repository klar voneinander getrennt, wodurch die Erweiterbarkeit und Lesbarkeit des Codes verbessert wurden.
+
 
 | User-Flow- oder Usability-Check
-|
+| Während der Entwicklung wurde der Nutzerfluss manuell überprüft. Dabei wurde kontrolliert, ob das Erstellen und Anzeigen von Aufgaben aus Sicht der Nutzer nachvollziehbar funktioniert. Die dabei gewonnenen Erkenntnisse fließen in die Weiterentwicklung des MVP ein.
 |===
 
 == 6. Nächste MVP-Schritte und Anpassung der Arbeitsweise
@@ -176,14 +181,15 @@ Beschreiben Sie, was Ihr Team nach Sprint 3 beibehalten, ändern oder gezielt ve
 | Kriterium | Ihre Antwort
 
 | Beibehalten
-|
+| Die Aufteilung in Frontend- und Backend-Team hat sich bewährt und soll beibehalten werden. Ebenso haben die regelmäßigen Sprint-Meetings, die klare Aufgabenverteilung innerhalb der Teams sowie die Nutzung von Pull Requests die Zusammenarbeit unterstützt. Die fristgerechte Umsetzung der Sprintziele zeigt, dass diese Arbeitsweise grundsätzlich erfolgreich ist.
 
 | Ändern / verbessern
-|
+| Die Kommunikation zwischen Frontend und Backend soll durch eine gemeinsame technische Dokumentation (z. B. API-Endpunkte und Schnittstellen) verbessert werden. Außerdem sollen Code Reviews wieder konsequent durchgeführt und feste Meetingtermine vereinbart werden. Im Backend soll die Aufgabenverteilung breiter erfolgen, um Abhängigkeiten von einzelnen Teammitgliedern zu reduzieren.
 
 | Nächster MVP-Schritt
-|
+| Im nächsten Sprint soll die Aufgabenverwaltung funktional erweitert und weitere Kernfunktionen von TaskHive umgesetzt werden. Zusätzlich sollen bestehende Funktionen weiter integriert, getestet und hinsichtlich Benutzerfreundlichkeit sowie Stabilität verbessert werden.
 
 | Offene Fragen / Risiken für die weitere Projektarbeit
-|
+| Offene Fragen bestehen insbesondere hinsichtlich der weiteren Skalierbarkeit der Anwendung, der vollständigen Dokumentation der Schnittstellen sowie der langfristigen Wartbarkeit der Codebasis. Darüber hinaus soll geprüft werden, wie die Zusammenarbeit zwischen Frontend und Backend weiter verbessert und die Qualitätssicherung durch regelmäßige Reviews gestärkt werden kann.
+
 |===
