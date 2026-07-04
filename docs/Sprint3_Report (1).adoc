@@ -27,7 +27,7 @@ Formulieren Sie Ihr Sprintziel in 1–2 Sätzen. Leitfragen:
 | Kriterium | Ihre Antwort
 
 | Sprintziel
-| Ziel des Sprints war es, den ersten funktionsfähigen MVP-Ausschnitt von TaskHive umzusetzen. Dazu wurden die Kernfunktionen im Frontend und Backend entwickelt und über REST-Schnittstellen miteinander verbunden, sodass ein durchgängiger Nutzerfluss entsteht.
+| Ziel des Sprints war es, Nutzerinnen und Nutzern die erste grundlegende Verwaltung von Aufgaben zu ermöglichen. Dafür wurde ein erster funktionsfähiger End-to-End-Nutzerfluss umgesetzt, mit dem Aufgaben erstellt und anschließend angezeigt werden können.
 
 
 | Ausgewählter MVP-Ausschnitt / Nutzerfluss
@@ -63,22 +63,22 @@ Beziehen Sie sich bevorzugt auf Praktiken, die in den Hinweisen für Sprint 3 be
 
 | Aufgaben aus User Stories ableiten
 | Die Aufgaben wurden aus den User Stories abgeleitet und zwischen Frontend- und Backend-Team aufgeteilt. Dadurch konnte parallel an verschiedenen Funktionen gearbeitet werden.
-| Link zu den GitHub-Issues oder zum Projektboard
+| https://github.com/benWnhHtw/A1-TaskHive/issues/56
 | Die klare Aufgabenverteilung erleichterte die Zusammenarbeit und sorgte für eine fristgerechte Umsetzung.
 
 | Pull Requests mit Bezug zu Issues vorbereiten
 | Neue Funktionen wurden über eigene Branches entwickelt und anschließend als Pull Request eingereicht.
-| Link zu einem Pull Request (z. B. PR #81 oder einem Feature-PR)
+| https://github.com/benWnhHtw/A1-TaskHive/pull/81
 | Pull Requests ermöglichten eine strukturierte Integration der Änderungen und eine bessere Nachvollziehbarkeit.
 
 | Verantwortlichkeiten im Code umsetzen
 | Die Anwendung wurde in Frontend und Backend getrennt entwickelt. Im Backend wurden Controller, Services und Datenzugriffe getrennt organisiert.
-| Link zum Backend-Ordner oder zur Projektstruktur
+| https://github.com/benWnhHtw/A1-TaskHive/tree/main/src
 | Die klare Trennung der Verantwortlichkeiten verbessert die Wartbarkeit und Erweiterbarkeit des Systems.
 
 | Verhalten anhand von Akzeptanzkriterien verifizieren
 | Die umgesetzten Funktionen wurden gemeinsam getestet, um zu prüfen, ob der Nutzerfluss wie geplant funktioniert.
-| Link zu den User Stories oder Testbeschreibungen
+| https://github.com/benWnhHtw/A1-TaskHive/issues
 | Dadurch konnten Fehler früh erkannt und vor der Abgabe behoben werden.
 
 |===
@@ -104,7 +104,7 @@ Beschreiben Sie 2–3 zentrale Erkenntnisse aus Sprint 3. Leitfragen:
 
 
 | Erkenntnis 3
-|Die praktische Umsetzung hat gezeigt, dass regelmäßige Abstimmungen und Code-Reviews wichtig sind, um Integrationsprobleme frühzeitig zu erkennen. Aus der Sprint-Retrospektive wurde daher abgeleitet, die technische Dokumentation zu verbessern und Reviews im nächsten Sprint konsequent durchzuführen.
+| Die praktische Umsetzung hat gezeigt, dass regelmäßige Abstimmungen und Code-Reviews wichtig sind, um Integrationsprobleme frühzeitig zu erkennen. Aus der Sprint-Retrospektive wurde daher abgeleitet, die technische Dokumentation zu verbessern und Reviews im nächsten Sprint konsequent durchzuführen.
 
 |===
 
@@ -145,7 +145,7 @@ Beschreiben Sie kurz, welche Nachweise zeigen, dass Ihr Produktinkrement nützli
 | Kriterium | Ihre Antwort
 
 | Umgesetzter End-to-End-Nutzerfluss
-|Im Sprint wurde ein erster durchgängiger Nutzerfluss umgesetzt. Nutzer können Aufgaben über das Frontend erfassen. Die Daten werden über REST-Schnittstellen an das Spring-Boot-Backend übertragen, dort verarbeitet und anschließend wieder im Frontend angezeigt. Damit steht ein funktionsfähiges Produktinkrement zur Verfügung.
+| Im Sprint wurde ein erster durchgängiger Nutzerfluss umgesetzt. Nutzer können Aufgaben über das Frontend erfassen. Die Daten werden über REST-Schnittstellen an das Spring-Boot-Backend übertragen, dort verarbeitet und anschließend wieder im Frontend angezeigt. Damit steht ein funktionsfähiges Produktinkrement zur Verfügung.
 
 
 | Akzeptanzkriterien und Definition of Done
