@@ -6,13 +6,15 @@
         <strong>{{ openTasks.length }}</strong>
       </div>
 
+      <p v-if="openTasks.length === 0" class="empty-column">Keine offenen Aufgaben.</p>
+
       <article v-for="task in openTasks" :key="task.id" class="task-card">
         <span class="task-icon" aria-hidden="true">✦</span>
         <h3>{{ task.title }}</h3>
         <p v-if="task.description" class="task-description">{{ task.description }}</p>
         <div class="task-meta">
           <span class="task-status task-status-open">Offen</span>
-          <span>◷ {{ formatDate(task.dueDate) }}</span>
+          <span>◷ {{ formatIsoDateDe(task.dueDate) }}</span>
         </div>
         <div class="task-footer">
           <span class="assignee-chip">{{ getInitials(task.assigneeName) }}</span>
@@ -36,13 +38,15 @@
         <strong>{{ doneTasks.length }}</strong>
       </div>
 
+      <p v-if="doneTasks.length === 0" class="empty-column">Keine erledigten Aufgaben.</p>
+
       <article v-for="task in doneTasks" :key="task.id" class="task-card task-card-done">
         <span class="task-icon" aria-hidden="true">◎</span>
         <h3>{{ task.title }}</h3>
         <p v-if="task.description" class="task-description">{{ task.description }}</p>
         <div class="task-meta">
           <span class="task-status task-status-done">Erledigt</span>
-          <span>◷ {{ formatDate(task.dueDate) }}</span>
+          <span>◷ {{ formatIsoDateDe(task.dueDate) }}</span>
         </div>
         <div class="task-footer">
           <span class="assignee-chip">{{ getInitials(task.assigneeName) }}</span>
@@ -56,6 +60,8 @@
 <script setup>
 import { computed } from 'vue'
 
+import { formatIsoDateDe } from '@/features/tasks/composables/useTaskFilter'
+
 const props = defineProps({
   tasks: {
     type: Array,
@@ -67,14 +73,6 @@ defineEmits(['markDone'])
 
 const openTasks = computed(() => props.tasks.filter((task) => task.status === 'open'))
 const doneTasks = computed(() => props.tasks.filter((task) => task.status === 'done'))
-
-function formatDate(value) {
-  return new Intl.DateTimeFormat('de-DE', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  }).format(new Date(value))
-}
 
 function getInitials(name = '') {
   return name

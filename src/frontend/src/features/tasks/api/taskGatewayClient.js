@@ -2,6 +2,17 @@ import { requestJson } from '@/core/api/httpClient'
 
 function normalizeTask(task, fallback = {}) {
   const assignedPerson = task.person ?? task.assignee
+  const rawPersonIds = Array.isArray(task.personIds)
+    ? task.personIds.map((id) => Number(id)).filter((id) => !Number.isNaN(id))
+    : []
+  const primaryPersonId =
+    task.personId ?? assignedPerson?.id ?? rawPersonIds[0] ?? fallback.personId
+  const personIds =
+    rawPersonIds.length > 0
+      ? rawPersonIds
+      : primaryPersonId != null
+        ? [Number(primaryPersonId)]
+        : []
 
   return {
     id: task.id,
@@ -9,7 +20,8 @@ function normalizeTask(task, fallback = {}) {
     description: task.description ?? task.beschreibung ?? fallback.description ?? '',
     dueDate: task.dueDate ?? task.faelligkeitsdatum,
     status: (task.status ?? 'OFFEN').toLowerCase() === 'erledigt' ? 'done' : 'open',
-    personId: task.personId ?? assignedPerson?.id ?? fallback.personId,
+    personId: primaryPersonId,
+    personIds,
     assigneeName:
       task.assigneeName ??
       (assignedPerson ? `${assignedPerson.vorname} ${assignedPerson.name}` : fallback.assigneeName),

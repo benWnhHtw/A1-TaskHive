@@ -12,6 +12,19 @@ export function findMockPerson(personId) {
   return mockPersons.find((person) => person.id === Number(personId))
 }
 
+export function findMockPersonByName(assigneeName = '') {
+  const normalized = String(assigneeName).trim().toLowerCase()
+
+  if (!normalized) {
+    return undefined
+  }
+
+  return mockPersons.find((person) => {
+    const fullName = `${person.vorname} ${person.name}`.toLowerCase()
+    return normalized === fullName || normalized === person.vorname.toLowerCase()
+  })
+}
+
 export function createMockPersonGateway() {
   return {
     async listPersons() {

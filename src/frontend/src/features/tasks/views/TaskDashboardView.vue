@@ -84,7 +84,17 @@
           <div class="board-header">
             <h2>Aufgaben-Board</h2>
             <div class="board-tools">
-              <button type="button">
+              <button
+                type="button"
+                class="board-tool-button"
+                :class="{
+                  'board-tool-button-open': isFilterPanelOpen,
+                  'board-tool-button-active': hasActiveFilters,
+                }"
+                :aria-expanded="isFilterPanelOpen"
+                aria-controls="task-filter-panel"
+                @click="isFilterPanelOpen = !isFilterPanelOpen"
+              >
                 <span class="tool-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M4 6h16" />
@@ -92,9 +102,12 @@
                     <path d="M10 18h4" />
                   </svg>
                 </span>
-                Filter
+                <span>Filter</span>
+                <span v-if="activeFilterCount > 0" class="filter-count-badge">
+                  {{ activeFilterCount }}
+                </span>
               </button>
-              <button type="button">
+              <button type="button" class="board-tool-button">
                 <span class="tool-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24">
                     <path d="M8 5v14" />
@@ -105,10 +118,37 @@
                     <path d="M12 19h8" />
                   </svg>
                 </span>
-                Sortieren
+                <span>Sortieren</span>
               </button>
             </div>
           </div>
+
+          <TaskFilterBar
+            v-if="tasks.length > 0 || hasActiveFilters"
+            :are-persons-loading="arePersonsLoading"
+            :date-from="dateFrom"
+            :date-to="dateTo"
+            :due-date-filter-label="dueDateFilterLabel"
+            :due-date-mode="dueDateMode"
+            :exact-date="exactDate"
+            :filtered-count="filteredTasks.length"
+            :has-active-filters="hasActiveFilters"
+            :is-due-date-filter-active="isDueDateFilterActive"
+            :is-open="isFilterPanelOpen"
+            :persons="persons"
+            :selected-person-ids="selectedPersonIds"
+            :selected-persons="selectedPersons"
+            :total-count="tasks.length"
+            @clear-due-date="clearDueDateFilter"
+            @clear-persons="clearPersonFilter"
+            @reset-all="resetAllFilters"
+            @set-persons="setSelectedPersonIds"
+            @toggle-person="togglePerson"
+            @update:date-from="dateFrom = $event"
+            @update:date-to="dateTo = $event"
+            @update:due-date-mode="setDueDateMode"
+            @update:exact-date="exactDate = $event"
+          />
 
           <p v-if="isLoading" class="state-message">Aufgaben werden geladen...</p>
           <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
@@ -116,7 +156,24 @@
             Keine Aufgaben vorhanden.
           </p>
 
-          <TaskList v-if="tasks.length > 0" :tasks="tasks" @mark-done="markTaskDone" />
+          <div
+            v-if="!isLoading && tasks.length > 0 && filteredTasks.length === 0"
+            class="panel empty-filter-state"
+          >
+            <h3>Keine passenden Aufgaben gefunden</h3>
+            <p>
+              Für die ausgewählten Personen- oder Fälligkeitsfilter gibt es aktuell keine Aufgaben.
+            </p>
+            <button type="button" class="primary-action" @click="resetAllFilters">
+              Filter zurücksetzen
+            </button>
+          </div>
+
+          <TaskList
+            v-if="filteredTasks.length > 0"
+            :tasks="filteredTasks"
+            @mark-done="markTaskDone"
+          />
         </section>
 
         <section v-if="isComingSoonView" class="panel coming-soon-page">
@@ -164,8 +221,10 @@
 import { computed, ref } from 'vue'
 
 import TaskCreateForm from '@/features/tasks/components/TaskCreateForm.vue'
+import TaskFilterBar from '@/features/tasks/components/TaskFilterBar.vue'
 import TaskList from '@/features/tasks/components/TaskList.vue'
 import { usePersons } from '@/features/persons/composables/usePersons'
+import { getTodayIsoDate, useTaskFilter } from '@/features/tasks/composables/useTaskFilter'
 import { useTasks } from '@/features/tasks/composables/useTasks'
 
 const props = defineProps({
@@ -180,6 +239,28 @@ defineEmits(['openCreate', 'openSettings'])
 const { tasks, isLoading, errorMessage, createTask, markTaskDone } = useTasks()
 const { persons, arePersonsLoading, personsErrorMessage } = usePersons()
 
+const isFilterPanelOpen = ref(true)
+
+const {
+  selectedPersonIds,
+  dueDateMode,
+  exactDate,
+  dateFrom,
+  dateTo,
+  isDueDateFilterActive,
+  hasActiveFilters,
+  activeFilterCount,
+  selectedPersons,
+  dueDateFilterLabel,
+  filteredTasks,
+  togglePerson,
+  clearPersonFilter,
+  setSelectedPersonIds,
+  setDueDateMode,
+  clearDueDateFilter,
+  resetAllFilters,
+} = useTaskFilter(tasks, persons)
+
 const openTasks = computed(() => tasks.value.filter((task) => task.status === 'open'))
 const doneTasks = computed(() => tasks.value.filter((task) => task.status === 'done'))
 const activeView = computed(() => props.activeView)
@@ -192,7 +273,7 @@ const isComingSoonView = computed(() =>
 const isStandaloneView = computed(() => activeView.value !== 'dashboard')
 const successMessage = ref('')
 const dueTodayCount = computed(() => {
-  const today = new Date().toISOString().slice(0, 10)
+  const today = getTodayIsoDate()
   return openTasks.value.filter((task) => task.dueDate === today).length
 })
 
