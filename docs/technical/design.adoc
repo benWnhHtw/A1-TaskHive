@@ -168,6 +168,201 @@ Rel(notification_svc, ext, "sendet E-Mails über", "SMTP")
 | [Schnittstellen]
 |===
 
+[[aufgabenfilter]]
+=== Frontend: Aufgabenfilter
+
+Der Aufgabenfilter ist eine abgeleitete Ansicht auf den bereits geladenen Aufgaben.
+Er entfernt oder verändert keine Einträge in `tasks`; `filteredTasks` wird aus den
+Quelldaten, den geladenen Personen und dem Filterzustand berechnet. Der nachfolgend
+dokumentierte Stand entspricht der Implementierung auf `main` mit Sprint 4
+(Merge von PR #83).
+
+==== Beteiligte Komponenten
+
+[cols="1,2,2", options="header"]
+|===
+| Komponente | Verantwortung | Schnittstelle zum Filter
+
+| `TaskDashboardView.vue`
+| Lädt Aufgaben und Personen, instanziiert das Composable und verbindet Filteroberfläche und Liste.
+| Übergibt Zustand und Aktionen als Props beziehungsweise Events an `TaskFilterBar`; übergibt `filteredTasks` an `TaskList`.
+
+| `TaskFilterBar.vue`
+| Stellt Personen- und Fälligkeitsfilter sowie aktive Filter und Reset bereit.
+| Meldet Änderungen über Events; importiert die angebotenen Fälligkeitsmodi aus `useTaskFilter.js`.
+
+| `PersonMultiSelectDropdown.vue`
+| Ermöglicht Mehrfachauswahl, Suche sowie Auswahl aller sichtbaren Personen.
+| Erhält Personen und ausgewählte IDs als Props und sendet `toggle`, `clear` und `set-persons`.
+
+| `useTaskFilter.js`
+| Kapselt reaktiven Zustand, Filterregeln und die abgeleitete Ergebnisliste.
+| Öffentliche Funktion `useTaskFilter(tasks, persons)`; beide Argumente sind Vue-Refs.
+
+| `TaskList.vue`
+| Stellt offene und erledigte Aufgaben der übergebenen Liste dar.
+| Kennt keine Filterregeln; erhält nur `tasks`.
+
+| `taskGatewayClient.js` und `personGatewayClient.js`
+| Beschaffen Aufgaben beziehungsweise Personen außerhalb der Filterlogik; der Aufgaben-Client normalisiert API-Antworten.
+| Liefern die Daten, auf denen die Client-Filterung arbeitet.
+|===
+
+Die Rückgabe von `useTaskFilter(...)` umfasst unter anderem die Ref-Werte
+`selectedPersonIds`, `dueDateMode`, `exactDate`, `dateFrom` und `dateTo`, die
+berechneten Werte `filteredTasks`, `selectedPersons` und `hasActiveFilters` sowie
+Aktionen zum Ändern und Zurücksetzen der Filter. Die View hängt damit von dieser
+Schnittstelle ab, nicht von einzelnen Vergleichsregeln.
+
+==== Filterregeln und Datenfluss
+
+* Mehrere ausgewählte Personen werden innerhalb des Personenkriteriums mit *ODER*
+  verknüpft. Eine Aufgabe passt, wenn mindestens eine ausgewählte ID in `personId`,
+  `personIds` oder `rotationsPersonIds` vorkommt.
+* Wenn eine Aufgabe keine verwertbare Personen-ID besitzt, verwendet die Implementierung
+  als Fallback `assigneeName` und den Vor- beziehungsweise vollständigen Namen der
+  ausgewählten Person. Diese Robustheitsregel ist nur für konsistente Namensdaten geeignet.
+* Personen- und Datumsfilter werden mit *UND* verknüpft. Ohne ausgewählte Person
+  schränkt der Personenfilter die Liste nicht ein.
+* Die Fälligkeitsmodi sind `all`, `overdue`, `today`, `next7days`, `exact` und `range`.
+  `overdue` schließt Aufgaben mit Status `done` aus; `next7days` umfasst heute bis
+  einschließlich heute plus sieben Kalendertage. Datumsbereiche sind an beiden Grenzen
+  inklusive und werden bei vertauschter Eingabe intern geordnet.
+* Ein Datum wird aus einem ISO-String im Format `YYYY-MM-DD` abgeleitet. Fehlt bei
+  einer aktiven Datumsbedingung ein verwertbares Fälligkeitsdatum, ist die Aufgabe kein
+  Treffer. Der Modus `exact` ohne Datum und der Modus `range` ohne beide Grenzen
+  aktivieren dagegen keine Datumsbedingung.
+
+[source,text]
+----
+PersonMultiSelectDropdown / TaskFilterBar
+                 |  Auswahl oder Datumsmodus (Event)
+                 v
+         TaskDashboardView
+                 |  Ref-Werte und Aktionen von useTaskFilter(...)
+                 v
+           useTaskFilter
+                 |  computed: filterTasks(tasks, filterState, persons)
+                 v
+           filteredTasks
+                 |  Prop `tasks`
+                 v
+              TaskList
+----
+
+Ein Wechsel der Filterwerte berechnet `filteredTasks` erneut. Dabei wird keine
+zusätzliche HTTP-Anfrage ausgelöst; die Regel gilt deshalb nur für die lokal
+vorliegenden Aufgaben.
+
+==== Sechs Gestaltungsaspekte
+
+[cols="1,3", options="header"]
+|===
+| Aspekt | Ausprägung in der Implementierung
+
+| Zustand und Invarianten
+| Die Auswahlwerte liegen in reaktiven Refs. `filteredTasks` ist ein `computed`-Wert
+  und verändert das ursprüngliche Aufgabenarray nicht.
+
+| Verhalten und Verantwortlichkeit
+| Die Filterbar erfasst Eingaben, das Composable wertet Personen- und Datumsregeln aus,
+  die Dashboard-View koordiniert und `TaskList` stellt dar.
+
+| Abhängigkeiten und Kopplung
+| Die View verwendet die öffentliche Rückgabe von `useTaskFilter(tasks, persons)`;
+  `TaskList` kennt die Filterregeln nicht. `TaskFilterBar` ist für die angebotenen
+  Datumsmodi an das Composable gekoppelt.
+
+| Grenzen und Kohäsion
+| Filterzustand und -berechnung liegen gemeinsam im Composable. Datenzugriff und
+  Antwortnormalisierung bleiben in den Gateway-Clients.
+
+| Änderung und Variabilität
+| Weitere Filterregeln werden vorrangig im Composable ergänzt; für neue Eingaben,
+  Bezeichnungen oder Optionen ist zusätzlich eine Anpassung der Filteroberfläche nötig.
+
+| Repräsentation und Verarbeitung
+| Personen werden über IDs, Daten als ISO-Strings repräsentiert. `filterTasks(...)`
+  verknüpft Personen- und Datumsprüfung; der Namensfallback ist eine Ausnahme für
+  Aufgaben ohne Personen-ID.
+|===
+
+==== Entwurfsentscheidung: clientseitige Filterung im Composable
+
+Diese Entwurfsentscheidung beschreibt die vorhandene Implementierung. Sie ist kein
+zusätzliches, als „akzeptiert“ bestätigtes ADR und trifft keine Aussage über eine
+historische Teamabstimmung.
+
+[cols="1,3", options="header"]
+|===
+| Punkt | Entscheidung und Begründung
+
+| Kontext
+| Die Aufgabenansicht benötigt kombinierbare Filter nach Personen und Fälligkeitsdatum.
+  Aufgaben und Personen werden in der Dashboard-View geladen und dort als reaktive
+  Daten an den Filter übergeben.
+
+| Entscheidung
+| Reaktiver Filterzustand und Regeln liegen im Vue-Composable `useTaskFilter.js`.
+  Die Dashboard-View koordiniert, `TaskFilterBar` erfasst Eingaben und `TaskList`
+  erhält ausschließlich die berechnete Liste.
+
+| Begründung
+| Zuständigkeiten bleiben getrennt und die reine Funktion `filterTasks(...)` kann mit
+  festen Eingaben geprüft werden. Bei bereits vollständig geladenen Aufgaben führt eine
+  Änderung der Auswahl nicht zu einem zusätzlichen Netzwerkzugriff.
+
+| Konsequenz
+| Die Ergebnisvollständigkeit ist auf den lokal geladenen Datenbestand begrenzt.
+  IDs, Statuswerte und Datumsformate müssen im Gateway konsistent normalisiert werden.
+|===
+
+Betrachtete Alternativen:
+
+* *Filterregeln direkt in `TaskDashboardView.vue`*: geringerer anfänglicher Aufwand,
+  vermischt jedoch Koordination und Regelwerk bei wachsender Filterlogik.
+* *Filterlogik in `useTaskFilter.js`*: die implementierte Variante; bündelt Zustand
+  und Regeln in einer testbaren, von der Darstellung getrennten Einheit.
+* *Serverseitige Filterung*: eignet sich für Pagination, große Datenmengen oder mehrere
+  Clients mit gemeinsamen Regeln, benötigt aber einen abgestimmten API-Vertrag und
+  Lade- sowie Fehlerzustände für Abfragen.
+
+==== Nachweisstand und offene Punkte
+
+Die folgenden Punkte sind keine als erledigt dokumentierten Arbeiten. Sie sind aus dem
+Quellcode abgeleitete Prüf- und Folgepunkte:
+
+[cols="2,3", options="header"]
+|===
+| Offener Punkt | Begründung und nächste Prüfung
+
+| API-Vertrag im Echtbetrieb
+| Der Client verwendet für Aufgaben `GET`/`POST /task` und `PATCH /task/{id}`.
+  Der vorhandene Spring-Controller stellt `GET`/`POST /aufgabe` bereit und enthält
+  keinen `PATCH`-Endpunkt. GET, POST, CORS, Fehlerbehandlung und das tatsächliche
+  Antwortformat müssen gegen eine laufende Anwendung geprüft werden.
+
+| Datenmodell-Normalisierung
+| Das Gateway verarbeitet unter anderem `titel`/`title`, `faelligkeitsdatum`/`dueDate`
+  und Personen-IDs. Der POST-Body des Clients enthält `personId`, während das
+  vorhandene OpenAPI-Schema `personIds` beschreibt. Der vertragliche Abgleich ist offen.
+
+| Mocks und reale Daten
+| Mocks sind aktiv, solange `VITE_USE_MOCKS` nicht exakt auf `false` gesetzt ist.
+  Ein erfolgreicher Filterlauf mit Mocks belegt deshalb keine Backend-Integration.
+
+| Vollständigkeit bei Datenvolumen
+| Der Filter sieht nur bereits geladene Aufgaben. Vor Pagination, Teilladung oder
+  mehreren Clients ist zu entscheiden, ob Filterparameter an die API gehören.
+
+| Testabdeckung und Sortierung
+| Im aktuellen Frontend sind keine automatisierten Filtertests und kein Test-Skript
+  vorhanden. Person-ODER, Personen-plus-Datum-UND, Datumsgrenzen, fehlende Daten,
+  Status `done` und Reset sollten gezielt geprüft werden. Die sichtbare Schaltfläche
+  „Sortieren“ besitzt in der View derzeit keine Ereignisbehandlung; eine Sortierfunktion
+  ist nicht Teil der hier nachgewiesenen Filterimplementierung.
+|===
+
 ---
 
 == Wichtige Interaktionsflüsse
