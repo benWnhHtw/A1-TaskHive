@@ -429,6 +429,16 @@ Punkte in Vergessenheit geraten._
 | Niedrig
 | [z. B. Lasttest ab Sprint 4 eingeplant]
 
+| Clientseitiger Filter berücksichtigt nur geladene Aufgaben
+| Bei späterer Pagination oder Teilladung können passende Aufgaben in der Anzeige fehlen.
+| Offen; bei derzeitiger Vollabfrage nicht durch einen Integrationstest belegt
+| Vor Pagination oder serverseitiger Suche Filterparameter, API-Vertrag und Ladezustände bewerten; Details im link:design.adoc#aufgabenfilter[Designdokument].
+
+| Mock-Betrieb verdeckt Unterschiede zur Backend-API
+| Das Frontend kann mit Mocks funktionieren, obwohl Endpunkte oder Datenformate der realen API abweichen.
+| Hoch, solange kein Ende-zu-Ende-Abgleich durchgeführt ist
+| Mit `VITE_USE_MOCKS=false` gegen eine laufende Anwendung testen; insbesondere Aufgaben- und Personen-Endpunkte sowie Fehlerfälle prüfen.
+
 | [Weiteres Risiko]
 | [Hoch / Mittel / Niedrig]
 | [Hoch / Mittel / Niedrig]
@@ -448,6 +458,14 @@ Punkte in Vergessenheit geraten._
 | [z. B. Fehlerbehandlung in API-Endpunkten unvollständig]
 | [z. B. MVP-Fokus; nur Hauptpfade abgedeckt]
 | [z. B. TECH-51]
+
+| Aufgaben-API des Frontends und vorhandener Backend-Controller weichen ab: Client nutzt `/task` und `PATCH /task/{id}`, Controller bietet `/aufgabe` mit GET/POST und keinen PATCH-Endpunkt.
+| Die Sprint-4-Filteroberfläche lässt sich mit Mocks unabhängig vom Backend prüfen; ein erfolgreicher Echtbetrieb ist dadurch nicht nachgewiesen.
+| - (Folgearbeit noch nicht als Ticket belegt)
+
+| Keine automatisierten Tests für die Filterregeln im Frontend nachweisbar.
+| `filterTasks(...)` ist isoliert prüfbar, aber im aktuellen Frontend sind weder Testdateien noch ein Test-Skript vorhanden.
+| - (Testfälle vor nächstem Release oder Sprint-Abschluss festlegen)
 
 | [Weitere technische Schuld]
 | [Begründung]
