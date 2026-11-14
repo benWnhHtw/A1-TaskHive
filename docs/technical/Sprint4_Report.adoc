@@ -1,0 +1,185 @@
+= Sprint-4-Report: Produktinkrement, Design-Impact und Weiterentwicklung des Entwurfs
+
+// Bitte fügen Sie hier die Informationen zu Ihrem Team, Projekt, Datum und Repository ein.
+Team:: A1-TaskHive
+Projektname:: TaskHive
+Datum:: 03.11.2026
+Repository-Link:: https://github.com/benWnhHtw/A1-TaskHive
+
+====
+Dieser Report soll auf maximal einer Seite zeigen, wie Ihr Team in Sprint 4 gearbeitet hat,
+welche Praktiken Sie angewendet haben, welches nützliche Produktinkrement entstanden ist,
+wie der bestehende Entwurf untersucht und weiterentwickelt wurde und was Sie daraus gelernt haben.
+
+Der Report ist kein Tätigkeitsprotokoll und kein vollständiges Design- oder Implementierungsdokument.
+Beschreiben Sie nicht nur, *was* Sie umgesetzt haben, sondern vor allem, *warum* die gewählten Änderungen
+den bestehenden Entwurf betreffen, welche Design-Impact-Analysen und Design-Smell-Untersuchungen
+durchgeführt wurden und wie daraus Designentscheidungen, Refactorings oder technische Schulden entstanden sind.
+====
+
+== 1. Sprintziel und nützliches Produktinkrement
+
+Formulieren Sie Ihr Sprintziel in 1–2 Sätzen. Leitfragen:
+
+* Welches zusammenhängende Produktinkrement (User Stories) wollte Ihr Team umsetzen?
+* Welche zentrale Frage zur Weiterentwickelbarkeit des bestehenden Systems sollte geklärt werden?
+* Warum ist dieses Inkrement ein sinnvoller Schritt und wie betrifft es den bestehenden Entwurf?
+
+[cols="1,3", options="header"]
+|===
+| Kriterium | Ihre Antwort
+
+| Sprintziel
+| Ein nützliches Produktinkrement mit Fokus auf Kommunikation (Chat), Filtern/Sortieren von Aufgaben sowie einer ersten echten Frontend-Backend-Anbindung umsetzen und dabei den bestehenden Entwurf auf Auswirkungen untersuchen.
+
+| Ausgewähltes Produktinkrement / User Stories
+| Kommunikation (Chat-Funktion), Filter- und Sortierfunktion für Aufgaben, teilweise Anbindung des Frontends an das Spring-Boot-Backend (Aufgaben-CRUD über Gateway).
+
+| Zentrale Frage zur Weiterentwickelbarkeit
+| Können wir unser bestehendes Produkt nachvollziehbar weiterentwickeln, und wie haben unsere bisherigen Designentscheidungen (Schichten, Gateway-Abstraktion, Feature-Struktur) die Erweiterungen erleichtert oder erschwert?
+|===
+
+
+== 2. Erwartete Praktiken in Sprint 4
+
+Wählen Sie 3–5 Praktiken aus, die für Ihren Sprint besonders relevant waren.
+Beziehen Sie sich bevorzugt auf Praktiken, die in den Hinweisen für Sprint 4 beschrieben werden. Mögliche Praktiken:
+
+* Sprint-Ziel und zusammengehörige User Stories auswählen
+* Design-Impact-Analyse für ausgewählte Änderungen durchführen (sechs Gestaltungsaspekte)
+* Design Smells untersuchen und mögliche Entwurfsschwächen begründen
+* Bei größeren Strukturänderungen Alternativen vergleichen
+* Notwendige Refactorings und Designänderungen umsetzen
+* Produktinkrement in kleinen, reviewbaren Schritten umsetzen
+* Pull Requests und Code Reviews mit Begründungen zu Design-Auswirkungen nutzen
+* Architektur- und Design-Dokumentation sowie ADRs aktualisieren
+* Offene technische Schulden dokumentieren und begründen
+
+[cols="1,2,2,2", options="header"]
+|===
+| Praktik
+| Konkrete Anwendung in unserem Sprint
+| Nachweis / Artefakt (Link einfügen)
+| Nutzen, Erkenntnis oder Anpassung
+
+| Design-Impact-Analyse (sechs Gestaltungsaspekte)
+| Auswirkungen der Backend-Anbindung und der geplanten Filter-/Chat-Funktionen auf Zustand, Verantwortlichkeiten, Kopplung, Grenzen und Variabilität betrachtet
+| Issues / Pull Requests; Abschnitt in diesem Report
+| Zeigte, dass die Gateway-Abstraktion und Feature-Struktur die Anbindung erleichtern, Status-Handling und Pfad-Konsistenz aber noch Schwachstellen sind
+
+| Produktinkrement umsetzen (kleine Schritte, Reviews)
+| Frontend-Gateway mit realen Clients, Aufgaben-CRUD, Status-Spalten im Frontend, erste Schritte zu Filter und Chat
+| GitHub PRs, `src/frontend/src/core/api`, `src/Backend/.../AufgabeController.java`
+| Frühe Integration liefert Feedback, macht aber Inkonsistenzen (z. B. `/aufgabe` vs. `/task`) sichtbar
+
+| Entwurf untersuchen (Verantwortlichkeiten, Grenzen, Testbarkeit)
+| Prüfung der Schichten (Controller–Service–Mapper–Entity) und der Frontend-Feature-Struktur
+| Code-Reviews, technische Dokumentation
+| Bestehende Strukturen tragen die Änderungen grundsätzlich; größere Umbauten waren nicht nötig
+
+| Technische Schulden dokumentieren
+| Offene Punkte (Pfad-Inkonsistenzen, unvollständige Status-Persistenz, fehlende Auth, unvollständige Design-Smell-Analyse) festgehalten
+| Issues / dieser Report
+| Macht die Nacharbeit im nächsten Sprint planbar und nachvollziehbar
+
+| 
+| 
+| 
+| 
+|===
+
+
+== 3. Wichtigste Lernergebnisse aus Sprint 4
+
+Beschreiben Sie 2–3 zentrale Erkenntnisse aus Sprint 4. Leitfragen:
+
+* Was hat Ihr Team über die Weiterentwickelbarkeit des bestehenden Systems gelernt?
+* Welche Annahme zum Entwurf, zu Verantwortlichkeiten oder zur Struktur wurde bestätigt, widerlegt oder präzisiert?
+* Welche Beobachtung zu Design Smells oder technischen Schulden hatte den größten Einfluss?
+
+[cols="1,3", options="header"]
+|===
+| Kriterium | Ihre Antwort
+
+| Erkenntnis 1
+| Die bestehende Gateway-Abstraktion und die feature-basierte Frontend-Struktur erleichtern die schrittweise Anbindung des Backends und die parallele Arbeit deutlich. Der Entwurf ist grundsätzlich erweiterbar.
+
+| Erkenntnis 2
+| Ohne frühzeitige und systematische Design-Impact-Analyse entstehen leichte Inkonsistenzen (Ressourcenpfade, Status-Handling), die später Aufwand verursachen. Design Smells müssen aktiv gesucht werden, sonst bleiben sie unbemerkt.
+
+| Erkenntnis 3
+| Die Trennung von Mock- und Real-Implementierung ist nützlich für die parallele Entwicklung, ersetzt aber nicht den Nachweis der echten Ende-zu-Ende-Integration. Diese muss bewusst und früh genug erfolgen.
+|===
+
+
+== 4. Änderungen am Entwurf, Inkrement oder an der Dokumentation
+
+Beschreiben Sie konkret anhand von Beispielen, was sich durch die Design-Impact-Betrachtung, Implementierung oder Review verändert hat.
+
+[cols="2,2,2", options="header"]
+|===
+| Ursprüngliche Annahme / geplanter Stand
+| Neue Erkenntnisse
+| Anpassung am Entwurf, Inkrement, Code oder Dokumentation
+
+| Frontend kann weitgehend mit Mocks weiterentwickelt werden
+| Reale Backend-Anbindung deckt Inkonsistenzen und fehlende Status-Unterstützung auf
+| Gateway-Clients aktiviert, Pfad- und DTO-Angleichungen als technische Schuld aufgenommen
+
+| Bestehende Schichten und Feature-Struktur reichen aus
+| Bestätigt: größere Strukturänderungen waren nicht erforderlich
+| Keine großen Refactorings; Fokus auf Nutzung der vorhandenen Grenzen und Verantwortlichkeiten
+
+| Design-Smell-Analyse und technische Schulden können später erfolgen
+| Ohne explizite Betrachtung bleiben Schwächen (z. B. Status-Invarianten, Auth) unklar
+| Offene technische Schulden und beobachtete Auffälligkeiten dokumentiert; Analyse im nächsten Sprint vertiefen
+|===
+
+
+== 5. Design-Impact, Entwurfsschwächen und technische Evidenz
+
+Beschreiben Sie kurz die wichtigsten Ergebnisse der Entwurfsuntersuchung. Leitfragen:
+
+* Welche Teile und Gestaltungsaspekte des bestehenden Systems waren von den Änderungen betroffen?
+* Welche Design Smells oder Entwurfsschwächen wurden untersucht oder beobachtet?
+* Welche Designentscheidungen oder Refactorings ergaben sich daraus?
+* Welche technischen Schulden bleiben bewusst offen und warum?
+
+[cols="1,3", options="header"]
+|===
+| Kriterium | Ihre Antwort
+
+| Betroffene Gestaltungsaspekte / Design-Impact
+| Zustand & Invarianten (Status-Handling), Verhalten & Verantwortlichkeit (Service-Schicht), Abhängigkeiten & Kopplung (Gateway), Grenzen & Kohäsion (Feature-Module), Änderung & Variabilität (Mock vs. Real), Repräsentation (DTOs/Mapper)
+
+| Untersuchte / beobachtete Design Smells / Entwurfsschwächen
+| Noch keine systematische Smell-Analyse durchgeführt. Beobachtet: Pfad-Inkonsistenz (`/aufgabe` vs. `/task`), unvollständige Persistenz von Status-Übergängen, fehlende zentrale Fehlerbehandlung und Authentifizierung
+
+| Designentscheidungen / Refactorings
+| Bestehende Schichten und Gateway-Abstraktion bewusst beibehalten (tragen die Änderungen gut). Keine größeren Strukturänderungen. Kleinere Angleichungen und Vervollständigungen als nächste Schritte geplant
+
+| Offene technische Schulden
+| Pfad- und DTO-Konsistenz, vollständige Status-Unterstützung im Backend, Authentifizierung, systematische Design-Smell-Analyse, Chat-Architektur (WebSocket vs. REST), Filter-Logik (Frontend vs. Backend)
+|===
+
+
+== 6. Nächste Schritte und Anpassung der Arbeitsweise
+
+Beschreiben Sie, was Ihr Team nach Sprint 4 beibehalten, ändern oder gezielt verbessern will.
+
+[cols="1,3", options="header"]
+|===
+| Kriterium | Ihre Antwort
+
+| Beibehalten
+| Gateway-Abstraktion, feature-basierte Frontend-Struktur, schrittweise Integration über Pull Requests, Nutzung der bestehenden Schichten
+
+| Ändern / verbessern
+| Design-Impact-Analysen und Design-Smell-Untersuchungen explizit in die Sprint-Planung und in PR-Beschreibungen aufnehmen; technische Schulden sichtbar machen und priorisieren; Pfad-/DTO-Konsistenz und Status-Handling zeitnah bereinigen
+
+| Nächster Fokus / Inkrement
+| Vollständigere Frontend-Backend-Integration, nutzbare Filter- und Sortierfunktion, erste Chat-Funktionalität (Nachrichten anzeigen/erstellen), systematische Nachholung der Design-Impact-Analyse für diese Änderungen
+
+| Offene Fragen / Risiken
+| Architektonische Einbettung des Chats (Persistenz, Echtzeit), Verteilung der Filter-Logik, Zeitpunkt und Umfang der Authentifizierung, Testbarkeit wichtiger Fachregeln
+|===

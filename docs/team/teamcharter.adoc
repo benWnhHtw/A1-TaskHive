@@ -1,5 +1,5 @@
 = Teamcharta: {Team A1 TaskHive}
-Benedikt Weinrich; Simon Joel Rios Sanchez; Tim Besner; Sirri Metuge Menick Misode; Alina Petrenko; Konrad Arvid Bornstedt
+Benedikt Weinrich; Thanh-Loan Katharina Pham; Tim Besner; Sirri Metuge Menick Misode; Konrad Arvid Bornstedt
 {localdatetime}
 include::../_includes/default-attributes.inc.adoc[]
 :version: 1.0
@@ -11,7 +11,7 @@ _Hier können Sie einen Teamnamen und ggf. ein Motto oder eine kurze Beschreibun
 
 *Was bauen wir, und warum?*
 
-_Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
+TaskHive ist eine kollaborative To-Do-Listen-Anwendung für Wohngemeinschaften, die die Organisation von Aufgaben und Verantwortlichkeiten im WG-Alltag neu strukturiert. Durch transparente Abläufe und eine faire, verlässliche Aufgabenverteilung wandelt die Anwendung alltägliche Pflichten wie Putzpläne oder gemeinsame Besorgungen in ein unkompliziertes System. Unser Ziel ist es, Verbindlichkeit zu schaffen, Missverständnisse zu reduzieren und das Zusammenleben in WGs durch klare Strukturen nachhaltig zu erleichtern
 
 == Rollen
 
@@ -23,13 +23,13 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Benedikt Weinrich
 
 | Scrum Master
-| Simon Joel Rios Sanchez
+| Thanh-Loan Katharina Pham
 
 | Tech Lead 
 | Astemir Sheriev
 
 | Entwickler:innen
-| Tim Besner, Sirri Metuge Menick Misode, Alina Petrenko, Konrad Arvid Bornstedt, Astemir Sheriev, Ranim Khouri
+| Tim Besner, Sirri Metuge Menick Misode, Konrad Arvid Bornstedt, Astemir Sheriev, Ranim Khouri
 
 | Stakeholder (Hauptansprechpartner)
 | Sofiia Khaleeva, Levin Grune, Joud Khatib, Junyan Wang, Constantin Francke, Antonio Albert
@@ -43,14 +43,14 @@ _Hier die Produktvision und den Projektzweck in 2–3 Sätzen beschreiben._
 | Ereignis | Wann | Dauer | Moderation
 
 | Standup (Weekly)
-| Dienstags 13:00 Uhr
+| Montags 11:15 Uhr
 | 15 min
-| Simon Joel Rios Sanchez
+| Thanh-Loan Katharina Pham
 
 | Sprint Planning
-| Mittwoch 19:00 Uhr, nach Sprintbeginn
-| 2 h
-| Simon Joel Rios Sanchez/ Benedikt Weinrich
+| Dienstag 17:30 Uhr, nach Sprintbeginn
+| 1.5 h
+| Thanh-Loan Katharina Pham/ Benedikt Weinrich
 
 | Sprint Review
 | Dienstag 13:15, Sprintende (5. Woche)
