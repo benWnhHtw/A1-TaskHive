@@ -1,0 +1,69 @@
+= Sprint Retrospektive
+
+= Was lief gut?
+
+=== Frontend:
+Aufgabenverteilung Frontend liefs Anfangs etwas unstrukturiert, jedoch haben wir uns da reingefunden und konnten die AUfgaben klar verteilt.
+Einer war zuständig fürs Design, ein anderer Logik und einer für die Kommunitkation mit dem Backend sowie koordination innerhalb des Frontend-Teams und zur Kontrolle dessen.
+
+=== Backend: 
+Die Aufgaben die verteilt waren verständlich und wurden fristgerecht und sauber erledigt.
+
+=== Organisation:
+Alles wurde fristgerecht abgegeben und erledigt. 
+Aufteilung in Frontend-Team und Backend-Team.
+Festlegung eines Termins lief reibungslos. Keine Termine wurden verschoben.
+Konsultation wurde wahrgenommen und es konnte jemand von außen mal unsere Methoden bewerten.
+Im Planing wurden nur noch Aufgaben besprochen, nicht mehr ausgearbeitet.
+
+
+= Was müssen wir ändern?
+
+== Backend:
+
+==== Mehr Aufgabenverteilung. Aufgaben waren sehr gebunden an eine Person.
+==== Wie?: Meeting fürs Frontend-Team. Technisches Kenntnisse erweitern. 
+
+
+== Organisation
+
+==== mehr Konsultationen
+wurden bisher noch nicht wahrgenommen, da wir nichts im Teamcharter festgehaltne haben was das anging und somit ist die Möglichkeit einer Kosultation in Vergessenheit geraten.
+
+==== mehr Teilnahme an den Meetings
+keine festen Termine und keine Konsequenzen bei zuspätem abmelden oder unentschuldigtem fehlen
+
+==== Wie?: 
+feste Termine, keine variierenden spontanen Termine mehr.
+Teilnehmerliste mit Abmeldgrund und Abmeldzeitpunkt.
+Kleine "Strafen" einführen.
+
+
+==== Kommunikation Backend-Frontend
+Anfangs schwierig aufgrund teilweise fehlender Kenntnisse im Frontend und fehlender Erfahrung in der Dokumentation.
+
+==== Wie?: 
+Dokumentation zur Umsetzung wie Endpoints und API Verträge nicht in den Issues festhalten sondern ein allgemeines Dokument erstellen.
+generell Dokumentation
+
+=== auslassen des Reviews
+Review wurde diesen Sprint ausgelassen, da die Zeitgefehlt hat und man das Review aus den Augen verloren hat.
+
+==== Wie?: 
+Termine frührer vor Augen führen.
+ScrumMaster 2 Wochen vohrer einmal Benachrichtigung geben.
+
+== Frontend
+
+=== Struktur besser festlegen
+Anfangs schwierig gewesen aufgrund von teilweise fehlenden Kenntnissen.
+
+==== Wie?: 
+besser dokumentieren, vorallem die Sachen die von den anderen Entwickler benötigt werden oder auf denen weiterentwickelt wird. 
+mehr Kenntniss um besser dokumentieren zu können.
+
+= Was lassen wir weg?
+/
+
+
+
