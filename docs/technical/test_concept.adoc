@@ -19,6 +19,44 @@ Warum wurden diese Testarten gewählt? Welchen Stellenwert hat Testing im Team?_
 „Wir setzen auf eine Teststrategie mit einem starken Fokus auf Unit-Tests,
 ergänzt durch Integrationstests für kritische Schnittstellen und manuelle Tests für die wichtigsten Nutzerinteraktionen."]
 
+
+== Produktrisiken und Testschwerpunkte
+
+[cols="3,2,1,1,1,3",options="header"]
+|===
+|Produktrisiko |Betroffen |Wahrscheinlichkeit |Auswirkung |Risikostufe |Begründung und Annahmen
+
+
+|Wenn Deadlines falsch gespeichert oder Zeitzonen nicht korrekt berücksichtigt werden, können Aufgaben fälschlicherweise als überfällig angezeigt werden, wodurch WG-Mitglieder unnötig erinnert werden.
+|User Story: Aufgabenzuweisung mit Deadlines; Qualitätsmerkmal: Funktionale Korrektheit.
+|niedrig
+| mittel
+|niedrig
+|Die korrekte Verarbeitung von Datums- und Zeitangaben ist notwendig. Angenommen wird, dass Deadlines mit Uhrzeit gespeichert werden.
+
+
+|Wenn mehrere Nutzer Aufgaben offline bearbeiten und diese später synchronisieren, kann es zum Überschreiben von Änderungen kommen, mit der Folge, dass Aufgabeninformationen für WG-Mitglieder verloren gehen.
+|User Story: Offline-Funktionalität der App; Qualitätsmerkmal: Datenintegrität
+|mittel
+|hoch
+|hoch
+|Bei der nachträglichen Synchronisation können Konflikte zwischen unterschiedlichen Datenständen entstehen. Angenommen wird, dass mehrere Nutzer dieselbe Aufgabe bearbeiten können.
+|===
+
+
+=== Risiko <Name>
+Testbedingung:: ...
+Teststufe:: ...
+Nachweis:: ...
+== Nicht getestet
+[cols="2,3",options="header"]
+|===
+|Bereich |Begründung
+|...
+|...
+|===
+
+
 == Testarten
 
 === Unit-Tests
